@@ -14,8 +14,8 @@ from langchain.prompts import PromptTemplate
 import re
 
 
-# Initialize Flask app
-#app = Flask(__name__)
+
+app = Flask(__name__)
 
 # Step 1: Extract text and table data from PDF using pdfplumber
 def extract_text_from_pdf(pdf_path):
@@ -65,7 +65,7 @@ pipe = pipeline(
     model=model,
     tokenizer=tokenizer,
     max_length=512,
-    temperature=0.7,  # Adjust for better answers
+    temperature=0.7,  
     top_p=0.9,
     repetition_penalty=1.15
 )
@@ -140,7 +140,7 @@ for question in questions:
     print(validate_answer(question, generated_text))
     print("-" * 50)
 
-"""# Create the Flask route to serve the chat interface
+# Create the Flask route to serve the chat interface
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -157,4 +157,4 @@ def ask():
     return jsonify({"response": answer})
 
 if __name__ == '__main__':
-    app.run(debug=True)"""
+    app.run(debug=True)
