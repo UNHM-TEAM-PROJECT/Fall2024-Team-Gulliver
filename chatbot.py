@@ -1,10 +1,5 @@
 import os
 import torch
-
-from flask import Flask, request, jsonify, render_template
-
-#from flask import Flask, request, jsonify, render_template
-
 import pdfplumber
 from langchain_community.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -16,10 +11,6 @@ from langchain.schema import Document
 from langchain_community.llms import HuggingFacePipeline
 from langchain.prompts import PromptTemplate
 import re
-
-
-
-app = Flask(__name__)
 
 # Step 1: Extract text and table data from PDF using pdfplumber
 def extract_text_from_pdf(pdf_path):
@@ -69,7 +60,7 @@ pipe = pipeline(
     model=model,
     tokenizer=tokenizer,
     max_length=512,
-    temperature=0.7,  
+    temperature=0.7,  # Adjust for better answers
     top_p=0.9,
     repetition_penalty=1.15
 )
@@ -144,24 +135,3 @@ for question in questions:
     print(validate_answer(question, generated_text))
     print("-" * 50)
 
-# Create the Flask route to serve the chat interface
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-# Create an API endpoint for handling user queries
-@app.route('/ask', methods=['POST'])
-def ask():
-    data = request.get_json()
-    user_question = data.get('message')
-    query = prompt_template.format(question=user_question)
-    generated_text = qa(query)
-
-    answer = validate_answer(user_question, generated_text)
-    return jsonify({"response": answer})
-
-if __name__ == '__main__':
-
-    app.run(debug=True)
-
-    app.run(debug=True)
