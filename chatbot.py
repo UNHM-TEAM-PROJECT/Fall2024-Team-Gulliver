@@ -1,6 +1,10 @@
 import os
 import torch
+
 from flask import Flask, request, jsonify, render_template
+
+#from flask import Flask, request, jsonify, render_template
+
 import pdfplumber
 from langchain_community.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -157,4 +161,7 @@ def ask():
     return jsonify({"response": answer})
 
 if __name__ == '__main__':
+
+    app.run(debug=True)
+
     app.run(debug=True)
