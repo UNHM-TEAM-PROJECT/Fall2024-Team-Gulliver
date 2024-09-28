@@ -3,7 +3,7 @@ import torch
 
 from flask import Flask, request, jsonify, render_template
 
-from flask import Flask, request, jsonify, render_template
+#from flask import Flask, request, jsonify, render_template
 
 import pdfplumber
 from langchain_community.document_loaders import DirectoryLoader
