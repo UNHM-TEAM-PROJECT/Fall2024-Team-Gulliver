@@ -1,5 +1,7 @@
+#chatbot.py
 import os
 import torch
+from flask import Flask, request, jsonify, render_template
 import pdfplumber
 from langchain_community.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -11,6 +13,10 @@ from langchain.schema import Document
 from langchain_community.llms import HuggingFacePipeline
 from langchain.prompts import PromptTemplate
 import re
+
+
+# Initialize Flask app
+app = Flask(__name__)
 
 # Step 1: Extract text and table data from PDF using pdfplumber
 def extract_text_from_pdf(pdf_path):
@@ -97,16 +103,7 @@ qa = RetrievalQA.from_chain_type(llm=llm,
                                   retriever=retriever, 
                                   return_source_documents=True)
 
-# Step 9: Greeting and Fallback Response Function
-def handle_special_cases(question):
-    greetings = ["hi", "hello", "hey", "greetings"]
-    if any(greeting in question.lower() for greeting in greetings):
-        return "Hello! Feel free to ask any questions about the course or your internship."
-    if "team" in question.lower():
-        return "Our team name is 'Gulliver' and the team members are Shiva, Hema, Sindhu, and Nick."
-    return None
-
-# Step 10: Validate and Extract Credits or Numerical Values
+# Step 9: Validate and Extract Credits or Numerical Values
 def extract_numerical_answer(answer):
     match = re.search(r'\d+', answer)
     return match.group(0) if match else "Invalid number format"
@@ -125,39 +122,40 @@ def validate_answer(question, generated_text):
 
     return f"Answer: {answer}\nSource: {source}"
 
-# Step 11: Fallback Response Function
-def fallback_response():
-    return "I'm sorry, I didn't quite understand the question. Could you please rephrase or ask something else?"
-
-# Step 12: Query the Chain and Validate Outputs with Greeting and Fallback
+#Step 10: Query the Chain and Validate Outputs
 questions = [
     "When does the first sprint start?",
     "Who is the instructor for the course?",
     "What are the course office hours?",
     "How many credits is the course?",
+    "What are the course's learning outcomes?",
+    "What are the activities planned for Week 3?",
     "How many sprints are there?",
-    "What is the grading policy?",
-    "hi",  # Example greeting
-    "Who are my teammates?",  # Example team-related question
-    "What is our team name?",  # Example team-related question
-    "What is the schedule?"  # Example of fallback if unclear
+    "What is the grading policy?"
 ]
 
 for question in questions:
-    # Handle special cases for greeting or team-related queries
-    special_case = handle_special_cases(question)
-    if special_case:
-        print(f"Question: {question}")
-        print(f"Answer: {special_case}")
-    else:
-        query = prompt_template.format(question=question)
-        generated_text = qa(query)
-        answer = validate_answer(question, generated_text)
-        
-        # Fallback if no valid response is found
-        if "No answer found" in answer:
-            answer = fallback_response()
-        
-        print(f"Question: {question}")
-        print(answer)
+    query = prompt_template.format(question=question)
+    generated_text = qa(query)
+    print(f"Question: {question}")
+    print(validate_answer(question, generated_text))
     print("-" * 50)
+
+# Create the Flask route to serve the chat interface
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+# Create an API endpoint for handling user queries
+@app.route('/ask', methods=['POST'])
+def ask():
+    data = request.get_json()
+    user_question = data.get('message')
+    query = prompt_template.format(question=user_question)
+    generated_text = qa(query)
+
+    answer = validate_answer(user_question, generated_text)
+    return jsonify({"response": answer})
+
+if __name__ == '__main__':
+    app.run(debug=True)
