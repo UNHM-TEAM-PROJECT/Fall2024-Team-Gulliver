@@ -23,7 +23,7 @@
             border: 8px solid #003366;  /* (dark blue) border */
             border-radius: 15px;  /* More pronounced rounded corners */
             margin: 5px;  /* Add margin to separate from screen edges */
-	    
+        
         }
         .chat-header {
             background-color: #003366;  /* (dark blue) color */
@@ -65,7 +65,7 @@
             border-bottom-right-radius: 30px;  /* Match the container border radius */
         }
         #user-input {
-            width: 60%;  /* Reduce the width of the input field */
+            width: 60%;  /* Reduce  the width of the input field */
             padding: 10px 15px;
             font-size: 16px;
             border: 1px solid #d8bfd8;  /* Thistle */
@@ -131,7 +131,7 @@
         const chatHistory = document.getElementById('chat-history');
         const userInput = document.getElementById('user-input');
         const sendButton = document.getElementById('send-button');
-
+    
         function addMessage(content, isUser) {
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
@@ -139,27 +139,40 @@
             chatHistory.appendChild(messageDiv);
             chatHistory.scrollTop = chatHistory.scrollHeight;
         }
-
-        function handleSend() {
+    
+        async function handleSend() {
             const message = userInput.value.trim();
             if (message) {
-                addMessage(message, true);
+                addMessage(message, true); // Add user message to chat
                 userInput.value = '';
-                
-                // Simulate assistant response
-                setTimeout(() => {
-                    addMessage("This is a simulated response from the assistant.", false);
-                }, 1000);
+    
+                try {
+                    const response = await fetch('/ask', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ message: message })
+                    });
+    
+                    if (response.ok) {
+                        const data = await response.json();
+                        addMessage(data.response, false); // Add assistant response to chat
+                    } else {
+                        addMessage("Error: Unable to get a response.", false);
+                    }
+                } catch (error) {
+                    addMessage("Error: Unable to communicate with the server.", false);
+                }
             }
         }
-
+    
         sendButton.addEventListener('click', handleSend);
         userInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 handleSend();
             }
         });
-    </script>
+    </script>    
 </body>
 </html>
-
