@@ -1,8 +1,4 @@
-
 #chatbot.py
-
-
-
 import os
 import torch
 from flask import Flask, request, jsonify, render_template
@@ -17,7 +13,6 @@ from langchain.schema import Document
 from langchain_community.llms import HuggingFacePipeline
 from langchain.prompts import PromptTemplate
 import re
-
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -70,7 +65,7 @@ pipe = pipeline(
     model=model,
     tokenizer=tokenizer,
     max_length=512,
-    temperature=0.7,  # Adjust for better answers
+    temperature=0.7,  
     top_p=0.9,
     repetition_penalty=1.15
 )
@@ -132,8 +127,6 @@ questions = [
     "Who is the instructor for the course?",
     "What are the course office hours?",
     "How many credits is the course?",
-    "What are the course's learning outcomes?",
-    "What are the activities planned for Week 3?",
     "How many sprints are there?",
     "What is the grading policy?"
 ]
@@ -163,7 +156,3 @@ def ask():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
