@@ -1,18 +1,19 @@
+#chatbot.py
 import os
-import torch
 from flask import Flask, request, jsonify, render_template
 import pdfplumber
 from langchain_community.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
+from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
-from langchain.chains import RetrievalQA
-from langchain.schema import Document
-from langchain_community.llms import HuggingFacePipeline
+from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.prompts import PromptTemplate
+from langchain.schema import Document
 import re
 
+# OpenAI API key and organization
+apikey = "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"
+organization = "org-ykin6B7UJe9nKDvHiXGf1b9W"
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -32,19 +33,23 @@ def extract_text_from_pdf(pdf_path):
                 ) + "\n"
     return text
 
-# Path to the PDF file
-pdf_path = 'C:\\Users\\sindh\\TeamGulliver\\Data\\internship_course.pdf'
+# Step 2: Handle multiple PDFs in a directory
+def extract_texts_from_multiple_pdfs(pdf_directory):
+    documents = []
+    for pdf_file in os.listdir(pdf_directory):
+        if pdf_file.endswith(".pdf"):
+            pdf_path = os.path.join(pdf_directory, pdf_file)
+            pdf_text = extract_text_from_pdf(pdf_path)
+            documents.append(Document(page_content=pdf_text, metadata={"source": pdf_file}))
+    return documents
 
+# Directory containing your PDF files
+pdf_directory = '/Users/bubby/TeamGulliver/data/'
 
-pdf_text = extract_text_from_pdf(pdf_path)
+# Extract text from all PDFs in the directory
+documents = extract_texts_from_multiple_pdfs(pdf_directory)
 
-# Print the first 1000 characters to check content extraction
-print("Extracted Text from PDF (first 1000 chars):", pdf_text[:1000])
-
-# Step 2: Wrap the extracted text into a LangChain Document object
-documents = [Document(page_content=pdf_text, metadata={"source": pdf_path})]
-
-# Step 3: Improve Chunking Strategy for Schedule and Learning Outcomes
+# Step 3: Improve Chunking Strategy for better retrieval from all PDFs
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=500,  # Small enough for specific information extraction
     chunk_overlap=150,  # Increased overlap for better context retention
@@ -52,57 +57,45 @@ text_splitter = RecursiveCharacterTextSplitter(
 )
 texts = text_splitter.split_documents(documents)
 
-# Step 4: Load Embeddings using HuggingFaceEmbeddings
-embedding_model_name = 'sentence-transformers/all-MiniLM-L6-v2'
-sentence_embeddings = HuggingFaceEmbeddings(model_name=embedding_model_name)
+# Step 4: Load OpenAI Embeddings
+embeddings = OpenAIEmbeddings(model="text-embedding-ada-002", openai_api_key=apikey)
 
-# Step 5: Load LLM for response generation
-LLM_Model = "google/flan-t5-large"
-tokenizer = AutoTokenizer.from_pretrained(LLM_Model)
-model = AutoModelForSeq2SeqLM.from_pretrained(LLM_Model, torch_dtype=torch.float32)
-
-pipe = pipeline(
-    "text2text-generation",
-    model=model,
-    tokenizer=tokenizer,
-    max_length=1024,
-    temperature=0.7,  # Adjust for better answers
-    top_p=0.9,
-    repetition_penalty=1.15
-)
-
-llm = HuggingFacePipeline(pipeline=pipe)
-
-# Step 6: Create Chroma Index for Vector Store
+# Step 5: Create Chroma Index for Vector Store using OpenAI Embeddings
 persist_directory = 'db'
 if os.path.exists(persist_directory):
     # Clear previous vector store if switching models
     os.system(f"rm -rf {persist_directory}")
 
-db = Chroma.from_documents(documents=texts, 
-                           embedding=sentence_embeddings,
-                           persist_directory=persist_directory)
+db = Chroma.from_documents(documents=texts, embedding=embeddings, persist_directory=persist_directory)
 
-# Step 7: Create a retriever and chain it with LLM
-retriever = db.as_retriever(search_kwargs={"k": 3})
+# Step 6: Create a retriever and chain it with OpenAI LLM
+retriever = db.as_retriever()
+
+from langchain.llms import OpenAI
+
+llm = OpenAI(
+    openai_api_key=apikey,
+    openai_organization=organization,
+    temperature=0.7,  # Adjust as needed
+    top_p=0.9,        # Adjust to control output randomness
+    frequency_penalty=0.0,  # Penalty for word repetition
+    presence_penalty=0.6    # Encourage new topic introduction
+)
+
+# Step 7: Create a QA chain with sources
+qa = RetrievalQAWithSourcesChain.from_chain_type(llm=llm, retriever=retriever)
 
 # Step 8: Refine the Prompt Template for More Detailed Answers
 prompt_template = PromptTemplate(
     input_variables=["question"],
     template="""
-    You have access to a course syllabus. Based on this information, please answer the following question as accurately as possible:
+    You are a knowledgeable assistant with access to multiple course syllabi. Answer the following question using specific details from the content.
 
     Question: {question}
 
-    Please provide a detailed answer based on the course syllabus only.
+    Ensure to include all relevant information, especially when asked about learning outcomes, planned activities, or instructor details.
     """
 )
-
-
-qa = RetrievalQA.from_chain_type(llm=llm, 
-                                  chain_type="stuff", 
-                                  retriever=retriever, 
-                                  return_source_documents=True)
 
 # Step 9: Validate and Extract Credits or Numerical Values
 def extract_numerical_answer(answer):
@@ -111,19 +104,19 @@ def extract_numerical_answer(answer):
 
 def validate_answer(question, generated_text):
     try:
-        answer = generated_text.get("result", "No answer found")
-        
-        
+        answer = generated_text.get("answer", "No answer found")
+        source = generated_text['sources']
+
         # Validate numerical answers
         if "credits" in question.lower() or "how many" in question.lower():
             answer = extract_numerical_answer(answer)
         
     except (IndexError, KeyError, AttributeError):
-        return "No answer found"
+        return f"Answer: Not available\nSource: Not available"
 
-    return answer
+    return f"Answer: {answer}\nSource: {source}"
 
-#Step 10: Query the Chain and Validate Outputs
+# Step 10: Query the Chain and Validate Outputs
 questions = [
     "When does the first sprint start?",
     "Who is the instructor for the course?",
