@@ -1,4 +1,3 @@
-# Chatbot.py/
 import os
 import torch
 from flask import Flask, request, jsonify, render_template
@@ -13,6 +12,7 @@ from langchain.schema import Document
 from langchain_community.llms import HuggingFacePipeline
 from langchain.prompts import PromptTemplate
 import re
+
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -33,7 +33,8 @@ def extract_text_from_pdf(pdf_path):
     return text
 
 # Path to the PDF file
-pdf_path = '/Users/bubby/Gulliver/data/internship_course.pdf'
+pdf_path = 'C:\\Users\\sindh\\TeamGulliver\\Data\\internship_course.pdf'
+
 
 pdf_text = extract_text_from_pdf(pdf_path)
 
@@ -64,8 +65,8 @@ pipe = pipeline(
     "text2text-generation",
     model=model,
     tokenizer=tokenizer,
-    max_length=512,
-    temperature=0.7,  
+    max_length=1024,
+    temperature=0.7,  # Adjust for better answers
     top_p=0.9,
     repetition_penalty=1.15
 )
@@ -89,13 +90,14 @@ retriever = db.as_retriever(search_kwargs={"k": 3})
 prompt_template = PromptTemplate(
     input_variables=["question"],
     template="""
-    You are a knowledgeable assistant with access to a course syllabus. Answer the following question using specific details from the syllabus content.
+    You have access to a course syllabus. Based on this information, please answer the following question as accurately as possible:
 
     Question: {question}
 
-    Ensure to include all relevant information, especially when asked about learning outcomes or planned activities.
+    Please provide a detailed answer based on the course syllabus only.
     """
 )
+
 
 qa = RetrievalQA.from_chain_type(llm=llm, 
                                   chain_type="stuff", 
@@ -110,16 +112,16 @@ def extract_numerical_answer(answer):
 def validate_answer(question, generated_text):
     try:
         answer = generated_text.get("result", "No answer found")
-        source = generated_text['source_documents'][0].metadata['source']
+        
         
         # Validate numerical answers
         if "credits" in question.lower() or "how many" in question.lower():
             answer = extract_numerical_answer(answer)
         
     except (IndexError, KeyError, AttributeError):
-        return f"Answer: Not available\nSource: Not available"
+        return "No answer found"
 
-    return f"Answer: {answer}\nSource: {source}"
+    return answer
 
 #Step 10: Query the Chain and Validate Outputs
 questions = [
@@ -127,6 +129,8 @@ questions = [
     "Who is the instructor for the course?",
     "What are the course office hours?",
     "How many credits is the course?",
+    "What are the course's learning outcomes?",
+    "What are the activities planned for Week 3?",
     "How many sprints are there?",
     "What is the grading policy?"
 ]
