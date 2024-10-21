@@ -52,7 +52,6 @@ def extract_text_from_pdf(pdf_path):
                 ) + "\n"
     return text
 
-
 # Initialize the chat history file if it doesn't exist or is empty
 def initialize_chat_history_file():
     if not os.path.exists(chat_history_file) or os.path.getsize(chat_history_file) == 0:
