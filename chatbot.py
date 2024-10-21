@@ -44,7 +44,7 @@ def extract_texts_from_multiple_pdfs(pdf_directory):
     return documents
 
 # Directory containing your PDF files
-pdf_directory = '/Users/bubby/TeamGulliver/data/'
+pdf_directory = 'C:\\Users\\sindh\\TeamGulliver\\Data\\'
 
 # Extract text from all PDFs in the directory
 documents = extract_texts_from_multiple_pdfs(pdf_directory)
@@ -105,16 +105,16 @@ def extract_numerical_answer(answer):
 def validate_answer(question, generated_text):
     try:
         answer = generated_text.get("answer", "No answer found")
-        source = generated_text['sources']
+
 
         # Validate numerical answers
         if "credits" in question.lower() or "how many" in question.lower():
             answer = extract_numerical_answer(answer)
-        
-    except (IndexError, KeyError, AttributeError):
-        return f"Answer: Not available\nSource: Not available"
 
-    return f"Answer: {answer}\nSource: {source}"
+    except (IndexError, KeyError, AttributeError):
+        return f"Answer not available"
+
+    return f"{answer}"
 
 # Step 10: Query the Chain and Validate Outputs
 questions = [
