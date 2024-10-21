@@ -1,163 +1,288 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pastel Full-screen Chat Interface</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        body {
-            background-color: #3b4d61;  /* Light navy blue background */
-            font-family: Arial, sans-serif;
-        }
-        .chat-container {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background-color: #ffffff;  /* Very light pastel pink */
-            border: 8px solid #003366;  /* (dark blue) border */
-            border-radius: 15px;  /* More pronounced rounded corners */
-            margin: 5px;  /* Add margin to separate from screen edges */
-        
-        }
-        .chat-header {
-            background-color: #003366;  /* (dark blue) color */
-            color: #ffffff;  /* White text for contrast */
-            padding: 15px;
-            font-weight: bold;
-            text-align: center;
-            border-bottom: 1px solid #3b4d61;  /* Border to separate header */
-            
-        }
-        .chat-history {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-            background-color: #f0f8ff;  /* Very light pastel blue */
-        }
-        .message {
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>UNH Internship Chatbot</title>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+       <style>
+           :root {
+               --unh-blue: #003591;
+               --unh-white: #ffffff;
+               --chat-bg: #f0f8ff;
+               --message-bg: #e0e0e0;
+               --input-bg: #e6e6fa;
+           }
+           
+           html, body {
+               height: 100%;
+               margin: 0;
+               padding: 0;
+               overflow: hidden;
+           }
+           body {
+               background-color: var(--unh-blue);
+               font-family: Arial, sans-serif;
+           }
+           .chat-container {
+               height: 100vh;
+               display: flex;
+               flex-direction: column;
+               background-color: var(--unh-white);
+               border: 8px solid var(--unh-blue);
+               border-radius: 15px;
+               margin: 5px;
+               box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+           }
+           .chat-header {
+               background-color: var(--unh-blue);
+               color: var(--unh-white);
+               padding: 15px;
+               font-weight: bold;
+               text-align: center;
+               border-bottom: 1px solid #3b4d61;
+               font-size: 1.2em;
+           }
+           .chat-intro {
+               background-color: var(--unh-white);
+               color: var(--unh-blue);
+               font-size: 1em;
+               border-bottom: 1px solid var(--unh-blue);
+               margin-bottom: 0px;
+               padding: 15px;
+               text-align: center;
+           }
+           .chat-history {
+               flex: 1;
+               overflow-y: auto;
+               padding: 20px;
+               background-color: var(--chat-bg);
+           }
+           .message {
+            position: relative;
             margin-bottom: 15px;
             padding: 10px 15px;
             border-radius: 20px;
             max-width: 75%;
-        }
-        .user-message {
-            background-color: #e0e0e0;  /*gray */
-            align-self: flex-end;
-            margin-left: auto;
-        }
-        .assistant-message {
-            background-color: #e0e0e0;  /* gray */
-            align-self: flex-start;
-        }
-        .input-area {
-            display: flex;
-            justify-content: center;  /* Center the input area horizontally */
-            align-items: center;
-            padding: 15px;
-            background-color: #e6e6fa;  /* Lavender */
-            border-bottom-left-radius: 30px;  /* Match the container border radius */
-            border-bottom-right-radius: 30px;  /* Match the container border radius */
-        }
-        #user-input {
-            width: 60%;  /* Reduce  the width of the input field */
-            padding: 10px 15px;
-            font-size: 16px;
-            border: 1px solid #d8bfd8;  /* Thistle */
-            border-radius: 25px;
-            background-color: #fff;
-        }
-        #send-button {
-            background-color: #add8e6;  /* Light blue */
-            color: #5a5a5a;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
+           }
+           .user-message {
+               background-color: var(--message-bg);
+               align-self: flex-end;
+               margin-left: auto;
+               border-bottom-right-radius: 5px;
+           }
+           .assistant-message {
+               background-color: var(--unh-white);
+               align-self: flex-start;
+               border-bottom-left-radius: 5px;
+           }
+           .message.user-message::before {
+               content: '👤';
+               margin-right: 10px;
+           }
+           .message.assistant-message::before {
+               content: '🤖';
+               margin-right: 10px;
+           }
+           .input-area {
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-left: 10px;  /* Bring the button closer to the input field */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        #send-button:hover {
-            background-color: #87ceeb;  /* Sky blue */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-        #send-button:active {
-            background-color: #b0e0e6;  /* Powder blue */
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-        }
-        #send-button svg {
-            width: 20px;
-            height: 20px;
-            fill: #5a5a5a;
-        }
-    </style>
-</head>
-<body>
-    <div class="container-fluid h-100 p-0">
-        <div class="row h-100 m-0">
-            <div class="col-12 p-0">
-                <div class="chat-container">
-                    <div class="chat-header">
-                        University Of New Hampshire
-                    </div>
-                    <div class="chat-history" id="chat-history">
-                        <!-- Chat messages will be inserted here -->
-                    </div>
-                    <div class="input-area">
-                        <input type="text" id="user-input" class="form-control" placeholder="Type your message here...">
+            padding: 15px;
+            background-color: #e6e6fa;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            }
+            #user-input {
+                width: 60%;
+                padding: 10px 15px;
+                font-size: 16px;
+                border: 1px solid #d8bfd8;
+                border-radius: 25px;
+                background-color: var(--unh-white);
+            }
+            #send-button {
+                background-color: #add8e6;
+                color: #5a5a5a;
+                border: none;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-left: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            #send-button:hover {
+                background-color: #87ceeb;  /* Sky blue */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            }
+            #send-button:active {
+                background-color: #b0e0e6;  /* Powder blue */
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            }
+            #send-button svg {
+                width: 20px;
+                height: 20px;
+                fill: #5a5a5a;
+            }
+           @media (max-width: 768px) {
+               .chat-container {
+                   margin: 0;
+                   border-radius: 0;
+                   border-width: 0;
+               }
+               .message {
+                   max-width: 90%;
+               }
+               #user-input {
+                    width: 70%;
+                    font-size: 14px;
+               }
+           }
+
+           .edit-button {
+               position: absolute;
+               top: 5px;
+               right: 5px;
+               background-color: transparent;
+               border: none;
+               color: #666;
+               cursor: pointer;
+               font-size: 12px;
+           }
+       </style>
+   </head>
+   <body>
+       <div class="container-fluid h-100 p-0">
+           <div class="row h-100 m-0">
+               <div class="col-12 p-0">
+                   <div class="chat-container">
+                       <div class="chat-header">
+                           University of New Hampshire
+                       </div>
+                       <div class="chat-intro">
+                           <p>Welcome to the UNH Internship Chatbot!</p>
+                       </div>
+                       <div class="chat-history" id="chat-history">
+                           <!-- Chat messages will be inserted here -->
+                       </div>
+                       <div class="input-area">
+                        <input type="text" id="user-input" class="form-control" placeholder="Type your question here...">
                         <button id="send-button">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
                             </svg>
                         </button>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                   </div>
+               </div>
+           </div>
+       </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const chatHistory = document.getElementById('chat-history');
-        const userInput = document.getElementById('user-input');
-        const sendButton = document.getElementById('send-button');
-    
-        function addMessage(content, isUser) {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
-            messageDiv.textContent = content;
-            chatHistory.appendChild(messageDiv);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
-        }
-    
-        async function handleSend() {
-            const message = userInput.value.trim();
-            if (message) {
-                addMessage(message, true); // Add user message to chat
-                userInput.value = '';
-    
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            const chatHistory = document.getElementById('chat-history');
+            const userInput = document.getElementById('user-input');
+            const sendButton = document.getElementById('send-button');
+
+            function addMessage(content, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
+                
+                if (isUser) {
+                    const messageContent = document.createElement('span');
+                    messageContent.textContent = content;
+                    messageDiv.appendChild(messageContent);
+                    
+                    const editButton = document.createElement('button');
+                    editButton.classList.add('edit-button');
+                    editButton.textContent = 'Edit';
+                    editButton.onclick = function() {
+                        editMessage(messageDiv, messageContent, editButton);
+                    };
+                    messageDiv.appendChild(editButton);
+                } else {
+                    messageDiv.textContent = content;
+                }
+                
+                chatHistory.appendChild(messageDiv);
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+            }
+
+            function editMessage(messageDiv, messageContent, editButton) {
+                // Create an input group container
+                const inputGroup = document.createElement('div');
+                inputGroup.classList.add('input-group', 'mb-2'); // Add Bootstrap input-group for horizontal alignment
+
+                // Create the input field
+                const inputField = document.createElement('input');
+                inputField.type = 'text';
+                inputField.value = messageContent.textContent;
+                inputField.classList.add('form-control'); // Bootstrap form control for styling
+
+                // Create the send button with both icon and text
+                const sendButton = document.createElement('button');
+                sendButton.innerHTML = '<i class="bi bi-send-fill"></i> Send'; // Bootstrap icon and "Send" text
+                sendButton.classList.add('btn', 'btn-primary'); // Bootstrap button classes for proper sizing
+                sendButton.onclick = function() {
+                    saveMessage(messageDiv, inputField, messageContent, sendButton, editButton);
+                };
+
+                // Add input field and button to the input group
+                const inputGroupAppend = document.createElement('div');
+                inputGroupAppend.classList.add('input-group-append'); // Add append div for button inside input-group
+                inputGroupAppend.appendChild(sendButton); // Append the button to the input group
+
+                inputGroup.appendChild(inputField); // Append input field to the input group
+                inputGroup.appendChild(inputGroupAppend); // Append the button container to the input group
+
+                // Clear the messageDiv and add the input group
+                messageDiv.innerHTML = '';
+                messageDiv.appendChild(inputGroup);
+            }
+
+
+
+            function saveMessage(messageDiv, inputField, messageContent, saveButton, editButton) {
+                const newMessage = inputField.value;
+                messageContent.textContent = newMessage;
+
+                messageDiv.innerHTML = '';
+                messageDiv.appendChild(messageContent);
+                messageDiv.appendChild(editButton);
+
+                // Remove all subsequent messages (including the bot's response)
+                removeSubsequentMessages(messageDiv);
+
+                // Optionally, resend the edited message to the server.
+                handleResend(newMessage);
+            }
+
+            function removeSubsequentMessages(messageDiv) {
+                let nextElement = messageDiv.nextElementSibling;
+                while (nextElement) {
+                    nextElement.remove();
+                    nextElement = messageDiv.nextElementSibling;
+                }
+            }
+
+            async function handleResend(newMessage) {
                 try {
                     const response = await fetch('/ask', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({ message: message })
+                        body: JSON.stringify({ message: newMessage })
                     });
-    
+
                     if (response.ok) {
                         const data = await response.json();
-                        addMessage(data.response, false); // Add assistant response to chat
+                        addMessage(data.response, false); 
                     } else {
                         addMessage("Error: Unable to get a response.", false);
                     }
@@ -165,14 +290,40 @@
                     addMessage("Error: Unable to communicate with the server.", false);
                 }
             }
-        }
-    
-        sendButton.addEventListener('click', handleSend);
-        userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                handleSend();
+
+            async function handleSend() {
+                const message = userInput.value.trim();
+                if (message) {
+                    addMessage(message, true); // Add user message to chat
+                    userInput.value = '';
+
+                    try {
+                        const response = await fetch('/ask', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ message: message })
+                        });
+
+                        if (response.ok) {
+                            const data = await response.json();
+                            addMessage(data.response, false); // Add assistant response to chat
+                        } else {
+                            addMessage("Error: Unable to get a response.", false);
+                        }
+                    } catch (error) {
+                        addMessage("Error: Unable to communicate with the server.", false);
+                    }
+                }
             }
-        });
-    </script>    
-</body>
+
+            sendButton.addEventListener('click', handleSend);
+            userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    handleSend();
+                }
+            });
+        </script>
+   </body>
 </html>
