@@ -32,6 +32,63 @@ def extract_text_from_pdf(pdf_path):
                     ["\t".join([str(cell) if cell is not None else '' for cell in row]) for row in tables if row]
                 ) + "\n"
     return text
+# Path to the JSON file for storing chat history
+chat_history_file = 'chat_history.json'
+
+
+
+# Step 1: Extract text and table data from PDF using pdfplumber
+def extract_text_from_pdf(pdf_path):
+    text = ''
+    with pdfplumber.open(pdf_path) as pdf:
+        for page in pdf.pages:
+            page_text = page.extract_text() or ''  # Extract text from page
+            text += page_text + "\n"  # Add newline for separation
+            tables = page.extract_table()
+            if tables:
+                # Replace None values with empty strings and format table data
+                text += "\n\n" + "\n".join(
+                    ["\t".join([str(cell) if cell is not None else '' for cell in row]) for row in tables if row]
+                ) + "\n"
+    return text
+
+
+# Initialize the chat history file if it doesn't exist or is empty
+def initialize_chat_history_file():
+    if not os.path.exists(chat_history_file) or os.path.getsize(chat_history_file) == 0:
+        with open(chat_history_file, 'w') as file:
+            json.dump([], file)  # Initialize the file with an empty list
+
+# Load chat history from the JSON file
+def load_chat_history():
+    if os.path.exists(chat_history_file):
+        try:
+            with open(chat_history_file, 'r') as file:
+                data = file.read().strip()  # Read the file and remove leading/trailing whitespace
+                if data:  # Check if the file is not empty
+                    return json.loads(data)  # Return parsed JSON
+                else:
+                    return []  # Return an empty list if the file is empty
+        except json.JSONDecodeError:
+            # If the file contains invalid JSON, reset it with an empty list
+            return []
+    return []  # If the file doesn't exist, return an empty list
+
+# Save chat history to the JSON file
+def save_chat_history(chat_history):
+    with open(chat_history_file, 'w') as file:
+        json.dump(chat_history, file, indent=4)
+
+# Append a new chat entry to the JSON file
+def save_interaction_to_json(user_question, bot_response):
+    chat_history = load_chat_history()  # Load existing chat history
+    new_chat = {
+        "user_question": user_question,
+        "bot_response": bot_response,
+        "timestamp": datetime.now().isoformat()
+    }
+    chat_history.append(new_chat)  # Append the new chat to the history
+    save_chat_history(chat_history)  # Save the updated chat history back to the file
 
 # Step 2: Handle multiple PDFs in a directory
 def extract_texts_from_multiple_pdfs(pdf_directory):
