@@ -10,6 +10,8 @@ from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.prompts import PromptTemplate
 from langchain.schema import Document
 import re
+import json
+from datetime import datetime
 
 # OpenAI API key and organization
 apikey = "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"
@@ -203,6 +205,7 @@ def ask():
     generated_text = qa(query)
 
     answer = validate_answer(user_question, generated_text)
+    save_interaction_to_json(user_question, answer)
     return jsonify({"response": answer})
 
 if __name__ == '__main__':
