@@ -282,7 +282,7 @@
 
                     if (response.ok) {
                         const data = await response.json();
-                        addMessage(data.response, false); // Add assistant response to chat
+                        addMessage(data.response, false); 
                     } else {
                         addMessage("Error: Unable to get a response.", false);
                     }
