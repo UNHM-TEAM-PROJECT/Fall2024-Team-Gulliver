@@ -129,9 +129,11 @@ db = Chroma.from_documents(documents=texts, embedding=embeddings, persist_direct
 # Step 6: Create a retriever and chain it with OpenAI LLM
 retriever = db.as_retriever()
 
-from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI  # Import ChatOpenAI instead
 
-llm = OpenAI(
+# Modify the LLM initialization to specify the model
+llm = ChatOpenAI(
+    model="gpt-3.5-turbo",  # Specify the chat model you want to use
     openai_api_key=apikey,
     openai_organization=organization,
     temperature=0.7,  # Adjust as needed
@@ -139,6 +141,7 @@ llm = OpenAI(
     frequency_penalty=0.0,  # Penalty for word repetition
     presence_penalty=0.6    # Encourage new topic introduction
 )
+
 
 # Step 7: Create a QA chain with sources
 qa = RetrievalQAWithSourcesChain.from_chain_type(llm=llm, retriever=retriever)
