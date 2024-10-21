@@ -104,16 +104,16 @@ def extract_numerical_answer(answer):
 def validate_answer(question, generated_text):
     try:
         answer = generated_text.get("answer", "No answer found")
-        source = generated_text['sources']
+       
 
         # Validate numerical answers
         if "credits" in question.lower() or "how many" in question.lower():
             answer = extract_numerical_answer(answer)
         
     except (IndexError, KeyError, AttributeError):
-        return f"Answer: Not available\nSource: Not available"
+        return f"Answer not available"
 
-    return f"Answer: {answer}\nSource: {source}"
+    return f"{answer}"
 
 # Step 10: Query the Chain and Validate Outputs
 questions = [
