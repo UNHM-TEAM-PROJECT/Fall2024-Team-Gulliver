@@ -1,10 +1,9 @@
-#chatbot.py
 import os
 from flask import Flask, request, jsonify, render_template
 import pdfplumber
 from langchain_community.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings  # Updated import after fixing deprecation warning
 from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.prompts import PromptTemplate
@@ -20,38 +19,26 @@ organization = "org-ykin6B7UJe9nKDvHiXGf1b9W"
 # Initialize Flask app
 app = Flask(__name__)
 
-# Step 1: Extract text and table data from PDF using pdfplumber
-def extract_text_from_pdf(pdf_path):
-    text = ''
-    with pdfplumber.open(pdf_path) as pdf:
-        for page in pdf.pages:
-            page_text = page.extract_text() or ''  # Extract text from page
-            text += page_text + "\n"  # Add newline for separation
-            tables = page.extract_table()
-            if tables:
-                # Replace None values with empty strings and format table data
-                text += "\n\n" + "\n".join(
-                    ["\t".join([str(cell) if cell is not None else '' for cell in row]) for row in tables if row]
-                ) + "\n"
-    return text
 # Path to the JSON file for storing chat history
 chat_history_file = 'chat_history.json'
 
-
-
-# Step 1: Extract text and table data from PDF using pdfplumber
+# Step 1: Extract text and table data from PDF using pdfplumber with table markers
 def extract_text_from_pdf(pdf_path):
     text = ''
     with pdfplumber.open(pdf_path) as pdf:
         for page in pdf.pages:
-            page_text = page.extract_text() or ''  # Extract text from page
+            page_text = page.extract_text() or ''  # Extract normal text
             text += page_text + "\n"  # Add newline for separation
+            
+            # Extract table data if present
             tables = page.extract_table()
             if tables:
-                # Replace None values with empty strings and format table data
-                text += "\n\n" + "\n".join(
+                table_text = "\n".join(
                     ["\t".join([str(cell) if cell is not None else '' for cell in row]) for row in tables if row]
-                ) + "\n"
+                )
+                # Add table-specific markers to prevent splitting
+                text += f"<TABLE_START>\n{table_text}\n<TABLE_END>\n"
+    
     return text
 
 # Initialize the chat history file if it doesn't exist or is empty
@@ -108,12 +95,38 @@ pdf_directory = '/Users/bubby/TeamGulliver/data'
 documents = extract_texts_from_multiple_pdfs(pdf_directory)
 
 # Step 3: Improve Chunking Strategy for better retrieval from all PDFs
+# Modify text splitter to handle table markers
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=500,  # Small enough for specific information extraction
     chunk_overlap=150,  # Increased overlap for better context retention
     separators=["\n\n", "\n", " "],  # Split based on paragraphs, new lines, or spaces
 )
-texts = text_splitter.split_documents(documents)
+
+def custom_split_documents(documents):
+    chunks = []
+    for doc in documents:
+        # Split only content outside <TABLE_START> and <TABLE_END>
+        if "<TABLE_START>" in doc.page_content:
+            # Handle tables as separate chunks
+            parts = re.split(r"(<TABLE_START>.*?<TABLE_END>)", doc.page_content, flags=re.DOTALL)
+            for part in parts:
+                if part.startswith("<TABLE_START>"):
+                    # Treat entire table as a single chunk
+                    chunks.append(Document(page_content=part, metadata=doc.metadata))
+                else:
+                    # Apply text splitting to non-table content
+                    chunked_texts = text_splitter.split_text(part)
+                    for chunk in chunked_texts:
+                        chunks.append(Document(page_content=chunk, metadata=doc.metadata))
+        else:
+            # Normal text splitting
+            chunked_texts = text_splitter.split_text(doc.page_content)
+            for chunk in chunked_texts:
+                chunks.append(Document(page_content=chunk, metadata=doc.metadata))
+    return chunks
+
+# Split documents into chunks with table handling
+texts = custom_split_documents(documents)
 
 # Step 4: Load OpenAI Embeddings
 embeddings = OpenAIEmbeddings(model="text-embedding-ada-002", openai_api_key=apikey)
@@ -124,6 +137,7 @@ if os.path.exists(persist_directory):
     # Clear previous vector store if switching models
     os.system(f"rm -rf {persist_directory}")
 
+# Correctly pass the chunked documents to Chroma
 db = Chroma.from_documents(documents=texts, embedding=embeddings, persist_directory=persist_directory)
 
 # Step 6: Create a retriever and chain it with OpenAI LLM
@@ -142,7 +156,6 @@ llm = ChatOpenAI(
     presence_penalty=0.6    # Encourage new topic introduction
 )
 
-
 # Step 7: Create a QA chain with sources
 qa = RetrievalQAWithSourcesChain.from_chain_type(llm=llm, retriever=retriever)
 
@@ -158,7 +171,6 @@ prompt_template = PromptTemplate(
     """
 )
 
-
 # Step 9: Validate and Extract Credits or Numerical Values
 def extract_numerical_answer(answer):
     match = re.search(r'\d+', answer)
@@ -170,10 +182,8 @@ def validate_answer(question, generated_text):
         # Validate numerical answers
         if "credits" in question.lower() or "how many" in question.lower():
             answer = extract_numerical_answer(answer)
-
     except (IndexError, KeyError, AttributeError):
         return f"Answer not available"
-
     return f"{answer}"
 
 # Step 10: Query the Chain and Validate Outputs
@@ -214,3 +224,4 @@ def ask():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
