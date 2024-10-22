@@ -158,6 +158,7 @@ prompt_template = PromptTemplate(
     """
 )
 
+
 # Step 9: Validate and Extract Credits or Numerical Values
 def extract_numerical_answer(answer):
     match = re.search(r'\d+', answer)
