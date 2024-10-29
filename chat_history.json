@@ -1,0 +1,704 @@
+[
+    {
+        "user_question": "who is the professor?",
+        "bot_response": "The professor for the COMP 893 Team Project Internship and COMP690 Internship Experience courses is Karen Jin, Associate Professor in the Department of Applied Engineering and Sciences at the University of New Hampshire.",
+        "timestamp": "2024-10-28T18:23:46.863125",
+        "question_hash": "6ac70f30d331547bec1ce6bf454cb5ba"
+    },
+    {
+        "user_question": "which are activities planned week2?",
+        "bot_response": "In Week 2, the planned activities are:\n\n- Project Kickoff\n- Environment Setup: Jira\n  - Create Project backlog\n  - Create user stories, tasks, and bugs\n- Integration with Source code control, team communication",
+        "timestamp": "2024-10-28T18:26:20.563113",
+        "question_hash": "3b160cefff168a401d07fede0d79ac37"
+    },
+    {
+        "user_question": "how many sprint are there in the internship project?",
+        "bot_response": "The internship project includes three sprints.",
+        "timestamp": "2024-10-28T18:26:52.495561",
+        "question_hash": "4318684c6cb3cc4a5274b4f0d1c3b077"
+    },
+    {
+        "user_question": "when does first sprint starts?",
+        "bot_response": "The first sprint of the internship project starts on September 18.",
+        "timestamp": "2024-10-28T18:27:10.311882",
+        "question_hash": "958922c057272e44da84c61a9a6ca1ab"
+    },
+    {
+        "user_question": "which all weeks sprints starts?",
+        "bot_response": "The sprints of the internship project start as follows:\n\n- **1st Sprint**: Starts on September 18 (Week 4)\n- **2nd Sprint**: Starts on October 9 (Week 7)\n- **3rd Sprint**: Starts on November 13 (Week 12)",
+        "timestamp": "2024-10-28T18:27:42.260918",
+        "question_hash": "a064ca3bbd2c478786dc6aa52fb0f36b"
+    },
+    {
+        "user_question": "when does second sprint starts?",
+        "bot_response": "The second sprint of the internship project starts on October 9th.",
+        "timestamp": "2024-10-28T18:28:17.486969",
+        "question_hash": "9812473a5ee0747178019549fe428bb8"
+    },
+    {
+        "user_question": "when does 2nd sprint starts?",
+        "bot_response": "The second sprint of the internship project starts on October 9th.",
+        "timestamp": "2024-10-28T18:28:29.060359",
+        "question_hash": "891466aed363da6d32ddda9a715e26a0"
+    },
+    {
+        "user_question": "when is sprint 2?",
+        "bot_response": "The second sprint of the internship project starts on October 9th.",
+        "timestamp": "2024-10-28T18:28:35.410597",
+        "question_hash": "32aed38a3a8e79e226527d7a2ae9f61d"
+    },
+    {
+        "user_question": "when does third sprint starts?",
+        "bot_response": "The third sprint of the internship project starts on November 13.",
+        "timestamp": "2024-10-28T18:28:52.303102",
+        "question_hash": "96ec2007bac49263bb8aa9a9ee03fca0"
+    },
+    {
+        "user_question": "how may sprint retrospectives are there?",
+        "bot_response": "There are three sprint retrospectives scheduled for the internship project. These occur at the end of each sprint:\n1. End of 1st Sprint - Week 6\n2. End of 2nd Sprint - Week 11\n3. End of 3rd Sprint - Week 15",
+        "timestamp": "2024-10-28T18:29:21.079650",
+        "question_hash": "ee63c9cd31c20e9f240291d68babaa56"
+    },
+    {
+        "user_question": "when does each sprint ends?",
+        "bot_response": "The sprints of the internship project end on the following dates:\n\n- The end of first sprint is on october 2nd.\n- The end of the 2nd Sprint is on November 6.\n- The end of the 3rd Sprint is on December 4.",
+        "timestamp": "2024-10-28T18:29:48.623044",
+        "question_hash": "9cde9fc68903f24e45ece0910b97e290"
+    },
+    {
+        "user_question": "when does first sprint ends?",
+        "bot_response": "The first sprint of the internship project ends on October 2nd.",
+        "timestamp": "2024-10-28T18:30:10.741741",
+        "question_hash": "5ee466a48fd218306f782bc7d7a49c37"
+    },
+    {
+        "user_question": "can you give all end date of each sprints?",
+        "bot_response": "The end dates for each sprint in the internship project are as follows:\n\n- **1st Sprint:** October 2\n- **2nd Sprint:** November 6\n- **3rd Sprint:** December 4",
+        "timestamp": "2024-10-28T18:41:28.231675",
+        "question_hash": "2a0970dc98aa017e50ff73579a89dbee"
+    },
+    {
+        "user_question": "in which week do we have scrum meetings only on mondays?",
+        "bot_response": "The scrum meetings are held only on Mondays during Week 6, Week 11, and Week 15.",
+        "timestamp": "2024-10-28T18:42:09.909580",
+        "question_hash": "6757fa2a3c3e567dc21336f46407e40a"
+    },
+    {
+        "user_question": "in which week do we have scrum meetings only on monday's?",
+        "bot_response": "Scrum meetings are held only on Mondays during Week 6, Week 11, Week14 and Week 15.",
+        "timestamp": "2024-10-28T18:42:40.322829",
+        "question_hash": "b7b0d5574948030d46af593325cfe6b0"
+    },
+    {
+        "user_question": "which weeks we have only meetings on fridays?",
+        "bot_response": "Meetings are held only on Fridays during Week 12.",
+        "timestamp": "2024-10-28T18:43:41.252977",
+        "question_hash": "6bb71367e6d90e75a737fc86d69986db"
+    },
+    {
+        "user_question": "which week we have meetings only on wednesday and friday?",
+        "bot_response": "Meetings are scheduled only on Wednesday and Friday during Week 8.",
+        "timestamp": "2024-10-28T18:45:06.043243",
+        "question_hash": "e1c1e12bfc46c90249bceca78cee2874"
+    },
+    {
+        "user_question": "when is first sprint review?",
+        "bot_response": "The first sprint review of the internship project takes place on October 2nd, at the end of the 1st Sprint.",
+        "timestamp": "2024-10-28T18:45:49.977224",
+        "question_hash": "abf70e8fabd8d600d9486874d8c48323"
+    },
+    {
+        "user_question": "when is second sprint review?",
+        "bot_response": "The second sprint review of the internship project takes place on November 6, at the end of the 2nd Sprint.",
+        "timestamp": "2024-10-28T18:46:04.717046",
+        "question_hash": "419f632a8a5de235ff603ddff5725920"
+    },
+    {
+        "user_question": "how many weeks we have scrum meetings?",
+        "bot_response": "Scrum meetings are scheduled during the following weeks of the internship project:\n\n- Week 4\n- Week 5\n- Week 6\n- Week 8\n- Week 9\n- Week 10\n- Week 11\n- Week 12\n- Week 13\n- Week 14\n- Week 15\n\nThis totals to 11 weeks where scrum meetings are scheduled.",
+        "timestamp": "2024-10-28T18:46:40.043168",
+        "question_hash": "7646301de4c11fae4176b3c2ac5d61dc"
+    },
+    {
+        "user_question": "what are the different types of internship courses?",
+        "bot_response": "The different types of internship courses available at UNH Manchester for computing major students include:\n\n1. **COMP690: Internship Experience** - This course is for undergraduate students and offers an applied research option for those who are currently working, and a team project option for students in their last semester of the program.\n\n2. **COMP890: Internship and Career Planning** - This is a 1 credit course for graduate students, designed to help plan the internship search process. It is offered in both fall and spring semesters.\n\n3. **COMP891: Internship Practice** - A variable credit course (1-3 credits) for graduate students that requires registration when they have an external internship. This course is necessary to apply for Curricular Practical Training (CPT).\n\n4. **COMP892: Applied Research Internship** - A variable credit course (1-3 credits) for students who are currently working full-time or part-time in tech fields. It is offered in fall, spring, and summer semesters.\n\n5. **COMP893: Team Project Internship** - This course is specifically for students who are in their last semester of study and need to fulfill their internship requirements. It is offered in the fall and spring semesters.\n\nThese courses are designed to provide practical experience and professional development in various aspects of computing and technology fields.",
+        "timestamp": "2024-10-28T20:18:58.389257",
+        "question_hash": "5cd6baa9431a2007f4e0e595e42d4528"
+    },
+    {
+        "user_question": "what are the differeent types of internship courses for graduate students?",
+        "bot_response": "For graduate students at UNH Manchester in the computing major, the available internship courses are:\n\n1. **COMP890: Internship and Career Planning** - This is a 1-credit course designed to be taken after the first semester to assist students in planning for their internship search process. It is offered in both fall and spring semesters.\n\n2. **COMP891: Internship Practice** - This is a variable credit course (1-3 credits) that students take when they have secured an external internship. Students must register for at least 1 credit in this course to apply for Curricular Practical Training (CPT). This course is available in fall, spring, and summer semesters.\n\n3. **COMP892: Applied Research Internship** - Also a variable credit course (1-3 credits), this option is suitable for students who are currently working full-time or part-time in tech fields. It is offered in fall, spring, and summer semesters.\n\n4. **COMP893: Team Project Internship** - This course is intended for students in their last semester of study who need to fulfill their internship requirements through team projects. It offers 1-3 credits and is available in the fall and spring semesters.",
+        "timestamp": "2024-10-28T20:19:42.713596",
+        "question_hash": "65b3e8e17fefa3d7f492dce249033a60"
+    },
+    {
+        "user_question": "I have got an internship which course should I register?",
+        "bot_response": "If you have secured an internship, you should register for the COMP891: Internship Practice course. This is a variable credit 1-3 credits course that you will need to take when you have an external internship. Remember, you will need to register in this course for at least 1 credit to apply for CPT (Curricular Practical Training) if you are an F1 student. Make sure to get the necessary permissions and approvals as outlined in the advising summary.",
+        "timestamp": "2024-10-28T20:20:11.180185",
+        "question_hash": "81f938ae669b7b800ade096c5b26d643"
+    },
+    {
+        "user_question": "what is cpt?",
+        "bot_response": "In the context of internship courses, CPT stands for Curricular Practical Training.",
+        "timestamp": "2024-10-28T20:20:36.369303",
+        "question_hash": "354381378f2c6d7d6cd77e8c1e3d2e59"
+    },
+    {
+        "user_question": "what is weightage of the attendance?",
+        "bot_response": "The weightage of attendance in the course evaluation is 10%.",
+        "timestamp": "2024-10-28T20:20:55.621522",
+        "question_hash": "7047d597b565bdb4d799a28b991f9e43"
+    },
+    {
+        "user_question": "can I submit my assignment late?",
+        "bot_response": "The policy for late submissions is very strict and applies only in exceptional cases such as student illness, accident, or emergencies that are properly documented. A late submission may be granted only if you email prior to the deadline and explain and provide evidence for the circumstances that have prevented you from meeting the class requirement. Failing to comply with these rules may result in no credit for the assignment.",
+        "timestamp": "2024-10-28T20:21:16.305589",
+        "question_hash": "82731e963be600f214effaba866113f7"
+    },
+    {
+        "user_question": "what happens if submit my assignment late?",
+        "bot_response": "The policy for late submissions is very strict and applies only in exceptional cases of student illness, accident, or emergencies that are properly documented. A late submission may be granted only if the student emails prior to the deadline and explains and provides evidence for the circumstances that have prevented them from meeting the class requirement. Failing to comply with these rules may result in no credit for the assignment.",
+        "timestamp": "2024-10-28T20:21:35.350325",
+        "question_hash": "0f9035dcaf8d320a381cb5932983cbec"
+    },
+    {
+        "user_question": "can I submit my assignment if professor approves?",
+        "bot_response": "No, the policy for late submissions is very strict and applies only in exceptional cases of student illness, accident, or emergencies that are properly documented. Even with approval from the professor, you must email prior to the deadline and provide evidence for the circumstances that have prevented you from meeting the class requirement. Failing to comply with these rules may result in no credit for the assignment.",
+        "timestamp": "2024-10-28T20:22:21.637344",
+        "question_hash": "d07de1d6a287ee34e4a2d6b44aa096aa"
+    },
+    {
+        "user_question": "how sprint grade is calculated?",
+        "bot_response": "The sprint grade is calculated as the product of the Teamwork Grade and the Sprint Grade. Each component contributes to the overall sprint grade, with the Teamwork Grade being based on peer evaluation for each of the three sprints. The Sprint Grade itself is determined by the technical aspect of the product and team project management. However, detailed rubrics for these evaluations are to be announced (TBA).",
+        "timestamp": "2024-10-28T20:22:58.702553",
+        "question_hash": "686124eef96e8f4290df74108e2988ef"
+    },
+    {
+        "user_question": "can I miss the class?",
+        "bot_response": "Yes, you are allowed to miss a class, but you must email the instructor about the circumstances and request to be excused for the meeting before the class meeting. Additionally, you will need to arrange a meeting with the instructor individually to update your internship progress. This is in accordance with the University Policy on Attendance as stated in the UNH Student Rights, Rules, and Responsibilities.",
+        "timestamp": "2024-10-28T20:24:04.341770",
+        "question_hash": "8de76299ddd95eccae12f51ce6efaff6"
+    },
+    {
+        "user_question": "what should tittle page consists of?",
+        "bot_response": "The title page of the internship report should display the following items:\n1. The student\u2019s full name\n2. Internship start and finish dates\n3. The title of the internship project",
+        "timestamp": "2024-10-28T20:25:11.310105",
+        "question_hash": "511ab2048591fb2f39e6415a9ee08eaa"
+    },
+    {
+        "user_question": "how many pages excutive summary should be?",
+        "bot_response": "The executive summary of the project should be a minimum of 2 full pages, not including spacing, figures, and tables.",
+        "timestamp": "2024-10-28T20:25:35.472194",
+        "question_hash": "c4dd0db80c010d25564b90a5e93667ca"
+    },
+    {
+        "user_question": "what we need to write in self asssement of the project?",
+        "bot_response": "In the self-assessment of the project, you should include the following elements:\n\n1. **Learning Experience**: Describe what you learned from your experience during the internship.\n\n2. **Relation to Major Studies**: Discuss the relationship of the work you did during the internship to your major studies.\n\n3. **Benefits**: Explain the benefits you gained from the internship experience.\n\n4. **Theory vs. Practice**: Provide a comparison between the theoretical knowledge you've learned in the classroom and the practical experience you gained during the internship.\n\n5. **Correlation with Classroom Knowledge**: Analyze how the project activities you carried out are correlated with your classroom knowledge.\n\n6. **Influence on Future Career Plans**: Reflect on how the project will influence your future career plans.\n\n7. **Professional Application**: Describe what was learned and how it will be applied to your professional career goals.\n\n8. **Skill Development**: Identify additional skills that will need to be developed to ensure career readiness. This might include learning new technologies, developing a broader network, or taking additional coursework.\n\n9. **Advice for Peers and Faculty**: Offer advice that you would have for a fellow student and/or faculty member with regard to your experience.\n\nMake sure to use full sentences and provide a detailed reflection in each of these areas. The section should be at least 3 full pages long, not including spacing, figures, and tables.",
+        "timestamp": "2024-10-28T20:26:16.132482",
+        "question_hash": "03b3de68e052f57face99de164d66965"
+    },
+    {
+        "user_question": "how many pages conclusion should be?",
+        "bot_response": "The conclusion of the project should be 1 full page.",
+        "timestamp": "2024-10-28T20:26:52.783062",
+        "question_hash": "93612fefe04d3f3a630e8c31d515f574"
+    },
+    {
+        "user_question": "how does the internship report should be?",
+        "bot_response": "The internship report should be structured as follows:\n\n1. **Title Page**: This should include your full name, the start and finish dates of your internship, and the title of your internship project.\n\n2. **Executive Summary**: Provide a concise overview of the project, including its objectives, duration, and key outcomes.\n\n3. **Introduction**: Introduce the project and its background, including the problem or opportunity that led to its initiation. Describe the rationale for using the Scrum framework and highlight the project's significance.\n\n4. **Project Objectives**: Clearly state the project's objectives, both in terms of deliverables and the intended business or customer impact.\n\n5. **Scrum Framework**: Explain how the Scrum framework was adopted and implemented throughout the project lifecycle. Discuss the roles and responsibilities of each team member and highlight any adjustments or adaptations made to fit the project's context.\n\n6. **Self-assessment of the Project Experience**: In this section, discuss what you learned from your experience, the relationship of the work to your major studies, the benefits to you, the comparison between theory and practice, how the project activities are correlated with your classroom knowledge, and how the project will influence your future career plans. Also include your reflection on the internship experiences, what was learned, how it will be applied to your professional career goals, additional skills that need to be developed, and advice for fellow students or faculty members.\n\n7. **Conclusions**: Include a summary of key conclusions derived from the project experience.\n\n**Formatting Requirements**:\n- Single-spaced lines.\n- Between 6-8 pages (not including the title page, figures, and tables).\n- Size 12 in Times New Roman font.\n- No additional white space between paragraphs and sections.\n- All tables and figures must be captioned.\n- All pages are numbered.\n- The report should be saved in PDF format for submission.\n\nEnsure that you use full sentences instead of bullet points in your writing. Each section has specific page requirements, so make sure to adhere to those to meet the grading criteria effectively.",
+        "timestamp": "2024-10-28T20:27:30.367769",
+        "question_hash": "c73bee60e32bfa96705e5b059535f29c"
+    },
+    {
+        "user_question": "what are the formatting requiremnts for the report?",
+        "bot_response": "The formatting requirements for the internship report are as follows:\n\n- The report should be single-spaced.\n- The text should be in size 12 Times New Roman font.\n- There should be no additional white space between paragraphs and sections.\n- All tables and figures must be captioned.\n- All pages must be numbered.\n- The report should be saved in PDF format for submission.\n\nThe report should be between 6-8 pages long, not including the title page, figures, and tables.",
+        "timestamp": "2024-10-28T20:28:16.955058",
+        "question_hash": "56ecf24a3bf7c3cbd19c83094c154849"
+    },
+    {
+        "user_question": "how much do I need to earn to pass the class?",
+        "bot_response": "You need to earn a minimum of 75% in your final report grade to pass the course.",
+        "timestamp": "2024-10-28T20:28:39.875677",
+        "question_hash": "99f85b486bbec2a7efefa3a016f6ce9d"
+    },
+    {
+        "user_question": "what happens if I fail to full the page requiremnts?",
+        "bot_response": "Failing to meet the page requirements for the report will result in up to a 30% deduction of the total report grade.",
+        "timestamp": "2024-10-28T20:29:12.456807",
+        "question_hash": "5b3a113a3f7dca52d53ffd42d42caf4c"
+    },
+    {
+        "user_question": "how the report should be saved?",
+        "bot_response": "The internship report should be saved in PDF format for submission.",
+        "timestamp": "2024-10-28T20:29:39.487601",
+        "question_hash": "54e7c8dee2bd9c903f5d7b970ffcf890"
+    },
+    {
+        "user_question": "can I save report in word?",
+        "bot_response": "No, the internship report should be saved in PDF format for submission.",
+        "timestamp": "2024-10-28T20:29:50.649160",
+        "question_hash": "17aafe6c526b8b9daaa9ad8c5e883e62"
+    },
+    {
+        "user_question": "When is final report due?",
+        "bot_response": "The final report for the internship project is due on December 9.",
+        "timestamp": "2024-10-28T21:18:11.627606",
+        "question_hash": "785d924ceb6a0af6485d6c4059ef318d"
+    },
+    {
+        "user_question": "which weeks we have scrum meetings only on wednesday's?",
+        "bot_response": "There are no weeks where scrum meetings are held only on Wednesdays. The schedule provided does not list any week with scrum meetings exclusively on a Wednesday.",
+        "timestamp": "2024-10-28T21:18:48.387348",
+        "question_hash": "2bce526ab9d0d5ef28a0483a0deb0934"
+    },
+    {
+        "user_question": "who is the lecturer?",
+        "bot_response": "The lecturer for the course is Karen Jin, Associate Professor in the Department of Applied Engineering and Sciences.",
+        "timestamp": "2024-10-28T21:19:33.801802",
+        "question_hash": "83c78e1c8db6b651595514f1cd7a6b71"
+    },
+    {
+        "user_question": "Where does UNH located?",
+        "bot_response": "The University of New Hampshire (UNH) has multiple campuses. The main campus is located in Durham, New Hampshire. There is also a campus in Manchester, New Hampshire, referred to as UNH Manchester.",
+        "timestamp": "2024-10-28T21:20:04.572533",
+        "question_hash": "13cf80d1c398cabbcd1ed6ab9301a1c8"
+    },
+    {
+        "user_question": "what is the name of the pdf that you have used for this chatbot as source?",
+        "bot_response": "I don't have access to external sources or specific PDF documents. I generate responses based on a mixture of licensed data, data created by human trainers, and publicly available information. If you have any specific questions or need information on a particular topic, feel free to ask!",
+        "timestamp": "2024-10-28T21:21:08.020927",
+        "question_hash": "5ff104f5e9e9ea6516bffe2f61f71dea"
+    },
+    {
+        "user_question": "how to make pasta?",
+        "bot_response": "I don't have the specific information on how to make pasta. However, making pasta generally involves mixing flour with water and sometimes eggs to form a dough, which is then kneaded, rolled out, and cut into shapes before being cooked in boiling water. For detailed recipes and techniques, you might want to look up specific pasta recipes or watch cooking tutorials online.",
+        "timestamp": "2024-10-28T21:22:14.617531",
+        "question_hash": "b0fd2d0e2af3ee4162f5d016ccd2acdf"
+    },
+    {
+        "user_question": "how to make pizza?",
+        "bot_response": "I don't have specific information on how to make pizza in the provided context. If you need a general recipe or instructions, I recommend looking up a recipe online or checking out a cooking guide.",
+        "timestamp": "2024-10-28T21:22:35.714700",
+        "question_hash": "709b1eb10e3d085719926a389a0844ab"
+    },
+    {
+        "user_question": "what is opt?",
+        "bot_response": "I don't know the answer to that based on the information provided.",
+        "timestamp": "2024-10-28T21:22:54.555477",
+        "question_hash": "c7098b6f4c627251c326ae86c9105ce2"
+    },
+    {
+        "user_question": "what is dt?",
+        "bot_response": "\"DT\" stands for Development Team.",
+        "timestamp": "2024-10-28T21:23:08.788538",
+        "question_hash": "deffbbc48b9f6b9f66f068244c21be00"
+    },
+    {
+        "user_question": "how to include tables in final report?",
+        "bot_response": "Tables included in the final report should be captioned. This means each table must have a clear and descriptive title or explanation that provides context or explains what the table represents. Additionally, ensure that all tables are formatted consistently and integrated into the document in a way that supports the accompanying text and overall flow of the report.",
+        "timestamp": "2024-10-28T21:24:42.688210",
+        "question_hash": "021a3ba6e6c6870fb3f83a4f842968dc"
+    },
+    {
+        "user_question": "What can you do?",
+        "bot_response": "I can assist with a variety of tasks, including providing information, answering questions based on the context provided, helping with text analysis, summarizing content, and offering explanations on a wide range of topics. If you have specific questions or need information on a particular subject, feel free to ask!",
+        "timestamp": "2024-10-28T21:25:48.632217",
+        "question_hash": "bdd4fa6ed95fc7052ae0ee7182b8fc61"
+    },
+    {
+        "user_question": "when sprint ends?",
+        "bot_response": "The sprints in the internship project end on the following dates:\n\n- The end of the 1st Sprint is on October 2.\n- The end of the 2nd Sprint is on November 6.\n- The end of the 3rd Sprint is on December 4.",
+        "timestamp": "2024-10-28T21:30:36.520665",
+        "question_hash": "3f1c43ad52522c3a8df0917a48d5a552"
+    },
+    {
+        "user_question": "I have taken 1 credit already how many more credits i need to take for this course?",
+        "bot_response": "If you have already taken 1 credit for the internship course, the number of additional credits you need to complete depends on the specific course requirements and your degree plan. Many internship courses are variable credit courses ranging from 1-3 credits. If you are aiming for a typical full completion of such a course, you would need to take an additional 2 credits to reach the maximum of 3 credits. However, it's important to consult with your academic advisor or the faculty internship coordinator, Prof. Karen Jin, to confirm the exact credit requirements based on your academic program and personal circumstances.",
+        "timestamp": "2024-10-28T21:33:17.348400",
+        "question_hash": "7703f55d7fceb6c81e8ddbfeda9f4067"
+    },
+    {
+        "user_question": "I have completed 1 credit how many more credits I have to complete for this course?",
+        "bot_response": "For the internship courses mentioned, such as COMP690, COMP891, and COMP893, these are variable credit courses ranging from 1-3 credits. If you have already completed 1 credit and the course allows for up to 3 credits, you may need to complete up to 2 additional credits to reach the maximum allowed credits for the course, depending on your degree requirements and the specific guidelines of the course. It's best to consult with the faculty internship coordinator or your academic advisor to determine the exact number of credits you need to fulfill your program's requirements.",
+        "timestamp": "2024-10-28T21:34:43.149753",
+        "question_hash": "009facc07cc313001a52db501a86c166"
+    },
+    {
+        "user_question": "I am a graduate student i have completed 1 credit already how many more to take?",
+        "bot_response": "As a graduate student, the internship course (such as COMP891) is a variable credit course ranging from 1-3 credits. If you have already completed 1 credit, the number of additional credits you need to take depends on the specific requirements of your program or any personal academic goals you might have set. Typically, you would need to complete up to 2 more credits if aiming for the maximum of 3 credits typically allowed for this course. However, it's best to consult with your academic advisor or the faculty internship coordinator, Prof. Karen Jin, to determine the exact number of credits required for your situation.",
+        "timestamp": "2024-10-28T21:35:38.345778",
+        "question_hash": "3486ed09a032885538e75e355c35e449"
+    },
+    {
+        "user_question": "who is professor?",
+        "bot_response": "The professor for the course is Karen Jin, Associate Professor in the Department of Applied Engineering and Sciences.",
+        "timestamp": "2024-10-28T21:42:03.633422",
+        "question_hash": "6889ac7b2a619fde9b9b24115269278d"
+    },
+    {
+        "user_question": "how to register for the course?",
+        "bot_response": "To register for an internship course, you will need to obtain the instructor\u2019s permission. You should email the faculty internship coordinator or the course instructor to get registered for the course. For more details, you may also email Prof. Karen Jin.",
+        "timestamp": "2024-10-28T21:45:09.255886",
+        "question_hash": "d0a07097b5ac2997cb6aa973c60aeb31"
+    },
+    {
+        "user_question": "what is the email of her?",
+        "bot_response": "The email address of Professor Karen Jin is karen.jin@unh.edu.",
+        "timestamp": "2024-10-28T21:45:22.938335",
+        "question_hash": "05ed34e4e8cda8033344eaefd946ef30"
+    },
+    {
+        "user_question": "where she is available?",
+        "bot_response": "Professor Karen Jin is available in Room 139 at the Pandora Mill building. You can also reach her via email at karen.jin@unh.edu or attend her office hours on Monday from 1-4pm and Friday from 9-noon, which are available in person or over Zoom.",
+        "timestamp": "2024-10-28T21:45:56.118088",
+        "question_hash": "6ba13027febab277fd48b37347e61c8d"
+    },
+    {
+        "user_question": "what is caps office phone?",
+        "bot_response": "The phone number for the CaPS (Career and Professional Success) office is (603) 641-4394",
+        "timestamp": "2024-10-28T21:46:44.549011",
+        "question_hash": "96a08d3591d4c34e245fea1f3b3444ff"
+    },
+    {
+        "user_question": "what is caps office phone number?",
+        "bot_response": "The phone number for the CaPS (Career and Professional Success) office is (603) 641-4394",
+        "timestamp": "2024-10-28T21:47:03.496185",
+        "question_hash": "12af95548f30cb51cd9694eb7431adee"
+    },
+    {
+        "user_question": "what is CAPS office phone ?",
+        "bot_response": "The phone number for the CaPS (Career and Professional Success) office is (603) 641-4394.",
+        "timestamp": "2024-10-28T21:47:23.566304",
+        "question_hash": "e6b083139761df2c0cb30e6c26494908"
+    },
+    {
+        "user_question": "what is ywca?",
+        "bot_response": "The acronym YWCA stands for \"Young Women's Christian Association.\"",
+        "timestamp": "2024-10-28T21:48:37.501264",
+        "question_hash": "0d7a4f70c0e06c1d63bad0fdbe4acf78"
+    },
+    {
+        "user_question": "what is oiss?",
+        "bot_response": "OISS stands for the Office of International Students and Scholars.",
+        "timestamp": "2024-10-28T21:49:07.911429",
+        "question_hash": "bba57fdb4e126ce69b22cd9b8da9fbca"
+    },
+    {
+        "user_question": "whats their email?",
+        "bot_response": "The email address for the Office of International Students and Scholars (OISS) is oiss@unh.edu.",
+        "timestamp": "2024-10-28T21:49:41.795476",
+        "question_hash": "32ef44a8a5478395239090f6552adeaf"
+    },
+    {
+        "user_question": "what is CaPs office phone number ?",
+        "bot_response": "The phone number for the CaPS (Career and Professional Success) office is (603) 641-4394",
+        "timestamp": "2024-10-28T21:50:24.508428",
+        "question_hash": "8df539c34af517b80c202a46aae129b2"
+    },
+    {
+        "user_question": "how can I look for internship?",
+        "bot_response": "To search for an internship, you can start by using Handshake, as it is highly recommended for UNH students since many employers post their opportunities there specifically looking for UNH students. Additionally, you can explore other job websites such as LinkedIn, Indeed, and Hired. Attending internship fairs on both the Manchester and Durham campuses can also be very beneficial. Don\u2019t forget to network with family, friends, and faculty who might provide leads or advice on available internships.",
+        "timestamp": "2024-10-28T21:51:01.788586",
+        "question_hash": "94b569f4f1cc7c88c7d6d49e2f6ae2a2"
+    },
+    {
+        "user_question": "How can I register my internship experience on Handshake?",
+        "bot_response": "To register your internship experience on Handshake, please follow these steps:\n\n1. Login to Handshake.\n2. On the top right corner, under Career Center, go to Experiences.\n3. Click on \"Request an Experience\" and fill out the form.\n4. Your internship experience must be approved by your site supervisor and your course instructor.\n5. Make sure to include at least three well-developed learning objectives.\n\nIf you have any questions related to registering your internship experience on Handshake, please contact the Career and Professional Success office.",
+        "timestamp": "2024-10-28T21:51:43.454839",
+        "question_hash": "ea397fae6e63ae8d72516ffd957d4e04"
+    },
+    {
+        "user_question": "I registered for 2 credits how many hours should I work?",
+        "bot_response": "If you are registered for 2 credit hours of the Internship Experience class, you must complete 80 hours of internship work. This calculation is based on the guideline that each credit hour is roughly equal to 40 hours of internship work.",
+        "timestamp": "2024-10-28T21:53:18.825475",
+        "question_hash": "0bf60e2d2d2f795991f9e4d257fdf46f"
+    },
+    {
+        "user_question": "how many sprints are there?",
+        "bot_response": "The internship project includes three sprints.",
+        "timestamp": "2024-10-28T21:54:03.636875",
+        "question_hash": "82a164764881191f144c88341174ee50"
+    },
+    {
+        "user_question": "what is scrum?",
+        "bot_response": "Scrum is a framework used to manage and complete complex projects, typically in software development and other fields where quick iteration and flexibility are valued. It is an agile methodology that helps teams work together to efficiently address complex adaptive problems while delivering high-value products. Key components of Scrum include:\n\n1. **Roles**: There are three primary roles within a Scrum team:\n   - **Product Owner**: Responsible for maximizing the value of the product resulting from the work of the Development Team.\n   - **Scrum Master**: Ensures that the team lives by the values and practices of Scrum. The Scrum Master acts as a facilitator and helps remove impediments that the team may encounter.\n   - **Development Team**: A group of professionals who do the actual work of delivering potentially releasable increments of the \"Done\" product at the end of each Sprint.\n\n2. **Events/Ceremonies**: Scrum prescribes a set of events to create regularity and to minimize the need for meetings not defined in Scrum:\n   - **Sprint**: A time-boxed period (usually 2-4 weeks) during which a \"Done\", useable, and potentially releasable product increment is created.\n   - **Sprint Planning**: A meeting at the start of the sprint where the team decides what work will be done during that sprint.\n   - **Daily Scrum (or Daily Standup)**: A short (15 minutes or less) meeting held each day of the sprint, where team members synchronize activities and create a plan for the next 24 hours.\n   - **Sprint Review**: Held at the end of the sprint to inspect the increment and adapt the Product Backlog if needed.\n   - **Sprint Retrospective**: Occurs after the Sprint Review and before the next Sprint Planning. This meeting is for the Scrum Team to inspect itself and create a plan for improvements to be enacted during the next Sprint.\n\n3. **Artifacts**: These provide key information that the team needs to understand how the product is coming along and what needs to be done next:\n   - **Product Backlog**: An ordered list of everything that might be needed in the product, maintained by the Product Owner.\n   - **Sprint Backlog**: A set of items selected from the Product Backlog to be completed during the Sprint, plus a plan for delivering the product Increment and realizing the Sprint Goal.\n   - **Increment**: The sum of all the Product Backlog items completed during a Sprint and all previous Sprints.\n\nScrum emphasizes real-time communication, team self-management, and the flexibility to adapt to emerging business realities.",
+        "timestamp": "2024-10-28T21:55:07.639948",
+        "question_hash": "fe1bdb747d6d9786f457855da2ba2d59"
+    },
+    {
+        "user_question": "how can I request cpt?",
+        "bot_response": "To request Curricular Practical Training (CPT) at UNH Manchester, you need to follow these steps:\n\n1. **Meet with the Internship Advisor**: Before you start the process, schedule a meeting with Professor Karen Jin at karen.jin@unh.edu to discuss your internship and ensure it meets the requirements for CPT.\n\n2. **Login to eOISS**: Access the electronic Office of International Students and Scholars (eOISS) portal.\n\n3. **Complete the CPT Authorization Form**: Under the section labeled \"F-1 Practical Training,\" select \u201cCPT Authorization Form.\u201d Fill out the form with all required details including your job title, responsibilities, place of employment, start and end dates, and the number of hours you will work per week.\n\n4. **Upload Required Documents**:\n   - **Internship Offer Letter**: This letter must include specific dates of employment.\n   - **Proof of Course Registration**: Upload a screenshot of your registration in the relevant internship course, ensuring your name or UNH student ID number is visible.\n\n5. **Submit the eForm**: After submitting the eForm, the Internship Advisor will receive an automated email from OISS requesting their approval for your CPT.\n\n6. **Approval and Issuance of New I-20**: Once the Internship Advisor has approved your request, OISS will issue your new I-20. This document is necessary before you can legally start your employment under CPT.\n\n7. **Timing**: Ensure you submit the eForm and all supporting documentation 7-10 days in advance of your intended start date to allow sufficient time for processing.\n\nRemember, you cannot begin your employment until you have received your new I-20 and the start date of your CPT has begun. Employment prior to this approval is unauthorized and can impact your F-1 status.",
+        "timestamp": "2024-10-28T21:55:56.081700",
+        "question_hash": "a0d11faed33e59477ace44880a7ff4f4"
+    },
+    {
+        "user_question": "how to register for cpt?",
+        "bot_response": "To register for Curricular Practical Training (CPT) at UNH Manchester, please follow these steps:\n\n1. **Meet with the Internship Advisor**: Schedule a meeting with Professor Karen Jin at karen.jin@unh.edu before submitting any forms.\n\n2. **Login to eOISS**: Access the electronic Office of International Students and Scholars (eOISS) portal.\n\n3. **Select CPT Authorization Form**: Under the section labeled \"F-1 Practical Training,\" choose the \u201cCPT Authorization Form.\u201d\n\n4. **Complete the Form**: Fill out the form with details including your job title, responsibilities, place of employment, start and end dates, and the number of hours you will work per week.\n\n5. **Upload Required Documents**:\n   - A letter from your employer detailing your job description and employment period.\n   - Proof of your course registration for the internship class (a screenshot of your registration will suffice if it shows your name or UNH student ID).\n\n6. **Submission and Advisor Approval**: After you submit the eForm, the Internship Advisor will receive an automated email from OISS requesting their approval for your CPT.\n\n7. **Issuance of New I-20**: Once the Internship Advisor has approved your request, OISS will issue your new I-20.\n\n8. **Wait for I-20 Before Starting Employment**: An OISS Advisor must issue your I-20 before you can begin your employment. Ensure to submit the eForm and supporting documentation 7-10 days in advance of your start date to avoid delays.\n\nBy following these steps, you can successfully register for CPT at UNH Manchester.",
+        "timestamp": "2024-10-28T21:56:28.019710",
+        "question_hash": "8a9df6a956c907953eff25c45d241865"
+    },
+    {
+        "user_question": "what is scrum meeting?",
+        "bot_response": "A scrum meeting, often referred to as a daily scrum or daily stand-up, is a short, time-boxed (typically 15 minutes) meeting that is a key component of the Scrum framework, which is used in agile project management and software development. The purpose of this meeting is to synchronize the activities and progress of the team, discuss any obstacles or challenges, and plan for the next 24 hours. This meeting helps keep the team aligned and informed about each member's tasks and progress toward achieving the sprint goals.\n\nDuring a scrum meeting, each team member typically answers three questions:\n1. What did I accomplish yesterday?\n2. What will I do today?\n3. Are there any impediments or blockers in my way?\n\nThese meetings are usually held at the same time and place every working day to promote routine and minimize complexity.",
+        "timestamp": "2024-10-28T21:57:57.925550",
+        "question_hash": "5f0b81889a89ca41dd6c0601157a3fc8"
+    },
+    {
+        "user_question": "i am working for Fall 24 semester, the dates you are eligible to work?",
+        "bot_response": "For the Fall 2024 semester, the eligible work dates you can work between are from August 26, 2024, to December 20, 2019. Please note that employment cannot begin until the first day of the semester, which is usually around January 20th, and there will be a period of approximately 4 weeks that you cannot work in between semesters.",
+        "timestamp": "2024-10-28T21:59:28.038717",
+        "question_hash": "5d7e655a2e64a5c602139db02e226366"
+    },
+    {
+        "user_question": "i am working for Fall 24 semeste which dates you are eligible to work?",
+        "bot_response": "For the Fall 2024 semester, the eligible work dates you can work between are from August 26, 2024, to December 20, 2019. However, please note that there seems to be a typographical error in the end date provided. It's likely meant to say December 20, 2024. Please confirm the exact end date with your internship coordinator or relevant university office to ensure accuracy.",
+        "timestamp": "2024-10-28T22:01:50.715781",
+        "question_hash": "b2d2db2059ab1c7836a99400ea3defb1"
+    },
+    {
+        "user_question": "i am in first sem which course do I need to take?",
+        "bot_response": "If you are in your first semester, you should take the COMP890: Internship and Career Planning course. This 1 credit course is designed to help you plan for the internship search process and is offered in both fall and spring semesters.",
+        "timestamp": "2024-10-28T22:03:25.602272",
+        "question_hash": "95cf0495e4b80f50c58c605a06066a41"
+    },
+    {
+        "user_question": "i am in second sem which course do I need to take?",
+        "bot_response": "As a graduate student at UNH Manchester, you should take the COMP890: Internship and Career Planning course in your second semester. This 1 credit course is designed to help you plan for the internship search process and is offered in both fall and spring semesters.",
+        "timestamp": "2024-10-28T22:04:23.968125",
+        "question_hash": "45f215dbbb890b467870dafc507e73e4"
+    },
+    {
+        "user_question": "when to take 893 as graduate student?",
+        "bot_response": "A graduate student should take the COMP893 Team Project Internship course at UNH Manchester in their last semester of study. This course is offered in the fall and spring semesters.",
+        "timestamp": "2024-10-28T22:05:29.573930",
+        "question_hash": "fb871a40c6679f326edd5feeb66a53ce"
+    },
+    {
+        "user_question": "how many credits do I need to complete inorder to take internship planning course?",
+        "bot_response": "The internship planning course, COMP890: Internship and Career Planning, does not specify a credit requirement for enrollment. It is a 1 credit course that you need to take after the first semester to help you plan for the internship search process.",
+        "timestamp": "2024-10-28T22:06:22.317032",
+        "question_hash": "1b0bbdcfd8c2c81aad157e2af2eab7c4"
+    },
+    {
+        "user_question": "how to fill cpt authorization form?",
+        "bot_response": "To fill out the CPT Authorization form, follow these steps:\n\n1. **Meet with the Internship Advisor**: Before you start filling out the form, schedule a meeting with Professor Karen Jin at karen.jin@unh.edu to discuss your internship and ensure all prerequisites are met.\n\n2. **Login to eOISS**: Access the eOISS portal where you will find the form.\n\n3. **Select the Appropriate Form**: Under the section labeled \"F-1 Practical Training,\" choose the \u201cCPT Authorization Form.\u201d\n\n4. **Complete the Form**: Fill in all required fields on the form. This will typically include personal information, details about your internship such as job title, responsibilities, location, start and end dates, and the number of hours you will work per week.\n\n5. **Upload Required Documents**:\n   - **Internship Offer Letter**: This should include specific details like your job title, responsibilities, place of employment, and the exact start and end dates.\n   - **Proof of Course Registration**: Upload a screenshot of your registration in the Internship course, ensuring your name or UNH student ID number is visible.\n\n6. **Submit the eForm**: After completing the form and attaching all necessary documents, submit the eForm.\n\n7. **Internship Advisor Approval**: Once submitted, the Internship Advisor will receive an automated email from OISS requesting their approval for your CPT.\n\n8. **Issuance of New I-20**: After the Internship Advisor approves your request, OISS will issue your new I-20 form.\n\n9. **Wait for I-20 Before Starting Employment**: Remember, you must have the I-20 issued by an OISS Advisor before you can legally begin your employment.\n\nMake sure to submit the eForm and supporting documentation 7-10 days in advance of your start date to allow sufficient time for processing.",
+        "timestamp": "2024-10-28T22:07:58.089720",
+        "question_hash": "99e7d793ea0059e34130b0e151a75db8"
+    },
+    {
+        "user_question": "how to meet professsor?",
+        "bot_response": "To arrange a meeting with the professor, you should email the instructor about your circumstances and request to be excused for the meeting BEFORE the class meeting. Additionally, you will need to arrange a meeting with the instructor individually to update your internship progress. Make sure to include your availability and suggest possible times for the meeting in your email to facilitate scheduling.",
+        "timestamp": "2024-10-28T22:42:39.116867",
+        "question_hash": "1faa5b615d1af69e878d16674681616c"
+    },
+    {
+        "user_question": "can I get her email?",
+        "bot_response": "The email address of the professor, Karen Jin, is karen.jin@unh.edu.",
+        "timestamp": "2024-10-28T22:43:12.087467",
+        "question_hash": "4959c21a9671b2081ab453305728d502"
+    },
+    {
+        "user_question": "what is the best time to meet her?",
+        "bot_response": "The best time to meet Professor Karen Jin is during her office hours, which are Monday from 1-4pm and Friday from 9-noon. You can meet her in person or over Zoom, but it's recommended to email her at karen.jin@unh.edu to make an appointment.",
+        "timestamp": "2024-10-28T22:43:36.691298",
+        "question_hash": "c3aed1260354241ab9d02978c41097c3"
+    },
+    {
+        "user_question": "can I meet profssor on weekends?",
+        "bot_response": "The provided information does not specify whether you can schedule a meeting with the professor on weekends. It is recommended to contact the professor directly or refer to the course syllabus for specific office hours and availability. If you need to arrange a meeting outside of scheduled times, it's best to email the instructor to inquire about their availability.",
+        "timestamp": "2024-10-28T22:44:06.613904",
+        "question_hash": "79b8862a2e8d04b83bb9b61b55abdcc8"
+    },
+    {
+        "user_question": "what are the differeent types of courses available?",
+        "bot_response": "The different types of internship-related courses available are:\n\n1. **COMP 690: Internship Experience** - This course has an applied research option for students who are currently working, and a team project option for students in their last semester of the program. It is designed for undergraduate students.\n\n2. **COMP 890: Internship and Career Planning** - This is a 1 credit course intended to help graduate students plan for the internship search process after their first semester.\n\n3. **COMP 891: Internship Practice** - A variable credit (1-3 credits) course for graduate students, which they need to take when they have an external internship.\n\n4. **COMP 892: Applied Research Internship** - A variable credit (1-3 credits) course for students who are currently working full-time or part-time in tech fields.\n\n5. **COMP 893: Team Project Internship** - This course is specifically for students who are in their last semester of study and need to fulfill the internship requirements.\n\nThese courses cater to both undergraduate and graduate students, providing options based on their current employment status and stage in their academic program.",
+        "timestamp": "2024-10-28T22:45:04.878240",
+        "question_hash": "2daff6ca9ce8ab520b4720b648a35aa1"
+    },
+    {
+        "user_question": "in which weeks we have scrum meetings only on mondays?",
+        "bot_response": "Scrum meetings are held exclusively on Mondays during the following weeks:\n\n- Week 6 (10/2)\n- Week 11 (11/6)\n- Week 14 (11/27, although it is noted as Thanksgiving Break with no class)\n- Week 15 (12/4)",
+        "timestamp": "2024-10-29T12:25:08.890914",
+        "question_hash": "89bf2cd728ae0e98f58b8663d2120889"
+    },
+    {
+        "user_question": "in which weeks we have scrum meetings only on monday's?",
+        "bot_response": "Scrum meetings are held exclusively on Mondays during the following weeks:\n\n- Week 6 (10/2)\n- Week 11 (11/6)\n- Week 14 (11/27, although it is noted as Thanksgiving Break with no class, a scrum meeting is still scheduled for Monday)\n- Week 15 (12/4)",
+        "timestamp": "2024-10-29T12:25:48.408964",
+        "question_hash": "cb273cbd8f49f95818e334784f1683ce"
+    },
+    {
+        "user_question": "what is caps office website?",
+        "bot_response": "The website for the CaPS office at UNH Manchester is https://manchester.unh.edu/careers/career-professional-success.",
+        "timestamp": "2024-10-29T12:27:13.104277",
+        "question_hash": "cb7353961376caff68133125c4a94f0e"
+    },
+    {
+        "user_question": "how can i contact caps?",
+        "bot_response": "You can contact the CaPS (Career and Professional Success) office at UNH Manchester using the following details:Phone: (603) 641-4394,Email: unhm.career@unh.edu",
+        "timestamp": "2024-10-29T12:39:58.953371",
+        "question_hash": "b8cf772ab11bab324182fabfda5bec2c"
+    },
+    {
+        "user_question": "which weeks do we have scrum meetings only on mondays?",
+        "bot_response": "The weeks where scrum meetings are held only on Mondays are:\n\n- Week 6 (10/2)\n- Week 11 (11/6)\n- Week 14 (11/27, although it is noted as Thanksgiving Break with no class)\n- Week 15 (12/4)",
+        "timestamp": "2024-10-29T14:18:08.035979",
+        "question_hash": "d07ec335f713ae81a2dec77c44a52dc9"
+    },
+    {
+        "user_question": "when do we have scrum meetings only on mondays?",
+        "bot_response": "The dates when scrum meetings occur exclusively on Mondays are:\n\n- October 2, 2023\n- November 6, 2023\n- November 27, 2023\n- December 4, 2023",
+        "timestamp": "2024-10-29T14:18:34.642379",
+        "question_hash": "2c96380cd64a0b56f99ba7e052dcd0c1"
+    },
+    {
+        "user_question": "which weeks do we have scrum meetings only on monday's?",
+        "bot_response": "Scrum meetings are scheduled exclusively on Mondays during the following weeks:\n\n- Week 6 (10/2)\n- Week 11 (11/6)\n- Week 14 (11/27)\n- Week 15 (12/4)",
+        "timestamp": "2024-10-29T14:18:50.206147",
+        "question_hash": "1aeec9ec8024b89c647d70bba9571ee9"
+    },
+    {
+        "user_question": "when second sprint end?",
+        "bot_response": "The second sprint ends on November 6th.",
+        "timestamp": "2024-10-29T14:31:46.292109",
+        "question_hash": "086f1d2b5c37f1d63b3705f0a86e6c25"
+    },
+    {
+        "user_question": "what is the phone number of the caps?",
+        "bot_response": "The phone number for the CaPS (Career and Professional Success) office is (603) 641-4394.",
+        "timestamp": "2024-10-29T14:35:25.953779",
+        "question_hash": "284c8027e759136f8f5e75c353fc5675"
+    },
+    {
+        "user_question": "who is the instructor?",
+        "bot_response": "The instructor for both the COMP690 M2/M3 Internship Experience and COMP893 Team Project Internship courses is Karen Jin, Associate Professor in the Department of Applied Engineering and Sciences.",
+        "timestamp": "2024-10-29T14:38:21.465601",
+        "question_hash": "1961eb9927b56ffa02c96e6c88e7a140"
+    },
+    {
+        "user_question": "what is the caps office phone number?",
+        "bot_response": "The phone number for the CaPS (Career and Professional Success) office is (603) 641-4394.",
+        "timestamp": "2024-10-29T14:38:43.055350",
+        "question_hash": "534867b1e35a5d091778313f58decb99"
+    },
+    {
+        "user_question": "what attendance weightage?",
+        "bot_response": "The attendance weightage for the internship project course is 10% of the final grade. This is specifically for attending all required meetings as part of the course structure.",
+        "timestamp": "2024-10-29T14:39:57.088489",
+        "question_hash": "92279b131f1aa0abd401052589dce095"
+    },
+    {
+        "user_question": "which days we have scrum meetings only on friday?",
+        "bot_response": "Based on the provided schedule, the days with Scrum meetings only on Friday are during Week 12 when the 3rd Sprint Planning meeting and 3rd Sprint development start.",
+        "timestamp": "2024-10-29T15:15:56.948201",
+        "question_hash": "33802cd3bd657af07b009467485fda93"
+    },
+    {
+        "user_question": "which day we have scrum meetings only on friday?",
+        "bot_response": "Scrum meetings are scheduled on Fridays during Week 12.",
+        "timestamp": "2024-10-29T15:16:37.333658",
+        "question_hash": "e2fcb14851a9498f03f9f1a7c79ab418"
+    },
+    {
+        "user_question": "can you give me date have scrum meetings only on friday?",
+        "bot_response": "The date for Scrum meetings only on Friday is November 13th in Week 12.",
+        "timestamp": "2024-10-29T15:17:10.202251",
+        "question_hash": "dc29c5f453382424184885ad823eebe9"
+    },
+    {
+        "user_question": "what are the different types of courses available for grad students?",
+        "bot_response": "For graduate students in the computing program at UNH Manchester, there are two types of internship courses available:\n\n1. COMP890: Internship and Career Planning - This is a 1-credit course that helps students plan for the internship search process. It is offered in both fall and spring semesters.\n\n2. COMP891: Internship Practice - This is a variable credit 1-3 crs course that graduate students take when they have an external internship. Students need to register for at least 1 credit to apply for CPT.",
+        "timestamp": "2024-10-29T15:17:46.349777",
+        "question_hash": "8c12585b61d2fe4066abfac9dc9c9527"
+    },
+    {
+        "user_question": "what are the different types of internship courses available for grad students?",
+        "bot_response": "For graduate students in the computing program at UNH Manchester, there are several types of internship courses available:\n\n1. COMP890: Internship and Career Planning - This is a 1-credit course taken after the first semester to help plan for the internship search process.\n\n2. COMP891: Internship Practice - A variable credit course (1-3 credits) taken when you have an external internship. You need to register for at least 1 credit to apply for CPT.\n\n3. COMP892: Applied Research Internship - Another variable credit course (1-3 credits) for students currently working full or part-time in tech fields.\n\n4. COMP893: Team Project Internship - Specifically for students in their last semester of study who need to fulfill internship requirements.\n\nThese courses offer different options and credit structures to accommodate various internship experiences for graduate students in the computing program at UNH Manchester.",
+        "timestamp": "2024-10-29T15:19:04.176103",
+        "question_hash": "7a8d7ec0167623aba7d520c1080df770"
+    },
+    {
+        "user_question": "what is the sprint grade weightage?",
+        "bot_response": "The weightage of the sprint grade is 60%.",
+        "timestamp": "2024-10-29T15:19:25.269094",
+        "question_hash": "7424f72b9eddee472be441ec85e13c25"
+    },
+    {
+        "user_question": "CaPS office website?",
+        "bot_response": "The website for the CaPS office is https://manchester.unh.edu/careers/career-professional-success.",
+        "timestamp": "2024-10-29T15:23:35.223689",
+        "question_hash": "63813a7afefbd44a7f121e6f06beabff"
+    },
+    {
+        "user_question": "Caps office phone?",
+        "bot_response": "The phone number for the CaPS (Career and Professional Success) office is (603) 641-4394.",
+        "timestamp": "2024-10-29T15:24:23.332129",
+        "question_hash": "616c11a6a6b4d43680057102093b70c4"
+    },
+    {
+        "user_question": "Caps office email?",
+        "bot_response": "The email address for the CaPS office is unhm.career@unh.edu.",
+        "timestamp": "2024-10-29T15:24:45.056717",
+        "question_hash": "1d9b90165c135e3285724d2afaa50eca"
+    },
+    {
+        "user_question": "CAPS office phone?",
+        "bot_response": "The phone number for the CaPS (Career and Professional Success) office is (603) 641-4394.",
+        "timestamp": "2024-10-29T15:24:23.332129",
+        "question_hash": "616c11a6a6b4d43680057102093b70c4"
+    },
+    {
+        "user_question": "CaPS office phone?",
+        "bot_response": "The phone number for the CaPS (Career and Professional Success) office is (603) 641-4394.",
+        "timestamp": "2024-10-29T15:24:23.332129",
+        "question_hash": "616c11a6a6b4d43680057102093b70c4"
+    },
+    {
+        "user_question": "caps of phone?",
+        "bot_response": "The phone number for the CaPS (Career and Professional Success) office is (603) 641-4394.",
+        "timestamp": "2024-10-29T15:28:15.615282",
+        "question_hash": "83ea4d791964beec4dbc6d891c735f6a"
+    },
+    {
+        "user_question": "what majors are required to take the course?",
+        "bot_response": "Internship courses are required for all computing major students. This includes undergraduate Computer Information Systems Major (CIS), Computer Science (CS) Major, and at the graduate level: M.S. Information Technology Major and M.S. Cybersecurity Engineering Major.",
+        "timestamp": "2024-10-29T15:29:53.280576",
+        "question_hash": "dbfd28f16aefcd5910c005c95b9c0da9"
+    },
+    {
+        "user_question": "who is the internship coordinator?",
+        "bot_response": "The internship coordinator for the COMP893 Team Project Internship and COMP690 Internship Experience courses is Professor Karen Jin. You can contact her at karen.jin@unh.edu for any internship-related inquiries.",
+        "timestamp": "2024-10-29T15:30:23.526015",
+        "question_hash": "4183592e924ed54f5747498483afc840"
+    },
+    {
+        "user_question": "What is the internship coordinator\u2019s name?",
+        "bot_response": "The internship coordinator for the COMP893 Team Project Internship and COMP690 Internship Experience courses is Karen Jin.",
+        "timestamp": "2024-10-29T15:31:52.780381",
+        "question_hash": "fe7e0d61db6471a7b93968a9ba86bd50"
+    },
+    {
+        "user_question": "what is the buliding internship coordinator?",
+        "bot_response": "The building of the internship coordinator, Karen Jin, is the Pandora Mill building, Room 139.",
+        "timestamp": "2024-10-29T15:33:54.634483",
+        "question_hash": "29feace88a018be447ca7d2a376429a0"
+    },
+    {
+        "user_question": "OISS website?",
+        "bot_response": "The Office of International Students and Scholars (OISS) website provides information and resources for international students and scholars at UNH. This includes details on immigration regulations, visa processes, cultural adjustment support, and other services tailored to the needs of international students and scholars. The website likely offers guidance on maintaining legal status, employment opportunities, cultural events, and community resources to help international individuals thrive at UNH. For specific details, it is recommended to visit the OISS website at https://www.unh.edu/global/international-students-scholars or contact them directly at oiss@unh.edu.",
+        "timestamp": "2024-10-29T15:34:36.280190",
+        "question_hash": "a7f9fdf9bf443dd9b71fd9806f4cb1cb"
+    },
+    {
+        "user_question": "which weeks we have scrum meetings on fridays only?",
+        "bot_response": "The weeks where scrum meetings are scheduled on Fridays only are Week 12.",
+        "timestamp": "2024-10-29T15:57:24.754915",
+        "question_hash": "2d51f6a3c11908b262e422fcadf69130"
+    },
+    {
+        "user_question": "which week we have scrum meetings on fridays only?",
+        "bot_response": "Scrum meetings are scheduled on Fridays only in Week 12.",
+        "timestamp": "2024-10-29T15:57:52.612950",
+        "question_hash": "4124458ab02cac3794d5cd6165054822"
+    }
+]
