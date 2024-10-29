@@ -13,10 +13,11 @@
             --chat-bg: rgba(248, 249, 250, 0.95);
             --message-bg: rgba(233, 236, 239, 0.9);
             --input-bg: rgba(248, 249, 250, 0.95);
-            --btn-color: #0d6efd;
+            --btn-color: #ebf0f9;
             --btn-hover: #0b5ed7;
             --btn-text: #ffffff;
             --border-radius: 0;
+            --unh-black: #000000;
         }
         
         html, body {
@@ -106,8 +107,8 @@
         }
 
         .user-message {
-            background-color: rgba(13, 110, 253, 0.9);
-            color: var(--unh-white);
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #212529;
             margin-left: auto;
             border-bottom-right-radius: 0.25rem;
         }
@@ -135,13 +136,13 @@
 
         .user-message .message-avatar {
             right: -16px;
-            background-color: var(--btn-color);
+            background-color: var(--unh-blue);
             color: white;
         }
 
         .assistant-message .message-avatar {
             left: -16px;
-            background-color: #6c757d;
+            background-color: var(--unh-blue);
             color: white;
         }
 
@@ -194,7 +195,7 @@
             right: 0.5rem;
             background-color: rgba(255, 255, 255, 0.2);
             border: none;
-            color: var(--unh-white);
+            color: var(--unh-black);
             padding: 0.25rem 0.5rem;
             border-radius: 0.5rem;
             font-size: 0.8rem;
@@ -256,7 +257,7 @@
                 <div class="col-12 p-0">
                     <div class="chat-container">
                         <div class="chat-header">
-                            <img src="{{ url_for('static', filename='logo1.jpg') }}" alt="UNH Logo" width = '150px' height = '130px' ="img-fluid">
+                            <img src="{{ url_for('static', filename='logo1.jpeg') }}" alt="UNH Logo" width = '150px' height = '130px' ="img-fluid">
                             <h1 class="chat-header-title">UNH Internship Assistant</h1>
                         </div>
                         <div class="chat-history" id="chat-history">
