@@ -89,7 +89,7 @@ def extract_texts_from_multiple_pdfs(pdf_directory):
     return documents
 
 # Directory containing your PDF files
-pdf_directory = '/Users/bubby/TeamGulliver/data'
+pdf_directory = 'C:\\Users\\sindh\\TeamGulliver\\data'
 
 # Extract text from all PDFs in the directory
 documents = extract_texts_from_multiple_pdfs(pdf_directory)
