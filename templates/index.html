@@ -67,7 +67,7 @@
         }
 
         .chat-header img {
-            height: 60px;
+            height: 80px;
             object-fit: contain;
         }
 
@@ -147,10 +147,13 @@
         }
 
         .input-area {
-            padding: 1.5rem;
-            background-color: rgba(255, 255, 255, 0.95);
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background-color: #e6e6fa;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
         }
 
         .input-group {
@@ -175,7 +178,7 @@
             width: 45px;
             height: 45px;
             border-radius: 50%;
-            background-color: var(--btn-color);
+            background-color: #0b5ed7; 
             color: var(--btn-text);
             display: flex;
             align-items: center;
@@ -185,7 +188,7 @@
         }
 
         #send-button:hover {
-            background-color: var(--btn-hover);
+            background-color: #0b5ed7; /* Keep the color blue on hover */
             transform: scale(1.05);
         }
 
@@ -224,6 +227,36 @@
         .chat-history::-webkit-scrollbar-thumb:hover {
             background: rgba(0, 53, 145, 0.7);
         }
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .typing-indicator .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #666;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: blink 1s infinite alternate;
+        }
+
+        .typing-indicator .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
 
         @media (max-width: 768px) {
             .chat-container {
@@ -241,7 +274,7 @@
             }
 
             .chat-header img {
-                height: 40px;
+                height: 60px;
             }
 
             .chat-header-title {
@@ -257,7 +290,7 @@
                 <div class="col-12 p-0">
                     <div class="chat-container">
                         <div class="chat-header">
-                            <img src="{{ url_for('static', filename='logo1.jpg') }}" alt="UNH Logo" width = '150px' height = '130px' ="img-fluid">
+                            <img src="{{ url_for('static', filename='logo1.jpeg') }}" alt="UNH Logo" width = '100px' height = '130px' class = "img-fluid">
                             <h1 class="chat-header-title">UNH Internship Assistant</h1>
                         </div>
                         <div class="chat-history" id="chat-history">
@@ -279,7 +312,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // JavaScript remains the same as in the previous version
+       
         const chatHistory = document.getElementById('chat-history');
         const userInput = document.getElementById('user-input');
         const sendButton = document.getElementById('send-button');
@@ -287,6 +320,7 @@
         function addMessage(content, isUser) {
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
+            
             
             const messageContent = document.createElement('span');
             messageContent.textContent = content;
@@ -359,32 +393,44 @@
             }
         }
 
-        async function handleResend(newMessage) {
-            try {
-                const response = await fetch('/ask', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ message: newMessage })
-                });
+        // Typing indicator functions
+        function addTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.classList.add('typing-indicator');
+            typingDiv.id = 'typing-indicator';
 
-                if (response.ok) {
-                    const data = await response.json();
-                    addMessage(data.response, false);
-                } else {
-                    addMessage("Error: Unable to get a response.", false);
-                }
-            } catch (error) {
-                addMessage("Error: Unable to communicate with the server.", false);
+            // Add "Typing..." text
+            const typingText = document.createElement('span');
+            typingText.textContent = "Typing";
+            typingDiv.appendChild(typingText);
+
+            // Add animated dots
+            for (let i = 0; i < 3; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                typingDiv.appendChild(dot);
+            }
+
+            chatHistory.appendChild(typingDiv);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
             }
         }
 
+        // Handle message send with typing indicator
         async function handleSend() {
             const message = userInput.value.trim();
             if (message) {
                 addMessage(message, true);
                 userInput.value = '';
+
+                // Show typing indicator before fetching response
+                addTypingIndicator();
 
                 try {
                     const response = await fetch('/ask', {
@@ -395,6 +441,9 @@
                         body: JSON.stringify({ message: message })
                     });
 
+                    // Remove typing indicator after receiving response
+                    removeTypingIndicator();
+
                     if (response.ok) {
                         const data = await response.json();
                         addMessage(data.response, false);
@@ -402,17 +451,49 @@
                         addMessage("Error: Unable to get a response.", false);
                     }
                 } catch (error) {
+                    removeTypingIndicator();
                     addMessage("Error: Unable to communicate with the server.", false);
                 }
             }
         }
 
+        // Handle message resend with typing indicator
+        async function handleResend(newMessage) {
+            // Show typing indicator before fetching response
+            addTypingIndicator();
+
+            try {
+                const response = await fetch('/ask', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: newMessage })
+                });
+
+                // Remove typing indicator after receiving response
+                removeTypingIndicator();
+
+                if (response.ok) {
+                    const data = await response.json();
+                    addMessage(data.response, false);
+                } else {
+                    addMessage("Error: Unable to get a response.", false);
+                }
+            } catch (error) {
+                removeTypingIndicator();
+                addMessage("Error: Unable to communicate with the server.", false);
+            }
+        }
+
+        // Event listeners
         sendButton.addEventListener('click', handleSend);
         userInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 handleSend();
             }
         });
+
     </script>
 </body>
 </html>
