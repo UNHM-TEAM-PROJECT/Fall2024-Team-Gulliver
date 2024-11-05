@@ -1,4 +1,3 @@
-#chatbot.py
 import os
 from flask import Flask, request, jsonify, render_template
 import pdfplumber
