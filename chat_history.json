@@ -1281,5 +1281,103 @@
         "bot_response": "In the reflection section of your internship report, you should answer questions such as:\n- What did you learn from your experience?\n- How does the work relate to your major studies?\n- What benefits did you gain from the internship?\n- Compare theory learned in class to practical experiences at the internship.\n- Discuss how project activities align with your classroom knowledge.\n- Reflect on how the project will impact your future career plans.\n- Describe how the learning will be applied to your professional goals.\n- Identify additional skills needed for career readiness.\n- Offer advice based on your experience to fellow students or faculty members. \n\nFeel free to ask if you need more guidance on these reflection questions or any other internship-related inquiries!",
         "timestamp": "2024-11-05T13:10:06.778610",
         "question_hash": "2ccd10c70e542a83f62df98d3eafb17e"
+    },
+    {
+        "user_question": "what all Student learning outcomes for COMP893?",
+        "bot_response": "The Student Learning Outcomes for COMP893 Team Project Internship are:\n1. Analyze complex computing problems and identify solutions by applying principles of computing.\n2. Design, implement, and evaluate computing solutions that meet IT computing requirements.\n3. Communicate effectively in a variety of professional contexts.\n4. Function effectively as a member or leader of a team engaged in IT activities. \n\nIf you have any more questions or need further clarification, feel free to ask!",
+        "timestamp": "2024-11-05T14:45:04.904117",
+        "question_hash": "7be306e6afba5b8bbe303f4ad4509126"
+    },
+    {
+        "user_question": "who is the Faculty Internship Coordinator?",
+        "bot_response": "The Faculty Internship Coordinator for the internship program is Karen Jin. You can reach out to her for any internship-related inquiries or assistance.",
+        "timestamp": "2024-11-05T14:51:21.655222",
+        "question_hash": "c6be8b893169e7a73e2259ecd13112af"
+    },
+    {
+        "user_question": "what building is faculty Internship Coordinator in?",
+        "bot_response": "The Faculty Internship Coordinator, Karen Jin, is located in Room 139 of the Pandora Mill building. If you have any questions or need assistance, feel free to reach out to her via email at karen.jin@unh.edu or visit during her office hours on Mondays and Fridays. Let me know if you need more information or have any other questions!",
+        "timestamp": "2024-11-05T14:53:55.257041",
+        "question_hash": "2075f6cb3f95ef95439deeb9637b402b"
+    },
+    {
+        "user_question": "what is coordinator's email?",
+        "bot_response": "The coordinator's email is karen.jin@unh.edu. Feel free to reach out to her for any internship-related inquiries. If you have any more questions, feel free to ask!",
+        "timestamp": "2024-11-05T14:55:12.102738",
+        "question_hash": "c137663712b7b8322231b91960a4f47e"
+    },
+    {
+        "user_question": "what is the oiss website?",
+        "bot_response": "The OISS website is https://www.unh.edu/global/international-students-scholars. If you have any questions related to internships or CPT authorization, feel free to ask!",
+        "timestamp": "2024-11-05T14:56:41.806096",
+        "question_hash": "05de0049968045b99aa441f52e56223d"
+    },
+    {
+        "user_question": "what are the internship courses options for undergrads?",
+        "bot_response": "For undergraduate students, the internship course options are:\n- COMP690 Internship Experience\n- COMP892 Applied Research Internship\n- COMP893 Team Project Internship\n\nThese courses cater to different internship experiences and credit requirements. Feel free to ask if you need more details or have any questions!",
+        "timestamp": "2024-11-05T14:58:02.765714",
+        "question_hash": "c72e233e7847fe4d790e8389b011f578"
+    },
+    {
+        "user_question": "What is COMP891: Internship Practice?",
+        "bot_response": "COMP891: Internship Practice is a variable credit course (1-3 credits) offered to graduate students in the UNH computing internship program. This course focuses on practical internship experiences, allowing students to apply their computing knowledge in real-world settings. For more details or registration, please contact the faculty internship coordinator, Prof. Karen Jin. Feel free to ask if you have any more questions about this course or the internship program!",
+        "timestamp": "2024-11-05T15:02:48.151835",
+        "question_hash": "d63e54f2d0e468cdcca56cb4c2064e2d"
+    },
+    {
+        "user_question": "who can take comp892?",
+        "bot_response": "COMP892 is available for students who are currently working full-time or part-time in the tech fields. It is a variable credit course (1-3 credits) offered in both fall and spring semesters, as well as during the summer. If you have any specific questions about COMP892 or need further assistance, feel free to ask!",
+        "timestamp": "2024-11-05T15:05:03.705206",
+        "question_hash": "8d5aa314808b1df1ae636bfb45cad21f"
+    },
+    {
+        "user_question": "When is COMP891 offered in ?",
+        "bot_response": "COMP891 is offered in both fall and spring semesters, well as during the summer. If you have any specific questions or need further assistance, feel free to ask!",
+        "timestamp": "2024-11-05T15:09:38.477780",
+        "question_hash": "6e949ea1452077f0509858589839b58a"
+    },
+    {
+        "user_question": "can we take comp891 in summer?",
+        "bot_response": "Yes, you can take COMP891 (Internship Practice) during the summer, as well as in the fall and spring semesters",
+        "timestamp": "2024-11-05T15:10:08.925267",
+        "question_hash": "0fb5eb9649991f7f7723c247e711df72"
+    },
+    {
+        "user_question": "Q: What is COMP892?",
+        "bot_response": "COMP892 is the Applied Research Internship course. It is a variable credit course (1-3 credits) for students currently working full or part-time in tech fields. Feel free to reach out if you have more questions about COMP892 or any other internship courses!",
+        "timestamp": "2024-11-05T15:12:01.333357",
+        "question_hash": "f4fe3c5d870817ffcf8292d9275de80f"
+    },
+    {
+        "user_question": "What are the FAQS?",
+        "bot_response": "Some frequently asked questions about the UNH internship program include inquiries about registration procedures, weekly log requirements, final report structure, and credit hour requirements. If you have any specific questions or need further assistance, feel free to ask!",
+        "timestamp": "2024-11-05T15:15:35.829762",
+        "question_hash": "cfcfbf9e86099a6e99ef891bd9b3f40e"
+    },
+    {
+        "user_question": "What  FAQS are there?",
+        "bot_response": "Some frequently asked questions about the UNH internship program include inquiries about registration procedures, weekly log requirements, final report structure, and credit hour requirements. If you have any specific questions or need further assistance, feel free to ask!",
+        "timestamp": "2024-11-05T15:16:01.233040",
+        "question_hash": "4cab4e10837b0d3ea8f54ca593e25c48"
+    },
+    {
+        "user_question": "What are some Frequently asked questions?",
+        "bot_response": "Some frequently asked questions about the UNH internship program include inquiries about registration procedures, weekly log requirements, final report structure, and credit hour requirements. If you have any specific questions or need further assistance, feel free to ask!",
+        "timestamp": "2024-11-05T15:16:27.828919",
+        "question_hash": "a313219954aadf1d444f6c2b7aa939b3"
+    },
+    
+    
+    {
+        "user_question": "What are some FAQ's?",
+        "bot_response": "Some frequently asked questions about the UNH internship program include inquiries about registration procedures, weekly log requirements, final report structure, and credit hour requirements. If you have any specific questions or need further assistance, feel free to ask!.",
+        "timestamp": "2024-11-05T15:18:14.359224",
+        "question_hash": "ad16703b062591b6075856bc6880ae81"
+    },
+    {
+        "user_question": "what should you check for meeting dates and additional details?",
+        "bot_response": "To check meeting dates and additional details, refer to the course schedule provided for COMP690. If you need further clarification or have specific questions, feel free to ask!",
+        "timestamp": "2024-11-05T15:23:53.501827",
+        "question_hash": "e06228d9a553e422972b784442984f90"
     }
 ]
