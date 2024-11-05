@@ -1,4 +1,3 @@
-#chatbot.py
 import os
 from flask import Flask, request, jsonify, render_template
 import pdfplumber
@@ -7,12 +6,12 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.prompts import PromptTemplate
 from langchain.schema import Document
-from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 import re
 import json
 from datetime import datetime
 import hashlib
+from langchain.chat_models import ChatOpenAI
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -21,12 +20,11 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-
 # Path to the JSON file for storing chat history and conversation memory
 chat_history_file = 'chat_history.json'
 conversation_memory_file = 'conversation_memory.json'
 
-# OpenAI API key and organization (move these to a .env file for security in production)
+# OpenAI API key
 apikey = "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"
 
 # Initialize the chat history and conversation memory files if they don't exist
@@ -185,53 +183,114 @@ for item in previous_memory:
     memory.chat_memory.add_user_message(item["user"])
     memory.chat_memory.add_ai_message(item["assistant"])
 
-# Step 8: Create a Conversational Retrieval Chain with memory
-from langchain.chat_models import ChatOpenAI
+# Step 8: Define the custom prompt template for friendly, conversational tone
+PROMPT_TEMPLATE = """
+You are an AI assistant for UNH's computing internship courses. Your tone should be friendly and natural, like a conversation with a professor or teaching assistant, ensuring students feel comfortable and supported in their inquiries.
+
+Key Context Rules:
+1. When the user greets you, respond politely and offer assistance. For example: "Hello! I am the internship chatbot for UNH. How may I assist you today?"
+
+2. For out-of-context questions:
+   Respond with: "Sorry, I don’t have information about that question. Feel free to ask me anything related to the UNH internship program."
+
+3. Answer Format:
+   - Keep responses brief and focused (2-3 sentences maximum for technical concepts).
+   - Include course codes when relevant.
+   - Provide contact information when appropriate.
+   - Maintain a friendly, conversational tone as if speaking to a student in person.
+
+4. Response Topics:
+   - Details of internship courses (COMP690, COMP890, COMP891, COMP892, COMP893) and credit requirements.
+   - Steps for registration, instructor permission, and handling late registration due to mid-semester internship offers.
+   - Weekly log requirements, final report structure, and hours needed per credit.
+   - CPT/OPT authorization steps and required documents for F-1 students.
+   - Attendance policies and rules for excused absences and late submissions.
+   - Career resources, including resume coaching, Handshake, and online job portals.
+   - Use of Scrum and Agile project management frameworks in internships.
+   - Formatting and grading criteria for the final report submission.
+   - UNH policies on academic integrity and confidentiality reporting.
+   - Support services for international students and confidential counseling resources.
+   - Access to library resources, research assistance, and study spaces.
+
+5. Enhance Conversational Tone:
+   - Avoid robotic phrasing like "Answer:". Instead, respond naturally with the relevant information.
+   - If the requested information isn’t available, say: "I don’t have that information right now, but let me know if there’s anything else I can help with."
+
+6. For specific course-related inquiries, provide detailed responses including:
+   - Course codes and credits.
+   - Faculty internship coordinator contact information.
+   - Registration procedures for internship courses.
+
+Context: {context}
+Chat History: {chat_history}
+Question: {question}
+
+Response Guidelines:
+1. Be concise and direct.
+2. Maintain a helpful, friendly, and professional tone.
+3. Keep answers focused on the internship program.
+4. Include relevant course numbers.
+5. Verify all prerequisites.
+6. Only provide information from official documents.
+7. Encourage users to ask follow-up questions.
+
+Remember: Always keep responses concise, directly related to the internship program, approachable, and conversational.
+"""
+
+# Initialize the language model (LLM)
 llm = ChatOpenAI(
     model="gpt-3.5-turbo",
     openai_api_key=apikey,
     temperature=0,
-    top_p=1,
-    frequency_penalty=0.0,
-    presence_penalty=0.6
+    top_p=1
 )
 
-conversation_chain = ConversationalRetrievalChain.from_llm(
-    llm=llm,
-    retriever=retriever,
-    memory=memory
-)
+from langchain.schema import HumanMessage
 
-# Flask API for user queries with caching and persistent conversational memory
 @app.route('/ask', methods=['POST'])
 def ask():
     data = request.get_json()
-    user_question = data.get('message').strip()
+    user_question = data.get('message', '').strip()  # Ensure a default empty string
+    
+    # Ensure user_question is a string
+    if not isinstance(user_question, str) or not user_question:
+        return jsonify({"error": "Invalid question format."}), 400
+    
     question_hash = get_question_hash(user_question)
     
-    # Try retrieving cached response first for identical questions
+    # Check for a cached response for identical questions
     cached_response = get_cached_response(question_hash)
     if cached_response:
         return jsonify({"response": cached_response})
 
-    # Generate a new response if no cache is found, leveraging conversation memory
-    generated_text = conversation_chain.invoke({"question": user_question})
+    # Retrieve relevant context directly using similarity_search to avoid deprecated methods
+    relevant_docs = db.similarity_search(user_question, **retriever.search_kwargs)
+    context = "\n".join([doc.page_content for doc in relevant_docs])
+
+    # Format chat history for the prompt
+    chat_history = "\n".join(
+        [f"User: {m.content}\nAssistant: {r.content}" for m, r in zip(
+            memory.load_memory_variables({})["chat_history"][::2], 
+            memory.load_memory_variables({})["chat_history"][1::2]
+        )]
+    )
+
+    # Use the custom prompt template
+    prompt_text = PROMPT_TEMPLATE.format(context=context, chat_history=chat_history, question=user_question)
+
+    # Generate a new response using the formatted prompt with HumanMessage and invoke
+    response = llm.invoke([HumanMessage(content=prompt_text)])
+    answer = response.content if response else "No answer found"
     
-    # Extract answer and save conversation to memory file
-    answer = generated_text.get("answer", "No answer found")
+    # Save the interaction to history
     save_interaction_to_json(user_question, answer)
-
-    # Save the current memory state to persistent storage
-    memory_history = [
-    {"user": m.content, "assistant": r.content} 
-    for m, r in zip(memory.load_memory_variables({})["chat_history"][::2], memory.load_memory_variables({})["chat_history"][1::2])
-    ]
-
-    save_conversation_memory(memory_history)
+    save_conversation_memory([
+        {"user": m.content, "assistant": r.content} 
+        for m, r in zip(memory.load_memory_variables({})["chat_history"][::2], memory.load_memory_variables({})["chat_history"][1::2])
+    ])
 
     return jsonify({"response": answer})
 
-# Initialize chat history file and run the app
 if __name__ == '__main__':
     initialize_chat_history_file()
     app.run(debug=True, host='127.0.0.1', port=5000)
