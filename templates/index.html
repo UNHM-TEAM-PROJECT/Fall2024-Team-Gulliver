@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --unh-blue: #003591;
+            --unh-blue: #002B7D;
             --unh-white: #ffffff;
             --chat-bg: rgba(248, 249, 250, 0.95);
             --message-bg: rgba(233, 236, 239, 0.9);
@@ -60,19 +60,24 @@
             color: var(--unh-white);
             padding: 1rem;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            justify-content: center; /* Centers content horizontally */
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-            height: 80px;
+            height: 80px; /* Adjust height as needed */
+        }
+        .header-content {
+            display: flex;
+            align-items: center; /* Centers logo and title vertically */
+            gap: 10px; /* Adds space between logo and title */
         }
 
         .chat-header img {
-            height: 80px;
+            height: 60px; /* Adjust as needed */
+            width: auto;
             object-fit: contain;
         }
 
         .chat-header-title {
-            font-size: 1.5rem;
+            font-size: 24px;
             font-weight: 600;
             margin: 0;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -290,9 +295,12 @@
                 <div class="col-12 p-0">
                     <div class="chat-container">
                         <div class="chat-header">
-                            <img src="{{ url_for('static', filename='logo1.jpeg') }}" alt="UNH Logo" width = '100px' height = '130px' class = "img-fluid">
-                            <h1 class="chat-header-title">UNH Internship Assistant</h1>
+                            <div class="header-content">
+                                <img src="{{ url_for('static', filename='logo1.jpeg') }}" alt="UNH Logo" class="img-fluid">
+                                <h1 class="chat-header-title">UNH Internship Assistant</h1>
+                            </div>
                         </div>
+                        
                         <div class="chat-history" id="chat-history">
                             <!-- Chat messages will be inserted here -->
                         </div>
