@@ -1,5 +1,4 @@
 # automated_testing.py
-
 import os
 import json
 import pdfplumber
@@ -12,7 +11,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
 # Define paths and parameters
-pdf_directory = '../data'
+pdf_directory = '/Users/bubby/TeamGulliver/data'
 persist_directory = 'automated_testing_db'
 test_data_file = 'test_data.json'
 openai_api_key = "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"  # Replace with your OpenAI API key
@@ -91,7 +90,7 @@ def automated_testing(threshold=0.8):
         question = item['question']
         expected_answer = item['answer']
         
-        # Simulate a chatbot response independently.
+        # Simulate a chatbot response independently
         response = ask_chatbot(question)
         actual_answer = response.get("response", "")
         
