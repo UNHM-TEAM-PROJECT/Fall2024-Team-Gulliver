@@ -221,9 +221,14 @@ Key Context Rules:
    - Faculty internship coordinator contact information.
    - Registration procedures for internship courses.
 
-Context: {context}
-Chat History: {chat_history}
-Question: {question}
+Previous interactions with the user:
+{chat_history}
+
+Context related to the question:
+{context}
+
+Current Question:
+{question}
 
 Response Guidelines:
 1. Be concise and direct.
@@ -232,14 +237,15 @@ Response Guidelines:
 4. Include relevant course numbers.
 5. Verify all prerequisites.
 6. Only provide information from official documents.
-7. Encourage users to ask follow-up questions.
+7. If the user’s question references a recent answer, treat it as a follow-up and ensure continuity in the response.
+
 
 Remember: Always keep responses concise, directly related to the internship program, approachable, and conversational.
 """
 
 # Initialize the language model (LLM)
 llm = ChatOpenAI(
-    model="gpt-3.5-turbo",
+    model="gpt-4-turbo",
     openai_api_key=apikey,
     temperature=0,
     top_p=1
@@ -261,11 +267,12 @@ def ask():
     # Check for a cached response for identical questions
     cached_response = get_cached_response(question_hash)
     if cached_response:
-        return jsonify({"response": cached_response})
+        return jsonify({"response": cached_response, "retrieval_context": []})
 
-    # Retrieve relevant context directly using similarity_search to avoid deprecated methods
+    # Retrieve relevant context directly using similarity_search
     relevant_docs = db.similarity_search(user_question, **retriever.search_kwargs)
-    context = "\n".join([doc.page_content for doc in relevant_docs])
+    retrieval_context = [doc.page_content for doc in relevant_docs]
+    context = "\n".join(retrieval_context)
 
     # Format chat history for the prompt
     chat_history = "\n".join(
@@ -284,13 +291,19 @@ def ask():
     
     # Save the interaction to history
     save_interaction_to_json(user_question, answer)
-    save_conversation_memory([
-        {"user": m.content, "assistant": r.content} 
-        for m, r in zip(memory.load_memory_variables({})["chat_history"][::2], memory.load_memory_variables({})["chat_history"][1::2])
-    ])
+    # Save updated conversation memory (limit to last 5 interactions)
+    # Load existing conversation memory, append the new interaction, then save
+    conversation_memory_data = load_conversation_memory()
+    conversation_memory_data.append({"user": user_question, "assistant": answer})
+    conversation_memory_data = conversation_memory_data[-5:]  # Keep only the last 5 interactions
+    save_conversation_memory(conversation_memory_data)
 
-    return jsonify({"response": answer})
+    # Return both the chatbot response and the retrieval context for testing
+    return jsonify({"response": answer, "retrieval_context": retrieval_context})
 
 if __name__ == '__main__':
     initialize_chat_history_file()
     app.run(debug=True, host='127.0.0.1', port=5000)
+
+
+
