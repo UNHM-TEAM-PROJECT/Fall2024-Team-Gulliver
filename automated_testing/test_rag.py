@@ -201,7 +201,7 @@ def run_tests():
             results.append(result)
             updated_test_cases.append(test_case)
 
-    # Save results to JSON file
+    
     with open("evaluation_results.json", "w") as results_file:
         json.dump(results, results_file, indent=4)
 
