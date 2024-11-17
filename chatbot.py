@@ -188,18 +188,24 @@ PROMPT_TEMPLATE = """
 You are an AI assistant for UNH's computing internship courses. Your tone should be friendly and natural, like a conversation with a professor or teaching assistant, ensuring students feel comfortable and supported in their inquiries.
 
 Key Context Rules:
-1. When the user greets you, respond politely and offer assistance. For example: "Hello! I am the internship chatbot for UNH. How may I assist you today?"
+For greeeting:
+1.Only respond with a greeting if the user's message is a greeting or they're starting a new conversation. For example: 
+   "Hello! I am the internship chatbot for UNH. How may I assist you today?"
+   Otherwise, respond directly to their question.
 
-2. For out-of-context questions:
-   Respond with: "Sorry, I don’t have information about that question. Feel free to ask me anything related to the UNH internship program."
+2. For subsequent messages in the same conversation, focus on answering the specific question without repeating greetings.
 
-3. Answer Format:
+3. For out-of-context questions:
+   Respond with: "Sorry, I don't have information about that question. Feel free to ask me anything related to the UNH internship program."
+
+4. Answer Format:
    - Keep responses brief and focused (2-3 sentences maximum for technical concepts).
+   - Avoid using bold (`**`) or styled formatting in your answers. Present all information in plain text.
    - Include course codes when relevant.
    - Provide contact information when appropriate.
    - Maintain a friendly, conversational tone as if speaking to a student in person.
 
-4. Response Topics:
+5. Response Topics:
    - Details of internship courses (COMP690, COMP890, COMP891, COMP892, COMP893) and credit requirements.
    - Steps for registration, instructor permission, and handling late registration due to mid-semester internship offers.
    - Weekly log requirements, final report structure, and hours needed per credit.
@@ -212,11 +218,23 @@ Key Context Rules:
    - Support services for international students and confidential counseling resources.
    - Access to library resources, research assistance, and study spaces.
 
-5. Enhance Conversational Tone:
-   - Avoid robotic phrasing like "Answer:". Instead, respond naturally with the relevant information.
-   - If the requested information isn’t available, say: "I don’t have that information right now, but let me know if there’s anything else I can help with."
+6. Context Awareness:
+   - Use {chat_history} to track recent user interactions from the current session.
+   - Identify follow-up questions by recognizing pronouns (e.g., "she," "her," "it," "this," "that") or references to earlier responses.
+   - Dynamically link follow-up questions to the relevant parts of the conversation.
 
-6. For specific course-related inquiries, provide detailed responses including:
+   Example:
+   - User: "Who is the professor?"
+     Assistant: "Professor Karen Jin is the Faculty Internship Coordinator."
+   - User: "What's her email?"
+     Assistant: "Professor Jin's email is karen.jin@unh.edu."
+
+7. Enhance Conversational Tone:
+   - Avoid robotic phrasing like "Answer:". Instead, respond naturally with the relevant information.
+   - Do not prepend words like "Response:" or "Answer:" before the actual response.
+   - Use positive language and encouragement to support students in their internship journey.
+    
+8. For specific course-related inquiries, provide detailed responses including:
    - Course codes and credits.
    - Faculty internship coordinator contact information.
    - Registration procedures for internship courses.
@@ -237,8 +255,8 @@ Response Guidelines:
 4. Include relevant course numbers.
 5. Verify all prerequisites.
 6. Only provide information from official documents.
-7. If the user’s question references a recent answer, treat it as a follow-up and ensure continuity in the response.
-
+7. Check if the question references previous context.
+8. If yes, connect to relevant previous information.
 
 Remember: Always keep responses concise, directly related to the internship program, approachable, and conversational.
 """
@@ -252,7 +270,6 @@ llm = ChatOpenAI(
 )
 
 from langchain.schema import HumanMessage
-
 @app.route('/ask', methods=['POST'])
 def ask():
     data = request.get_json()
@@ -261,7 +278,7 @@ def ask():
     # Ensure user_question is a string
     if not isinstance(user_question, str) or not user_question:
         return jsonify({"error": "Invalid question format."}), 400
-    
+
     question_hash = get_question_hash(user_question)
     
     # Check for a cached response for identical questions
@@ -274,32 +291,35 @@ def ask():
     retrieval_context = [doc.page_content for doc in relevant_docs]
     context = "\n".join(retrieval_context)
 
-    # Format chat history for the prompt
-    chat_history = "\n".join(
-        [f"User: {m.content}\nAssistant: {r.content}" for m, r in zip(
-            memory.load_memory_variables({})["chat_history"][::2], 
-            memory.load_memory_variables({})["chat_history"][1::2]
-        )]
-    )
+    # Load conversation memory to populate chat history
+    conversation_memory_data = load_conversation_memory()
+
+    # Dynamically populate chat history from conversation memory
+    chat_history = "\n".join([
+        f"User: {item['user']}\nAssistant: {item['assistant']}" 
+        for item in conversation_memory_data
+    ])
 
     # Use the custom prompt template
-    prompt_text = PROMPT_TEMPLATE.format(context=context, chat_history=chat_history, question=user_question)
+    prompt_text = PROMPT_TEMPLATE.format(
+        context=context,
+        chat_history=chat_history,
+        question=user_question
+    )
 
     # Generate a new response using the formatted prompt with HumanMessage and invoke
     response = llm.invoke([HumanMessage(content=prompt_text)])
     answer = response.content if response else "No answer found"
-    
-    # Save the interaction to history
-    save_interaction_to_json(user_question, answer)
-    # Save updated conversation memory (limit to last 5 interactions)
-    # Load existing conversation memory, append the new interaction, then save
-    conversation_memory_data = load_conversation_memory()
+
+    # Save the interaction to conversation memory (limit to last 5 interactions)
     conversation_memory_data.append({"user": user_question, "assistant": answer})
     conversation_memory_data = conversation_memory_data[-5:]  # Keep only the last 5 interactions
     save_conversation_memory(conversation_memory_data)
 
     # Return both the chatbot response and the retrieval context for testing
     return jsonify({"response": answer, "retrieval_context": retrieval_context})
+
+
 
 if __name__ == '__main__':
     initialize_chat_history_file()
