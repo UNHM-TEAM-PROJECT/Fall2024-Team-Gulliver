@@ -138,7 +138,7 @@ test_cases = [
         "question": "Who do you need to email for internship courses?",
         "expected_answer": "To register for internship courses, you need to email the Internship Advisor, Karen Jin.",
         "retrieval_context": [
-            "All internship courses require instructor’s permission.",
+            "All internship courses require instructor's permission.",
             "You will need to email the faculty internship coordinator, or the course instructor to register you for the course.",
             "For more details, you may email Prof. Karen Jin.",
             "How to register for Internship Courses?",
@@ -201,7 +201,7 @@ def run_tests():
             results.append(result)
             updated_test_cases.append(test_case)
 
-    # Save results to JSON file
+    
     with open("evaluation_results.json", "w") as results_file:
         json.dump(results, results_file, indent=4)
 
