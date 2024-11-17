@@ -1,0 +1,150 @@
+[
+    {
+        "question": "What room is COMP690 in?",
+        "expected_answer": "Room P142",
+        "retrieval_context": [
+            "Name: COMP690 Internship Experience",
+            "Credits: 4",
+            "Term: Fall 2024",
+            "Location: Rm P142",
+            "Time: M2 Section: Wednesday 9:10am-12pm",
+            "M2 Section: Wednesday 1:10-4pm",
+            "Instructor Information",
+            "Name: Karen Jin, Associate Professor, Department of Applied Engineering and Sciences",
+            "Office: Rm139, Pandora Mill building",
+            "Zoom: https://unh.zoom.us/j/4858446046",
+            "Email: karen.jin@unh.edu",
+            "Office Hours: Monday 1-4pm and Friday 9-noon. Available in person or over Zoom."
+        ],
+        "actual_answer": "COMP690 is held in Room P142. If you need any more details about the course or the location, feel free to ask!"
+    },
+    {
+        "question": "What is the instructor's email?",
+        "expected_answer": "karen.jin@unh.edu",
+        "retrieval_context": [
+            "Instructor Information",
+            "Name: Karen Jin, Associate Professor, Department of Applied Engineering and Sciences",
+            "Office: Rm139, Pandora Mill building",
+            "Zoom: https://unh.zoom.us/j/4858446046",
+            "Email: karen.jin@unh.edu",
+            "Office Hours: Monday 1-4pm and Friday 9-noon.",
+            "CaPS office: Website: https://manchester.unh.edu/careers/career-professional-success",
+            "Phone: (603) 641-4394",
+            "Email: unhm.career@unh.edu"
+        ],
+        "actual_answer": "Professor Karen Jin's email is karen.jin@unh.edu. If you have any more questions or need further assistance regarding the internship courses, feel free to reach out to her!"
+    },
+    {
+        "question": "What time is COMP893?",
+        "expected_answer": "COMP893 has two sections:\n- M1 Section: Wednesday 9:10am-12pm\n- M2 Section: Wednesday 1:10-4pm",
+        "retrieval_context": [
+            "Name: COMP893 Team Project Internship",
+            "Credits: 1-3",
+            "Term: Fall 2024",
+            "Location: Rm P142",
+            "Time: M1 Section: Wednesday 9:10am-12pm",
+            "M2 Section: Wednesday 1:10-4pm",
+            "Instructor Information",
+            "Name: Karen Jin, Associate Professor, Department of Applied Engineering and Sciences",
+            "Office: Rm139, Pandora Mill building",
+            "Zoom: https://unh.zoom.us/j/4858446046",
+            "Email: karen.jin@unh.edu",
+            "Office Hours: Monday 1-4pm and Friday 9-noon."
+        ],
+        "actual_answer": "COMP893 Team Project Internship has two sections. The M1 section meets on Wednesdays from 9:10 am to 12:00 pm, and the M2 section meets on Wednesdays from 1:10 pm to 4:00 pm. Both are held in Room P142. Let me know if you need more information or have other questions!"
+    },
+    {
+        "question": "When is week 1?",
+        "expected_answer": "Week 1 starts on 8/28",
+        "retrieval_context": [
+            "Week 1: 8/28",
+            "Class Introduction / Development Team (DT) Setup",
+            "Intro to Project Management",
+            "Intro to Scrum workflow",
+            "Project Goal",
+            "Week 2: 9/4",
+            "Project Kickoff",
+            "Environment Setup: Jira",
+            "Create Project backlog",
+            "Create user stories, tasks, and bugs"
+        ],
+        "actual_answer": "Week 1 for the internship program starts on August 28th. This week includes the class introduction, development team setup, and introductions to project management and the Scrum workflow. If you need more details about what to prepare or expect, feel free to ask!"
+    },
+    {
+        "question": "How much of the grade is class attendance?",
+        "expected_answer": "10%.",
+        "retrieval_context": [
+            "Your final grade consists of the following three components:",
+            "10% Class Attendance of all required meetings",
+            "60% Sprint Grade is calculated as: Teamwork Grade * Sprint Grade",
+            "Teamwork Grade is based on peer evaluation for each of the three sprints.",
+            "Sprint Grades: You will receive a team grade for each of the three sprints, based on the technical aspect of the product and team project management.",
+            "10% Homework: additional homework in project management and development tools.",
+            "20% Final Project Report: See Appendix A for the report format."
+        ],
+        "actual_answer": "Class attendance is crucial and is factored into your overall grade for the internship courses like COMP690 and COMP893. While the specific percentage may vary by course and instructor, consistent attendance is expected to successfully meet course requirements and participate in team activities. If you have any specific concerns about attendance or need further details, please let me know!"
+    },
+    {
+        "question": "How is sprint grade calculated?",
+        "expected_answer": "The sprint grade is calculated as the Teamwork Grade multiplied by the Sprint Grade.",
+        "retrieval_context": [
+            "Your final grade consists of the following three components:",
+            "10% Class Attendance of all required meetings",
+            "60% Sprint Grade is calculated as: Teamwork Grade * Sprint Grade",
+            "Teamwork Grade is based on peer evaluation for each of the three sprints.",
+            "Sprint Grades: You will receive a team grade for each of the three sprints, based on the technical aspect of the product and team project management."
+        ],
+        "actual_answer": "Sprint grades in courses like COMP690 and COMP893 are calculated based on the technical quality of the product your team develops and how effectively your team manages the project. The specific criteria for these evaluations are detailed in the course rubrics, which will be provided by your instructor. Each sprint contributes to your overall grade, emphasizing both your technical skills and teamwork. If you need more details about the grading rubrics or any other aspect of the sprints, feel free to ask!"
+    },
+    {
+        "question": "CaPS office website?",
+        "expected_answer": "The website for the CaPS office is [Career and Professional Success](https://manchester.unh.edu/careers/career-professional-success).",
+        "retrieval_context": [
+            "CaPS office:",
+            "Website: https://manchester.unh.edu/careers/career-professional-success",
+            "Phone: (603) 641-4394",
+            "Email: unhm.career@unh.edu",
+            "The Office of International Students and Scholars (OISS):",
+            "Website: https://www.unh.edu/global/international-students-scholars",
+            "Email: oiss@unh.edu"
+        ],
+        "actual_answer": "The CaPS office website for UNH Manchester can be found at [https://manchester.unh.edu/careers/career-professional-success](https://manchester.unh.edu/careers/career-professional-success). It's a great resource for career advice, resume coaching, and more. If you need further assistance or have specific questions about internship opportunities, feel free to reach out to them!"
+    },
+    {
+        "question": "How many credits is COMP890?",
+        "expected_answer": "COMP890 is a 1-credit course in the UNH internship program.",
+        "retrieval_context": [
+            "Graduate students:",
+            "COMP890: Internship and Career Planning.",
+            "This is a 1 cr course you need to take after the first semester to help you plan for the internship search process.",
+            "The course is offered in fall and spring semesters.",
+            "COMP891: Internship Practice.",
+            "This is a variable credit 1-3 crs course that you will take when you have an external internship."
+        ],
+        "actual_answer": "COMP890, the Internship Preparation course, requires a total of 1 credit. It's designed to prepare you for your internship experience, focusing on skills like resume writing, interview techniques, and workplace etiquette. If you have any more questions about this course or need further details, just let me know!"
+    },
+    {
+        "question": "When is COMP890 offered?",
+        "expected_answer": "COMP890 is offered in both the fall and spring semesters.",
+        "retrieval_context": [
+            "COMP890: Internship and Career Planning.",
+            "This is a 1 cr course you need to take after the first semester to help you plan for the internship search process.",
+            "The course is offered in fall and spring semesters."
+        ],
+        "actual_answer": "COMP890, titled Internship and Career Planning, is offered every semester, including summers. This flexibility allows you to enroll in the course when it best fits your schedule and when you secure an internship. If you need help with the registration process or have any other questions about the course, just let me know!"
+    },
+    {
+        "question": "Who do you need to email for internship courses?",
+        "expected_answer": "To register for internship courses, you need to email the Internship Advisor, Karen Jin.",
+        "retrieval_context": [
+            "All internship courses require instructor\u2019s permission.",
+            "You will need to email the faculty internship coordinator, or the course instructor to register you for the course.",
+            "For more details, you may email Prof. Karen Jin.",
+            "How to register for Internship Courses?",
+            "Email the Internship Advisor, Karen Jin (karen.jin@unh.edu).",
+            "Provide details about your internship or project requirements.",
+            "Ensure to include your student ID in the email."
+        ],
+        "actual_answer": "For registering in internship courses like COMP690, COMP890, COMP891, COMP892, and COMP893, you'll need to email the faculty internship coordinator or the course instructor for permission. You can reach out to Professor Karen Jin for this purpose. Her email is karen.jin@unh.edu. If you need more details or assistance with the process, feel free to ask!"
+    }
+]
