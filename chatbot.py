@@ -1,4 +1,3 @@
-#chatbot.py
 import os
 from flask import Flask, request, jsonify, render_template
 import pdfplumber
@@ -127,7 +126,7 @@ def extract_texts_from_multiple_pdfs(pdf_directory):
     return documents
 
 # Directory containing your PDF files
-pdf_directory = '/Users/bubby/TeamGulliver/data'
+pdf_directory = "C:\\Users\\sindh\\TeamGulliver\\data"
 documents = extract_texts_from_multiple_pdfs(pdf_directory)
 
 # Step 3: Improve Chunking Strategy for better context retention
@@ -305,6 +304,3 @@ def ask():
 if __name__ == '__main__':
     initialize_chat_history_file()
     app.run(debug=True, host='127.0.0.1', port=5000)
-
-
-
