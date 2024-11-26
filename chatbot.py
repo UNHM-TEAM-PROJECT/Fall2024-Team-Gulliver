@@ -1,3 +1,4 @@
+#chatbot.py
 import os
 from flask import Flask, request, jsonify, render_template
 import pdfplumber
@@ -126,7 +127,7 @@ def extract_texts_from_multiple_pdfs(pdf_directory):
     return documents
 
 # Directory containing your PDF files
-pdf_directory = "C:\\Users\\sindh\\TeamGulliver\\data"
+pdf_directory = '/Users/bubby/TeamGulliver/data'
 documents = extract_texts_from_multiple_pdfs(pdf_directory)
 
 # Step 3: Improve Chunking Strategy for better context retention
@@ -196,11 +197,11 @@ For greeeting:
 2. For subsequent messages in the same conversation, focus on answering the specific question without repeating greetings.
 
 3. For out-of-context questions:
-   Respond with: "Sorry, I don't have information about that question. Feel free to ask me anything related to the UNH internship program."
+   Respond with: "Sorry, I don’t have information about that question. Feel free to ask me anything related to the UNH internship program."
 
 4. Answer Format:
    - Keep responses brief and focused (2-3 sentences maximum for technical concepts).
-   - Avoid using bold (`**`) or styled formatting in your answers. Present all information in plain text.
+   - Avoid using bold asterix (`*`) or styled formatting in your answers. Present all information in plain text.
    - Include course codes when relevant.
    - Provide contact information when appropriate.
    - Maintain a friendly, conversational tone as if speaking to a student in person.
@@ -220,7 +221,7 @@ For greeeting:
 
 6. Context Awareness:
    - Use {chat_history} to track recent user interactions from the current session.
-   - Identify follow-up questions by recognizing pronouns (e.g., "she," "her," "it," "this," "that") or references to earlier responses.
+   - Identify follow-up questions by recognizing pronouns (e.g., "she," "her," "it," "this," "that","their","them") or references to earlier responses.
    - Dynamically link follow-up questions to the relevant parts of the conversation.
 
    Example:
@@ -315,6 +316,9 @@ def ask():
     conversation_memory_data.append({"user": user_question, "assistant": answer})
     conversation_memory_data = conversation_memory_data[-5:]  # Keep only the last 5 interactions
     save_conversation_memory(conversation_memory_data)
+
+    # Save the interaction to chat history
+    save_interaction_to_json(user_question, answer)
 
     # Return both the chatbot response and the retrieval context for testing
     return jsonify({"response": answer, "retrieval_context": retrieval_context})
