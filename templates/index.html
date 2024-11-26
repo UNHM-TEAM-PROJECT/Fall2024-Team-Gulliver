@@ -287,18 +287,13 @@
         <div class="container-fluid h-100 p-0">
             <div class="row h-100 m-0">
                 <div class="col-12 p-0">
-
                     <div class="chat-container">
                         <div class="chat-header">
-    <div class="header-content">
-        <!-- Existing Logo -->
-        <img src="{{ url_for('static', filename='logo1.jpeg') }}" alt="UNH Logo" class="img-fluid">
-        <h1 class="chat-header-title">UNH Internship Assistant</h1>
-        <!-- Additional Logo -->
-        <img src="{{ url_for('static', filename='additional_logo.png') }}" alt="Additional Logo" class="img-fluid additional-logo">
-    </div>
-</div>
-
+                            <div class="header-content">
+                                <img src="{{ url_for('static', filename='logo1.jpeg') }}" alt="UNH Logo" class="img-fluid">
+                                <h1 class="chat-header-title">UNH Internship Assistant</h1>
+                            </div>
+                        </div>
                         
                         <div class="chat-history" id="chat-history">
                             <!-- Chat messages will be inserted here -->
@@ -324,6 +319,41 @@
     const sendButton = document.getElementById('send-button');
 
     let editingMessageElement = null;
+	 // Function to display the default welcome message when the page loads
+    function displayWelcomeMessage() {
+        const welcomeMessage = `
+<span class="emoji">👋</span>
+            Welcome to the UNH Internship Assistant! I am an InternBee!<span class="bee-icon">🐝</span>  How can I help you today? 
+            
+        `;
+        addHTMLMessage(welcomeMessage, false); // Add as an assistant message with HTML content
+    }
+
+    // Run displayWelcomeMessage when the page loads
+    window.addEventListener('load', () => {
+        displayWelcomeMessage();
+    });
+
+    // Function to add messages with HTML content
+    function addHTMLMessage(htmlContent, isUser) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
+
+        const messageContent = document.createElement('div');
+        messageContent.classList.add('message-content');
+
+        messageContent.innerHTML = htmlContent; // Set innerHTML to allow HTML content
+        messageDiv.appendChild(messageContent);
+
+        const avatar = document.createElement('div');
+        avatar.classList.add('message-avatar');
+        avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+        messageDiv.appendChild(avatar);
+
+        chatHistory.appendChild(messageDiv);
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+
 
     function addMessage(content, isUser) {
         const messageDiv = document.createElement('div');
