@@ -324,7 +324,7 @@
     const sendButton = document.getElementById('send-button');
 
     let editingMessageElement = null;
-
+	// Add cancel functionality
     function addMessage(content, isUser) {
         const messageDiv = document.createElement('div');
         messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
