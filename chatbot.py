@@ -127,7 +127,7 @@ def extract_texts_from_multiple_pdfs(pdf_directory):
     return documents
 
 # Directory containing your PDF files
-pdf_directory = "C:\\Users\\sindh\\Teamgulliver\\data"
+pdf_directory = '/Users/bubby/TeamGulliver/data'
 documents = extract_texts_from_multiple_pdfs(pdf_directory)
 
 # Step 3: Improve Chunking Strategy for better context retention
