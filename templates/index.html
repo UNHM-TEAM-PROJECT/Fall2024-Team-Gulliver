@@ -320,41 +320,33 @@
     const userInput = document.getElementById('user-input');
     const sendButton = document.getElementById('send-button');
 
-    let editingMessageElement = null;
-	 // Function to display the default welcome message when the page loads
-    function displayWelcomeMessage() {
-        const welcomeMessage = `
-<span class="emoji">👋</span>
-            Welcome to the UNH Internship Assistant! I am an InternBee!<span class="bee-icon">🐝</span>  How can I help you today? 
+        function addMessage(content, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
             
-        `;
-        addHTMLMessage(welcomeMessage, false); // Add as an assistant message with HTML content
-    }
-
-    // Run displayWelcomeMessage when the page loads
-    window.addEventListener('load', () => {
-        displayWelcomeMessage();
-    });
-
-    // Function to add messages with HTML content
-    function addHTMLMessage(htmlContent, isUser) {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
-
-        const messageContent = document.createElement('div');
-        messageContent.classList.add('message-content');
-
-        messageContent.innerHTML = htmlContent; // Set innerHTML to allow HTML content
-        messageDiv.appendChild(messageContent);
-
-        const avatar = document.createElement('div');
-        avatar.classList.add('message-avatar');
-        avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
-        messageDiv.appendChild(avatar);
-
-        chatHistory.appendChild(messageDiv);
-        chatHistory.scrollTop = chatHistory.scrollHeight;
-    }
+            
+            const messageContent = document.createElement('span');
+            messageContent.textContent = content;
+            messageDiv.appendChild(messageContent);
+            
+            const avatar = document.createElement('div');
+            avatar.classList.add('message-avatar');
+            avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+            messageDiv.appendChild(avatar);
+            
+            if (isUser) {
+                const editButton = document.createElement('button');
+                editButton.classList.add('edit-button');
+                editButton.innerHTML = '<i class="fas fa-edit"></i>';
+                editButton.onclick = function() {
+                    editMessage(messageDiv, messageContent, editButton);
+                };
+                messageDiv.appendChild(editButton);
+            }
+            
+            chatHistory.appendChild(messageDiv);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
 
 
     function addMessage(content, isUser) {
