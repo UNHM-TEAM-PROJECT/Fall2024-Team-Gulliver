@@ -28,7 +28,7 @@
         }
 
         body {
-            background-image: url("/Users/bubby/TeamGulliver/static/logo.png"); /* Direct path to the image in the static folder */
+            background-image: url("/Users/bubby/TeamGulliver/static/logo.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -58,18 +58,18 @@
             color: var(--unh-white);
             padding: 1rem;
             display: flex;
-            justify-content: center; /* Centers content horizontally */
+            justify-content: center;
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-            height: 80px; /* Adjust height as needed */
+            height: 80px;
         }
         .header-content {
             display: flex;
-            align-items: center; /* Centers logo and title vertically */
-            gap: 10px; /* Adds space between logo and title */
+            align-items: center;
+            gap: 10px;
         }
 
         .chat-header img {
-            height: 60px; /* Adjust as needed */
+            height: 60px;
             width: auto;
             object-fit: contain;
         }
@@ -87,7 +87,7 @@
             padding: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem; /* Space between messages */
+            gap: 1rem;
             background-color: transparent;
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
@@ -101,7 +101,6 @@
             position: relative;
             margin-bottom: 1.5rem;
             padding: 1rem;
-            padding-right: 5rem; /* Adds extra space for the edit button */
             border-radius: 1rem;
             max-width: 75%;
             animation: fadeIn 0.3s ease-in-out;
@@ -109,7 +108,6 @@
             word-wrap: break-word;
         }
         
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -121,15 +119,12 @@
             align-self: flex-end;
             border-bottom-right-radius: 0.25rem;
             text-align: left;
-            padding: 1rem;
-            padding-right: 3rem; /* Adds extra padding to the right for the edit button */
-            position: relative; /* Ensures the edit button positions correctly within the message box */
         }
 
         .assistant-message {
             background-color: rgba(255, 255, 255, 0.9);
             color: #212529;
-            align-self: flex-start; /* Aligns bot messages to the left */
+            align-self: flex-start;
             border-bottom-left-radius: 0.25rem;
             backdrop-filter: blur(5px);
             text-align: left;
@@ -148,6 +143,60 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
+/* Container for the input and buttons */
+.message-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Push buttons to the right */
+    gap: 10px; /* Spacing between elements */
+}
+
+/* Style for the input field */
+.edit-input {
+    flex-grow: 1; /* Make input take available space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Action buttons (Cancel and Send) */
+.action-buttons {
+    display: flex;
+    gap: 8px; /* Space between buttons */
+}
+
+.cancel-button,
+.send-button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.cancel-button {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.send-button {
+    background-color: #002B7D; /* Updated color */
+    color: #fff; /* Keep the text white for contrast */
+}
+
+/* Optional hover effect */
+.send-button:hover {
+    background-color: #001F5C; /* A slightly darker shade for hover */
+}
+
+
+/* Hover effects for buttons */
+.cancel-button:hover {
+    background-color: #e0e0e0;
+}
+
 
         .user-message .message-avatar {
             right: -16px;
@@ -203,73 +252,8 @@
         }
 
         #send-button:hover {
-            background-color: #0b5ed7; /* Keep the color blue on hover */
+            background-color: #0b5ed7;
             transform: scale(1.05);
-        }
-
-        .edit-button {
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-            background-color: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: var(--unh-black);
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.5rem;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .edit-button:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Custom Scrollbar */
-        .chat-history::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .chat-history::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.1);
-        }
-
-        .chat-history::-webkit-scrollbar-thumb {
-            background: rgba(0, 53, 145, 0.5);
-            border-radius: 4px;
-        }
-
-        .chat-history::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 53, 145, 0.7);
-        }
-        .typing-indicator {
-            display: flex;
-            align-items: center;
-            font-size: 1rem;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        .typing-indicator .dot {
-            width: 8px;
-            height: 8px;
-            background-color: #666;
-            border-radius: 50%;
-            margin: 0 2px;
-            animation: blink 1s infinite alternate;
-        }
-
-        .typing-indicator .dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .typing-indicator .dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes blink {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
         }
 
 
@@ -308,9 +292,11 @@
                             <div class="header-content">
                                 <img src="{{ url_for('static', filename='logo1.jpeg') }}" alt="UNH Logo" class="img-fluid">
                                 <h1 class="chat-header-title">UNH Internship Assistant</h1>
-                            </div>
+                            <!-- Additional Logo -->
+                            <img src="{{ url_for('static', filename='logo3.png') }}" alt="Bee Logo" class="img-fluid Bee logo">
                         </div>
-                        
+                    </div>
+                    
                         <div class="chat-history" id="chat-history">
                             <!-- Chat messages will be inserted here -->
                         </div>
@@ -329,156 +315,218 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-       
-        const chatHistory = document.getElementById('chat-history');
-        const userInput = document.getElementById('user-input');
-        const sendButton = document.getElementById('send-button');
+	<script>
+    const chatHistory = document.getElementById('chat-history');
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-button');
 
-        function addMessage(content, isUser) {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
+    let editingMessageElement = null;
+	 // Function to display the default welcome message when the page loads
+    function displayWelcomeMessage() {
+        const welcomeMessage = `
+<span class="emoji">👋</span>
+            Welcome to the UNH Internship Assistant! I am an InternBee!<span class="bee-icon">🐝</span>  How can I help you today? 
             
+        `;
+        addHTMLMessage(welcomeMessage, false); // Add as an assistant message with HTML content
+    }
+
+    // Run displayWelcomeMessage when the page loads
+    window.addEventListener('load', () => {
+        displayWelcomeMessage();
+    });
+
+    // Function to add messages with HTML content
+    function addHTMLMessage(htmlContent, isUser) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
+
+        const messageContent = document.createElement('div');
+        messageContent.classList.add('message-content');
+
+        messageContent.innerHTML = htmlContent; // Set innerHTML to allow HTML content
+        messageDiv.appendChild(messageContent);
+
+        const avatar = document.createElement('div');
+        avatar.classList.add('message-avatar');
+        avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+        messageDiv.appendChild(avatar);
+
+        chatHistory.appendChild(messageDiv);
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+
+
+    function addMessage(content, isUser) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
+        
+        const messageContent = document.createElement('div');
+        messageContent.classList.add('message-content');
+        
+        const textSpan = document.createElement('span');
+        textSpan.textContent = content;
+        messageContent.appendChild(textSpan);
+        
+        // Add edit icon for user messages
+        if (isUser) {
+            const editIconContainer = document.createElement('div');
+            editIconContainer.classList.add('edit-icon-container');
             
-            const messageContent = document.createElement('span');
-            messageContent.textContent = content;
-            messageDiv.appendChild(messageContent);
+            const editIcon = document.createElement('div');
+            editIcon.classList.add('edit-icon');
+            editIcon.innerHTML = '<i class="fas fa-edit"></i>';
+            editIcon.addEventListener('click', () => startEditing(messageDiv));
             
-            const avatar = document.createElement('div');
-            avatar.classList.add('message-avatar');
-            avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
-            messageDiv.appendChild(avatar);
-            
-            if (isUser) {
-                const editButton = document.createElement('button');
-                editButton.classList.add('edit-button');
-                editButton.innerHTML = '<i class="fas fa-edit"></i>';
-                editButton.onclick = function() {
-                    editMessage(messageDiv, messageContent, editButton);
-                };
-                messageDiv.appendChild(editButton);
-            }
-            
-            chatHistory.appendChild(messageDiv);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
+            editIconContainer.appendChild(editIcon);
+            messageContent.appendChild(editIconContainer);
+        }
+        
+        messageDiv.appendChild(messageContent);
+        
+        const avatar = document.createElement('div');
+        avatar.classList.add('message-avatar');
+        avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+        messageDiv.appendChild(avatar);
+        
+        chatHistory.appendChild(messageDiv);
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+
+   function startEditing(messageElement) {
+    if (editingMessageElement) {
+        cancelEditing();
+    }
+
+    editingMessageElement = messageElement;
+    const messageContent = messageElement.querySelector('.message-content span');
+
+    const editInput = document.createElement('input');
+    editInput.type = 'text';
+    editInput.value = messageContent.textContent;
+    editInput.classList.add('form-control', 'edit-input');
+    editInput.style.width = '100%'; // Set the initial width
+
+    const actionButtons = document.createElement('div');
+    actionButtons.classList.add('action-buttons');
+
+    const cancelButton = document.createElement('button');
+    cancelButton.textContent = 'Cancel';
+    cancelButton.classList.add('cancel-button');
+    cancelButton.addEventListener('click', cancelEditing);
+
+    const saveButton = document.createElement('button');
+    saveButton.textContent = 'Send';
+    saveButton.classList.add('send-button');
+    saveButton.addEventListener('click', () => saveEditing(messageElement, editInput.value));
+
+    actionButtons.appendChild(cancelButton);
+    actionButtons.appendChild(saveButton);
+
+    const messageContentContainer = messageElement.querySelector('.message-content');
+    messageContentContainer.innerHTML = '';
+    messageContentContainer.appendChild(editInput);
+    messageContentContainer.appendChild(actionButtons);
+
+    editInput.focus();
+
+    // Dynamically adjust width of input based on content
+    adjustInputWidth(editInput);
+    editInput.addEventListener('input', () => adjustInputWidth(editInput));
+
+    editInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            saveEditing(messageElement, editInput.value);
+        } else if (e.key === 'Escape') {
+            cancelEditing();
+        }
+    });
+}
+
+function adjustInputWidth(inputElement) {
+    const tempSpan = document.createElement('span');
+    tempSpan.style.visibility = 'hidden';
+    tempSpan.style.position = 'absolute';
+    tempSpan.style.whiteSpace = 'pre';
+    tempSpan.textContent = inputElement.value || inputElement.placeholder || 'a';
+    document.body.appendChild(tempSpan);
+
+    const newWidth = Math.max(tempSpan.offsetWidth + 20, 150); // Minimum width
+    inputElement.style.width = `${newWidth}px`;
+
+    document.body.removeChild(tempSpan);
+}
+
+    function saveEditing(messageElement, newContent) {
+        if (!messageElement || !newContent.trim()) {
+            cancelEditing();
+            return;
         }
 
-        function editMessage(messageDiv, messageContent, editButton) {
-            const inputGroup = document.createElement('div');
-            inputGroup.classList.add('input-group');
+        // Restore original message structure
+        const messageContent = messageElement.querySelector('.message-content');
+        const textSpan = document.createElement('span');
+        textSpan.textContent = newContent.trim();
+        
+        // Recreate edit icon
+        const editIconContainer = document.createElement('div');
+        editIconContainer.classList.add('edit-icon-container');
+        
+        const editIcon = document.createElement('div');
+        editIcon.classList.add('edit-icon');
+        editIcon.innerHTML = '<i class="fas fa-edit"></i>';
+        editIcon.addEventListener('click', () => startEditing(messageElement));
+        
+        editIconContainer.appendChild(editIcon);
+        
+        // Clear and repopulate message content
+        messageContent.innerHTML = '';
+        messageContent.appendChild(textSpan);
+        messageContent.appendChild(editIconContainer);
 
-            const inputField = document.createElement('input');
-            inputField.type = 'text';
-            inputField.value = messageContent.textContent;
-            inputField.classList.add('form-control');
+        editingMessageElement = null;
 
-            const saveButton = document.createElement('button');
-            saveButton.innerHTML = '<i class="fas fa-check"></i>';
-            saveButton.classList.add('btn', 'btn-primary');
-            saveButton.onclick = function() {
-                saveMessage(messageDiv, inputField, messageContent, saveButton, editButton);
-            };
+        // Resend the edited message
+        userInput.value = newContent.trim();
+        handleSend();
+    }
 
-            inputGroup.appendChild(inputField);
-            inputGroup.appendChild(saveButton);
+    function cancelEditing() {
+        if (!editingMessageElement) return;
 
-            messageDiv.innerHTML = '';
-            messageDiv.appendChild(inputGroup);
-        }
+        // Restore original message
+        const messageContent = editingMessageElement.querySelector('.message-content');
+        const editInput = messageContent.querySelector('input');
+        const originalContent = editInput ? editInput.value : '';
+        
+        // Recreate original content and edit icon
+        const textSpan = document.createElement('span');
+        textSpan.textContent = originalContent;
+        
+        const editIconContainer = document.createElement('div');
+        editIconContainer.classList.add('edit-icon-container');
+        
+        const editIcon = document.createElement('div');
+        editIcon.classList.add('edit-icon');
+        editIcon.innerHTML = '<i class="fas fa-edit"></i>';
+        editIcon.addEventListener('click', () => startEditing(editingMessageElement));
+        
+        editIconContainer.appendChild(editIcon);
+        
+        // Clear and repopulate message content
+        messageContent.innerHTML = '';
+        messageContent.appendChild(textSpan);
+        messageContent.appendChild(editIconContainer);
 
-        async function saveMessage(messageDiv, inputField, messageContent, saveButton, editButton) {
-            const newMessage = inputField.value;
-            messageContent.textContent = newMessage;
+        editingMessageElement = null;
+    }
 
-            messageDiv.innerHTML = '';
-            messageDiv.appendChild(messageContent);
-            messageDiv.appendChild(editButton);
-
-            const avatar = document.createElement('div');
-            avatar.classList.add('message-avatar');
-            avatar.innerHTML = '<i class="fas fa-user"></i>';
-            messageDiv.appendChild(avatar);
-
-            removeSubsequentMessages(messageDiv);
-            await handleResend(newMessage);
-        }
-
-        function removeSubsequentMessages(messageDiv) {
-            let nextElement = messageDiv.nextElementSibling;
-            while (nextElement) {
-                nextElement.remove();
-                nextElement = messageDiv.nextElementSibling;
-            }
-        }
-
-        // Typing indicator functions
-        function addTypingIndicator() {
-            const typingDiv = document.createElement('div');
-            typingDiv.classList.add('typing-indicator');
-            typingDiv.id = 'typing-indicator';
-
-            // Add "Typing..." text
-            const typingText = document.createElement('span');
-            typingText.textContent = "Typing";
-            typingDiv.appendChild(typingText);
-
-            // Add animated dots
-            for (let i = 0; i < 3; i++) {
-                const dot = document.createElement('div');
-                dot.classList.add('dot');
-                typingDiv.appendChild(dot);
-            }
-
-            chatHistory.appendChild(typingDiv);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
-        }
-
-        function removeTypingIndicator() {
-            const typingIndicator = document.getElementById('typing-indicator');
-            if (typingIndicator) {
-                typingIndicator.remove();
-            }
-        }
-
-        // Handle message send with typing indicator
-        async function handleSend() {
-            const message = userInput.value.trim();
-            if (message) {
-                addMessage(message, true);
-                userInput.value = '';
-
-                // Show typing indicator before fetching response
-                addTypingIndicator();
-
-                try {
-                    const response = await fetch('/ask', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ message: message })
-                    });
-
-                    // Remove typing indicator after receiving response
-                    removeTypingIndicator();
-
-                    if (response.ok) {
-                        const data = await response.json();
-                        addMessage(data.response, false);
-                    } else {
-                        addMessage("Error: Unable to get a response.", false);
-                    }
-                } catch (error) {
-                    removeTypingIndicator();
-                    addMessage("Error: Unable to communicate with the server.", false);
-                }
-            }
-        }
-
-        // Handle message resend with typing indicator
-        async function handleResend(newMessage) {
-            // Show typing indicator before fetching response
-            addTypingIndicator();
+    // Existing handleSend function remains the same
+    async function handleSend() {
+        const message = userInput.value.trim();
+        if (message) {
+            addMessage(message, true);
+            userInput.value = '';
 
             try {
                 const response = await fetch('/ask', {
@@ -486,11 +534,8 @@
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ message: newMessage })
+                    body: JSON.stringify({ message: message })
                 });
-
-                // Remove typing indicator after receiving response
-                removeTypingIndicator();
 
                 if (response.ok) {
                     const data = await response.json();
@@ -499,19 +544,18 @@
                     addMessage("Error: Unable to get a response.", false);
                 }
             } catch (error) {
-                removeTypingIndicator();
                 addMessage("Error: Unable to communicate with the server.", false);
             }
         }
+    }
 
-        // Event listeners
-        sendButton.addEventListener('click', handleSend);
-        userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                handleSend();
-            }
-        });
-
-    </script>
+    // Existing event listeners remain the same
+    sendButton.addEventListener('click', handleSend);
+    userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            handleSend();
+        }
+    });
+</script>
 </body>
 </html>
