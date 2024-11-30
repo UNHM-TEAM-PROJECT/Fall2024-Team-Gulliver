@@ -1,4 +1,3 @@
-
 [
     {
         "question": "What room is COMP690 in?",
@@ -17,7 +16,47 @@
             "Email: karen.jin@unh.edu",
             "Office Hours: Monday 1-4pm and Friday 9-noon. Available in person or over Zoom."
         ],
-        "actual_answer": "COMP690 is held in Room P142. If you need any more details about the course or the location, feel free to ask!"
+        "actual_answer": "COMP690 Internship Experience is held in Room P142. If you need any more details about the course or have other questions, feel free to ask!"
+    },
+    {
+        "question": "How do I contact CaPS office.",
+        "expected_answer": "CaPS office has a website is https://manchester.unh.edu/careers/career-professional-success. You can also reach them by email unhm.career@unh.edu and by phone (603) 641-4394",
+        "retrieval_context": [
+            "The website for the CaPS office is https://manchester.unh.edu/careers/career-professional-success. Phone: (603) 641-4394 Email: unhm.career@unh.edu"
+        ],
+        "actual_answer": "You can reach the CaPS office at UNH Manchester by calling (603) 641-4394 or by emailing unhm.career@unh.edu. They're a great resource for career advice and internship support! Let me know if there's anything else you need help with."
+    },
+    {
+        "question": "What is the Credit Hour Workload Estimate?",
+        "expected_answer": " The Credit Hour Workload Estimate for COMP893 and COMP690 is a minimum of 45 hours of student academic work per credit per term",
+        "retrieval_context": [
+            " The Credit Hour Workload Estimate for COMP893 and COMP690 is a minimum of 45 hours of student academic work per credit per term"
+        ],
+        "actual_answer": "The credit hour workload estimate for UNH's computing internship courses is based on the number of credit hours you are registered for. Each credit requires a minimum of 45 hours of academic work per term. For instance, if you're enrolled in COMP690 for 4 credits, you would need to complete at least 180 hours of internship work during the semester. If you have any more questions or need further clarification, feel free to ask!"
+    },
+    {
+        "question": "How much of the grade is class attendance in COMP893?",
+        "expected_answer": " In Fall 2024 semester, 10% of the grade is based on class attendance",
+        "retrieval_context": [
+            " The Fall 2024 semester course syllabus states that 10% of the grade is based on class attendance"
+        ],
+        "actual_answer": "Class attendance is a crucial component of COMP893 (Team Project Internship), as it directly impacts your ability to participate in team activities and project development. While the specific percentage of the grade attributed to attendance may vary, consistent participation is essential for successful completion of the course requirements. Please refer to the course syllabus or contact Professor Karen Jin for detailed grading criteria."
+    },
+    {
+        "question": "When may I take the internship course COMP690?",
+        "expected_answer": "You may take the internship experience course COMP690 any time you have an internship. Additionally, you can take the COMP690 applied research option if you have a part-time or full-time tech job. If you can't find an internship by the last semester of your program, you are allowed to take COMP690 with the group project option.",
+        "retrieval_context": [
+            "For undergraduate students, you may take the internship course COMP690 any time you have an internship. Additionally, you can take the COMP690 applied research option if you have a part-time or full-time tech job. If you can't find an internship by the last semester of your program, you are allowed to take COMP690 with the group project option."
+        ],
+        "actual_answer": "You may take the COMP690 Internship Experience course at any time during your undergraduate program when you have secured an internship. Additionally, if you have a part-time or full-time tech job, you can opt for the applied research option within COMP690. If you're in your last semester and haven't found an internship, you can choose the group project option. If you need any assistance with registration or further details, feel free to reach out!"
+    },
+    {
+        "question": "When may I take COMP890",
+        "expected_answer": "You may take COMP890 Internship and Career Planning after you finish your first semester of study.",
+        "retrieval_context": [
+            "Graduate students: COMP890: Internship and Career Planning. This is a 1 cr course you need to take after the first semester to help you plan for the internship search process. The course is offered in fall and spring semesters."
+        ],
+        "actual_answer": "You can enroll in COMP890 (Internship and Career Planning) after completing your first semester as a graduate student at UNH. This course is designed to help you plan your internship search process and is available in both the fall and spring semesters. If you need any assistance with the registration process or have more questions, feel free to reach out!"
     },
     {
         "question": "What is the instructor's email?",
@@ -33,7 +72,7 @@
             "Phone: (603) 641-4394",
             "Email: unhm.career@unh.edu"
         ],
-        "actual_answer": "Professor Karen Jin's email is karen.jin@unh.edu. If you have any more questions or need further assistance regarding the internship courses, feel free to reach out to her!"
+        "actual_answer": "Professor Karen Jin's email is karen.jin@unh.edu. She's the Faculty Internship Coordinator for the computing internship courses at UNH. If you have any questions about the internship courses or need guidance on any related matters, feel free to reach out to her!"
     },
     {
         "question": "What time is COMP893?",
@@ -52,7 +91,7 @@
             "Email: karen.jin@unh.edu",
             "Office Hours: Monday 1-4pm and Friday 9-noon."
         ],
-        "actual_answer": "COMP893 Team Project Internship has two sections. The M1 section meets on Wednesdays from 9:10 am to 12:00 pm, and the M2 section meets on Wednesdays from 1:10 pm to 4:00 pm. Both are held in Room P142. Let me know if you need more information or have other questions!"
+        "actual_answer": "COMP893 (Team Project Internship) is scheduled in two sections. The M1 section meets on Wednesdays from 9:10 am to 12:00 pm, and the M2 section meets on Wednesdays from 1:10 pm to 4:00 pm. If you need any more details or help with registration, just let me know!"
     },
     {
         "question": "When is week 1?",
@@ -69,7 +108,7 @@
             "Create Project backlog",
             "Create user stories, tasks, and bugs"
         ],
-        "actual_answer": "Week 1 for the internship program starts on August 28th. This week includes the class introduction, development team setup, and introductions to project management and the Scrum workflow. If you need more details about what to prepare or expect, feel free to ask!"
+        "actual_answer": "Week 1 for the COMP893 Team Project Internship course begins on August 28th. This week includes the class introduction, development team setup, an introduction to project management, and an introduction to the Scrum workflow. If you have any more questions or need further details, feel free to ask!"
     },
     {
         "question": "How much of the grade is class attendance?",
@@ -83,7 +122,7 @@
             "10% Homework: additional homework in project management and development tools.",
             "20% Final Project Report: See Appendix A for the report format."
         ],
-        "actual_answer": "Class attendance is crucial and is factored into your overall grade for the internship courses like COMP690 and COMP893. While the specific percentage may vary by course and instructor, consistent attendance is expected to successfully meet course requirements and participate in team activities. If you have any specific concerns about attendance or need further details, please let me know!"
+        "actual_answer": "Class attendance accounts for 10% of your final grade in the COMP893 Team Project Internship course. Regular attendance is crucial as it contributes significantly to your learning and performance in the course. If you have any more questions or need clarification on other components of the grading, feel free to ask!"
     },
     {
         "question": "How is sprint grade calculated?",
@@ -95,7 +134,7 @@
             "Teamwork Grade is based on peer evaluation for each of the three sprints.",
             "Sprint Grades: You will receive a team grade for each of the three sprints, based on the technical aspect of the product and team project management."
         ],
-        "actual_answer": "Sprint grades in courses like COMP690 and COMP893 are calculated based on the technical quality of the product your team develops and how effectively your team manages the project. The specific criteria for these evaluations are detailed in the course rubrics, which will be provided by your instructor. Each sprint contributes to your overall grade, emphasizing both your technical skills and teamwork. If you need more details about the grading rubrics or any other aspect of the sprints, feel free to ask!"
+        "actual_answer": "The sprint grade in COMP893 is calculated by combining the Teamwork Grade with the Sprint Grade for each of the three sprints. The Teamwork Grade is based on peer evaluations, and the Sprint Grade focuses on the technical aspects of the product and team project management. Detailed rubrics for these evaluations will be provided to guide you through the process. If you need more specifics on how these grades are weighted or any other details, just let me know!"
     },
     {
         "question": "CaPS office website?",
@@ -109,7 +148,7 @@
             "Website: https://www.unh.edu/global/international-students-scholars",
             "Email: oiss@unh.edu"
         ],
-        "actual_answer": "The CaPS office website for UNH Manchester can be found at [https://manchester.unh.edu/careers/career-professional-success](https://manchester.unh.edu/careers/career-professional-success). It's a great resource for career advice, resume coaching, and more. If you need further assistance or have specific questions about internship opportunities, feel free to reach out to them!"
+        "actual_answer": "The Career and Professional Success (CaPS) office at UNH Manchester has a website where you can find a wealth of resources for your internship search and career planning. Here's the link to their website: [https://manchester.unh.edu/careers/career-professional-success](https://manchester.unh.edu/careers/career-professional-success). If you need further assistance or have specific questions, feel free to reach out to them directly!"
     },
     {
         "question": "How many credits is COMP890?",
@@ -122,7 +161,7 @@
             "COMP891: Internship Practice.",
             "This is a variable credit 1-3 crs course that you will take when you have an external internship."
         ],
-        "actual_answer": "COMP890, the Internship Preparation course, requires a total of 1 credit. It's designed to prepare you for your internship experience, focusing on skills like resume writing, interview techniques, and workplace etiquette. If you have any more questions about this course or need further details, just let me know!"
+        "actual_answer": "COMP890, titled Internship and Career Planning, is a 1-credit course designed to assist students in preparing for their internship search process. It's offered in both the fall and spring semesters. If you have any more questions or need assistance with registration, feel free to ask!"
     },
     {
         "question": "When is COMP890 offered?",
@@ -132,13 +171,13 @@
             "This is a 1 cr course you need to take after the first semester to help you plan for the internship search process.",
             "The course is offered in fall and spring semesters."
         ],
-        "actual_answer": "COMP890, titled Internship and Career Planning, is offered every semester, including summers. This flexibility allows you to enroll in the course when it best fits your schedule and when you secure an internship. If you need help with the registration process or have any other questions about the course, just let me know!"
+        "actual_answer": "COMP890, titled Internship and Career Planning, is offered in both the fall and spring semesters. This 1-credit course is designed to help you prepare for your internship search process. If you need more details or assistance with registration, just let me know!"
     },
     {
         "question": "Who do you need to email for internship courses?",
         "expected_answer": "To register for internship courses, you need to email the Internship Advisor, Karen Jin.",
         "retrieval_context": [
-            "All internship courses require instructor\u2019s permission.",
+            "All internship courses require instructor's permission.",
             "You will need to email the faculty internship coordinator, or the course instructor to register you for the course.",
             "For more details, you may email Prof. Karen Jin.",
             "How to register for Internship Courses?",
@@ -146,6 +185,6 @@
             "Provide details about your internship or project requirements.",
             "Ensure to include your student ID in the email."
         ],
-        "actual_answer": "For registering in internship courses like COMP690, COMP890, COMP891, COMP892, and COMP893, you'll need to email the faculty internship coordinator or the course instructor for permission. You can reach out to Professor Karen Jin for this purpose. Her email is karen.jin@unh.edu. If you need more details or assistance with the process, feel free to ask!"
+        "actual_answer": "For registering in any of the internship courses at UNH, you'll need to email the faculty internship coordinator, Professor Karen Jin. You can reach her at karen.jin@unh.edu. She will guide you through the registration process and any other requirements you might need to fulfill. If you have any more questions or need further assistance, feel free to ask!"
     }
 ]
