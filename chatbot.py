@@ -155,6 +155,7 @@ text_splitter = RecursiveCharacterTextSplitter(
     separators=["\n\n", "\n", " "]
 )
 
+
 # Custom document splitting logic based on weekly sections
 def custom_split_documents_by_weeks(documents):
     """Splits documents into logical sections by weeks or content."""
