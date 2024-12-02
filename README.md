@@ -4,7 +4,6 @@
 This chatbot is designed to assist students at the University of New Hampshire (UNH) with internship-related queries. It dynamically retrieves information from multiple PDF documents using Retrieval-Augmented Generation (RAG) techniques and provides conversational, context-aware responses. The chatbot integrates **Flask**, **LangChain**, **Chroma**, and **OpenAI's GPT-4 Turbo**.
 
 ## Key Components
-
 ### Preprocessing
 - **PDF Extraction**: Extracts text and table data using `pdfplumber`.
 - **Chunking**: Splits text into smaller, manageable chunks using `RecursiveCharacterTextSplitter` and custom week-based logic.
