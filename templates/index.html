@@ -293,7 +293,7 @@
                                 <img src="{{ url_for('static', filename='logo1.jpeg') }}" alt="UNH Logo" class="img-fluid">
                                 <h1 class="chat-header-title">UNH Internship Assistant</h1>
                             <!-- Additional Logo -->
-                            <img src="{{ url_for('static', filename='additional_logo.png') }}" alt="Additional Logo" class="img-fluid additional-logo">
+                            <img src="{{ url_for('static', filename='logo3.png') }}" alt="Additional Logo" class="img-fluid additional-logo">
                         </div>
                     </div>
                     
@@ -393,55 +393,7 @@
         chatHistory.scrollTop = chatHistory.scrollHeight;
     }
 
-   function startEditing(messageElement) {
-    if (editingMessageElement) {
-        cancelEditing();
-    }
-
-    editingMessageElement = messageElement;
-    const messageContent = messageElement.querySelector('.message-content span');
-
-    const editInput = document.createElement('input');
-    editInput.type = 'text';
-    editInput.value = messageContent.textContent;
-    editInput.classList.add('form-control', 'edit-input');
-    editInput.style.width = '100%'; // Set the initial width
-
-    const actionButtons = document.createElement('div');
-    actionButtons.classList.add('action-buttons');
-
-    const cancelButton = document.createElement('button');
-    cancelButton.textContent = 'Cancel';
-    cancelButton.classList.add('cancel-button');
-    cancelButton.addEventListener('click', cancelEditing);
-
-    const saveButton = document.createElement('button');
-    saveButton.textContent = 'Send';
-    saveButton.classList.add('send-button');
-    saveButton.addEventListener('click', () => saveEditing(messageElement, editInput.value));
-
-    actionButtons.appendChild(cancelButton);
-    actionButtons.appendChild(saveButton);
-
-    const messageContentContainer = messageElement.querySelector('.message-content');
-    messageContentContainer.innerHTML = '';
-    messageContentContainer.appendChild(editInput);
-    messageContentContainer.appendChild(actionButtons);
-
-    editInput.focus();
-
-    // Dynamically adjust width of input based on content
-    adjustInputWidth(editInput);
-    editInput.addEventListener('input', () => adjustInputWidth(editInput));
-
-    editInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            saveEditing(messageElement, editInput.value);
-        } else if (e.key === 'Escape') {
-            cancelEditing();
-        }
-    });
-}
+  
 
 function adjustInputWidth(inputElement) {
     const tempSpan = document.createElement('span');
