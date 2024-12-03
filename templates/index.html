@@ -97,6 +97,24 @@
             background-attachment: fixed;
         }
 
+        .edit-icon-container {
+            display: block; /* Ensure it spans below the message */
+            text-align: right; /* Align the icon to the right */
+            margin-top: 8px; /* Add spacing between the message and the edit icon */
+        }
+        
+        .edit-icon {
+            font-size: 16px; /* Adjust size */
+            color: var(--unh-black); /* Default color for the edit icon */
+            cursor: pointer; /* Make it clickable */
+            transition: color 0.2s ease-in-out; /* Smooth hover effect */
+        }
+        
+        .edit-icon:hover {
+            color: var(--unh-blue); /* Highlight color on hover */
+        }
+        
+
         .message {
             position: relative;
             margin-bottom: 1.5rem;
@@ -255,7 +273,70 @@
             background-color: #0b5ed7;
             transform: scale(1.05);
         }
+    .edit-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--unh-black);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
 
+        .edit-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        .chat-history::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .chat-history::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-history::-webkit-scrollbar-thumb {
+            background: rgba(0, 53, 145, 0.5);
+            border-radius: 4px;
+        }
+
+        .chat-history::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 53, 145, 0.7);
+        }
+
+    .typing-indicator {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .typing-indicator .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #666;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: blink 1s infinite alternate;
+        }
+
+        .typing-indicator .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .typing-indicator .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
 
         @media (max-width: 768px) {
             .chat-container {
@@ -293,7 +374,7 @@
                                 <img src="{{ url_for('static', filename='logo1.jpeg') }}" alt="UNH Logo" class="img-fluid">
                                 <h1 class="chat-header-title">UNH Internship Assistant</h1>
                             <!-- Additional Logo -->
-                            <img src="{{ url_for('static', filename='additional_logo.png') }}" alt="Additional Logo" class="img-fluid additional-logo">
+                            <img src="{{ url_for('static', filename='logo3.png') }}" alt="Additional Logo" class="img-fluid additional-logo">
                         </div>
                     </div>
                     
@@ -315,193 +396,382 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-	<script>
-    const chatHistory = document.getElementById('chat-history');
-    const userInput = document.getElementById('user-input');
-    const sendButton = document.getElementById('send-button');
-
-    let editingMessageElement = null;
-	 // Function to display the default welcome message when the page loads
-    function displayWelcomeMessage() {
-        const welcomeMessage = `
-<span class="emoji">👋</span>
-            Welcome to the UNH Internship Assistant! I am an InternBee!<span class="bee-icon">🐝</span>  How can I help you today? 
-            
-        `;
-        addHTMLMessage(welcomeMessage, false); // Add as an assistant message with HTML content
-    }
-
-    // Run displayWelcomeMessage when the page loads
-    window.addEventListener('load', () => {
-        displayWelcomeMessage();
-    });
-
-    // Function to add messages with HTML content
-    function addHTMLMessage(htmlContent, isUser) {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
-
-        const messageContent = document.createElement('div');
-        messageContent.classList.add('message-content');
-
-        messageContent.innerHTML = htmlContent; // Set innerHTML to allow HTML content
-        messageDiv.appendChild(messageContent);
-
-        const avatar = document.createElement('div');
-        avatar.classList.add('message-avatar');
-        avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
-        messageDiv.appendChild(avatar);
-
-        chatHistory.appendChild(messageDiv);
-        chatHistory.scrollTop = chatHistory.scrollHeight;
-    }
-
-
-    function addMessage(content, isUser) {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
+    <script>
+    
+        const chatHistory = document.getElementById('chat-history');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+    
+        let editingMessageElement = null;
+    
+        // Display the default welcome message
+        function displayWelcomeMessage() {
+            const welcomeMessage = `
+                <span class="emoji">👋</span>
+                Welcome to the UNH Internship Assistant! I am an InternBee!<span class="bee-icon">🐝</span> How can I help you today? 
+            `;
+            addHTMLMessage(welcomeMessage, false);
+        }
+    
+        // Run displayWelcomeMessage when the page loads
+        window.addEventListener('load', () => {
+            displayWelcomeMessage();
+        });
+    
+        // Add messages with HTML content
+        function addHTMLMessage(htmlContent, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
+    
+            const messageContent = document.createElement('div');
+            messageContent.classList.add('message-content');
+            messageContent.innerHTML = htmlContent; // Allow HTML content
+            messageDiv.appendChild(messageContent);
+    
+            const avatar = document.createElement('div');
+            avatar.classList.add('message-avatar');
+            avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+            messageDiv.appendChild(avatar);
+    
+            if (isUser) {
+                addEditIcon(messageDiv);
+            }
+    
+            chatHistory.appendChild(messageDiv);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+    
+        // Add messages (text-based)
+        function addMessage(content, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', isUser ? 'user-message' : 'assistant-message');
+    
+            const messageContent = document.createElement('div');
+            messageContent.classList.add('message-content');
+    
+            const textSpan = document.createElement('span');
+            textSpan.textContent = content;
+            messageContent.appendChild(textSpan);
+    
+            if (isUser) {
+                addEditIcon(messageDiv);
+            }
+    
+            messageDiv.appendChild(messageContent);
+    
+            const avatar = document.createElement('div');
+            avatar.classList.add('message-avatar');
+            avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+            messageDiv.appendChild(avatar);
+    
+            chatHistory.appendChild(messageDiv);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+    
+        function addEditIcon(messageDiv) {
+            // Remove existing edit icon if it exists
+            const existingIconContainer = messageDiv.querySelector('.edit-icon-container');
+            if (existingIconContainer) {
+                existingIconContainer.remove();
+            }
         
-        const messageContent = document.createElement('div');
-        messageContent.classList.add('message-content');
-        
-        const textSpan = document.createElement('span');
-        textSpan.textContent = content;
-        messageContent.appendChild(textSpan);
-        
-        // Add edit icon for user messages
-        if (isUser) {
+            // Create a container for the edit icon
             const editIconContainer = document.createElement('div');
-            editIconContainer.classList.add('edit-icon-container');
-            
+            editIconContainer.classList.add('edit-icon-container'); // Use the new class
+        
+            // Create the edit icon itself
             const editIcon = document.createElement('div');
             editIcon.classList.add('edit-icon');
-            editIcon.innerHTML = '<i class="fas fa-edit"></i>';
+            editIcon.innerHTML = '<i class="fas fa-edit"></i>'; // Use the Font Awesome icon
             editIcon.addEventListener('click', () => startEditing(messageDiv));
-            
+        
+            // Append the edit icon to its container
             editIconContainer.appendChild(editIcon);
-            messageContent.appendChild(editIconContainer);
+        
+            // Append the container to the bottom of the message
+            messageDiv.appendChild(editIconContainer);
         }
         
-        messageDiv.appendChild(messageContent);
         
-        const avatar = document.createElement('div');
-        avatar.classList.add('message-avatar');
-        avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
-        messageDiv.appendChild(avatar);
+        function startEditing(messageElement) {
+            if (!messageElement) {
+                console.error("Message element is null or undefined.");
+                return;
+            }
         
-        chatHistory.appendChild(messageDiv);
-        chatHistory.scrollTop = chatHistory.scrollHeight;
-    }
+            if (editingMessageElement && editingMessageElement !== messageElement) {
+                cancelEditing();
+            }
+        
+            editingMessageElement = messageElement;
+        
+            const messageContent = messageElement.querySelector('.message-content span');
+            if (!messageContent) {
+                console.error("Message content span not found in:", messageElement);
+                return;
+            }
+        
+            const originalContent = messageContent.textContent;
+        
+            if (!messageElement.hasAttribute('data-original-content')) {
+                messageElement.setAttribute('data-original-content', originalContent);
+            }
+        
+            // Create an editable div for inline editing
+            const editDiv = document.createElement('div');
+            editDiv.contentEditable = true;
+            editDiv.textContent = originalContent;
+            editDiv.classList.add('form-control', 'edit-input');
+            editDiv.style.display = 'inline-block';
+            editDiv.style.minWidth = '50px'; // Minimum width
+            editDiv.style.maxWidth = '100%'; // Allow wrapping when exceeding container
+            editDiv.style.whiteSpace = 'pre-wrap'; // Preserve spaces and wrap text
+            editDiv.style.wordBreak = 'break-word'; // Ensure words break correctly
+            editDiv.style.border = '1px solid #ccc';
+            editDiv.style.padding = '5px';
+        
+            // Adjust height dynamically based on content
+            function adjustHeight() {
+                editDiv.style.height = 'auto'; // Reset height to calculate
+                editDiv.style.height = editDiv.scrollHeight + 'px'; // Set to scroll height
+            }
+        
+            editDiv.addEventListener('input', adjustHeight);
+        
+            const actionButtons = document.createElement('div');
+            actionButtons.classList.add('action-buttons');
+        
+            const cancelButton = document.createElement('button');
+            cancelButton.textContent = 'Cancel';
+            cancelButton.classList.add('cancel-button');
+            cancelButton.addEventListener('click', cancelEditing);
+        
+            const saveButton = document.createElement('button');
+            saveButton.textContent = 'Send';
+            saveButton.classList.add('send-button');
+            saveButton.addEventListener('click', () => saveEditing(messageElement, editDiv.textContent));
+        
+            actionButtons.appendChild(cancelButton);
+            actionButtons.appendChild(saveButton);
+        
+            const messageContentContainer = messageElement.querySelector('.message-content');
+            messageContentContainer.innerHTML = '';
+            messageContentContainer.appendChild(editDiv);
+            messageContentContainer.appendChild(actionButtons);
+        
+            editDiv.focus();
+        
+            // Move the caret to the end of the content
+            moveCaretToEnd(editDiv);
+            adjustHeight(); // Adjust height initially
+        }
+        
+        // Function to move caret to the end
+        function moveCaretToEnd(element) {
+            const range = document.createRange();
+            const selection = window.getSelection();
+            range.selectNodeContents(element);
+            range.collapse(false); // Move to the end of the node
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+        
+        function saveEditing(messageElement, newContent) {
+            if (!messageElement || !newContent.trim()) {
+                cancelEditing();
+                return;
+            }
+        
+            // Update the UI with the edited message
+            const messageContent = messageElement.querySelector('.message-content');
+            const textSpan = document.createElement('span');
+            textSpan.textContent = newContent.trim(); // Update with trimmed content
+            messageContent.innerHTML = '';
+            messageContent.appendChild(textSpan);
+        
+            // Re-add the edit icon
+            addEditIcon(messageElement);
+        
+            // Clear all subsequent messages (both user and assistant)
+            const allMessages = Array.from(chatHistory.querySelectorAll('.message'));
+            let foundEditedMessage = false;
+        
+            for (let i = 0; i < allMessages.length; i++) {
+                const msg = allMessages[i];
+        
+                if (msg === messageElement) {
+                    foundEditedMessage = true; // Mark the location of the edited message
+                } else if (foundEditedMessage) {
+                    msg.remove(); // Remove all messages after the edited message
+                }
+            }
+        
+            // Clear editing state
+            editingMessageElement = null;
+        
+            console.log('Edited Message:', newContent.trim()); // Debug log for verification
+        
+            // Call handleResend to reprocess the edited message
+            handleResend(newContent.trim());
+        }
+            
+        
+        
+    
+        // Cancel editing
+        function cancelEditing() {
+            if (!editingMessageElement) return;
+    
+            const originalContent = editingMessageElement.getAttribute('data-original-content');
+            const messageContent = editingMessageElement.querySelector('.message-content');
+    
+            const textSpan = document.createElement('span');
+            textSpan.textContent = originalContent;
+    
+            addEditIcon(editingMessageElement);
+    
+            messageContent.innerHTML = '';
+            messageContent.appendChild(textSpan);
+    
+            editingMessageElement.removeAttribute('data-original-content');
+            editingMessageElement = null;
+        }
+    
+        sendButton.addEventListener('click', handleSend);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleSend();
+            }
+        });
+    
+        async function handleSend() {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                userInput.value = '';
+    
+                try {
+                    const response = await fetch('/ask', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ message }),
+                    });
+    
+                    if (response.ok) {
+                        const data = await response.json();
+                        addMessage(data.response, false);
+                    } else {
+                        addMessage('Error: Unable to get a response.', false);
+                    }
+                } catch (error) {
+                    addMessage('Error: Unable to communicate with the server.', false);
+                }
+            }
+        }
+    
+    
 
-  
+ // Typing indicator functions
+        function addTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.classList.add('typing-indicator');
+            typingDiv.id = 'typing-indicator';
 
-function adjustInputWidth(inputElement) {
-    const tempSpan = document.createElement('span');
-    tempSpan.style.visibility = 'hidden';
-    tempSpan.style.position = 'absolute';
-    tempSpan.style.whiteSpace = 'pre';
-    tempSpan.textContent = inputElement.value || inputElement.placeholder || 'a';
-    document.body.appendChild(tempSpan);
+            // Add "Typing..." text
+            const typingText = document.createElement('span');
+            typingText.textContent = "Typing";
+            typingDiv.appendChild(typingText);
 
-    const newWidth = Math.max(tempSpan.offsetWidth + 20, 150); // Minimum width
-    inputElement.style.width = `${newWidth}px`;
+            // Add animated dots
+            for (let i = 0; i < 3; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                typingDiv.appendChild(dot);
+            }
 
-    document.body.removeChild(tempSpan);
-}
-
-    function saveEditing(messageElement, newContent) {
-        if (!messageElement || !newContent.trim()) {
-            cancelEditing();
-            return;
+            chatHistory.appendChild(typingDiv);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
         }
 
-        // Restore original message structure
-        const messageContent = messageElement.querySelector('.message-content');
-        const textSpan = document.createElement('span');
-        textSpan.textContent = newContent.trim();
-        
-        // Recreate edit icon
-        const editIconContainer = document.createElement('div');
-        editIconContainer.classList.add('edit-icon-container');
-        
-        const editIcon = document.createElement('div');
-        editIcon.classList.add('edit-icon');
-        editIcon.innerHTML = '<i class="fas fa-edit"></i>';
-        editIcon.addEventListener('click', () => startEditing(messageElement));
-        
-        editIconContainer.appendChild(editIcon);
-        
-        // Clear and repopulate message content
-        messageContent.innerHTML = '';
-        messageContent.appendChild(textSpan);
-        messageContent.appendChild(editIconContainer);
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
 
-        editingMessageElement = null;
+        // Handle message send with typing indicator
+        async function handleSend() {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                userInput.value = '';
 
-        // Resend the edited message
-        userInput.value = newContent.trim();
-        handleSend();
-    }
+                // Show typing indicator before fetching response
+                addTypingIndicator();
 
-    function cancelEditing() {
-        if (!editingMessageElement) return;
+                try {
+                    const response = await fetch('/ask', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ message: message })
+                    });
 
-        // Restore original message
-        const messageContent = editingMessageElement.querySelector('.message-content');
-        const editInput = messageContent.querySelector('input');
-        const originalContent = editInput ? editInput.value : '';
+                    // Remove typing indicator after receiving response
+                    removeTypingIndicator();
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        addMessage(data.response, false);
+                    } else {
+                        addMessage("Error: Unable to get a response.", false);
+                    }
+                } catch (error) {
+                    removeTypingIndicator();
+                    addMessage("Error: Unable to communicate with the server.", false);
+                }
+            }
+        }
+
+        async function handleResend(editedMessage) {
+            console.log('Resending Edited Message:', editedMessage); // Debug log
         
-        // Recreate original content and edit icon
-        const textSpan = document.createElement('span');
-        textSpan.textContent = originalContent;
-        
-        const editIconContainer = document.createElement('div');
-        editIconContainer.classList.add('edit-icon-container');
-        
-        const editIcon = document.createElement('div');
-        editIcon.classList.add('edit-icon');
-        editIcon.innerHTML = '<i class="fas fa-edit"></i>';
-        editIcon.addEventListener('click', () => startEditing(editingMessageElement));
-        
-        editIconContainer.appendChild(editIcon);
-        
-        // Clear and repopulate message content
-        messageContent.innerHTML = '';
-        messageContent.appendChild(textSpan);
-        messageContent.appendChild(editIconContainer);
-
-        editingMessageElement = null;
-    }
-
-    // Existing handleSend function remains the same
-    async function handleSend() {
-        const message = userInput.value.trim();
-        if (message) {
-            addMessage(message, true);
-            userInput.value = '';
-
             try {
+                // Show typing indicator
+                addTypingIndicator();
+        
+                // Send the edited message to the server
                 const response = await fetch('/ask', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ message: message })
+                    body: JSON.stringify({ message: editedMessage }),
                 });
-
+        
+                // Remove typing indicator
+                removeTypingIndicator();
+        
                 if (response.ok) {
                     const data = await response.json();
-                    addMessage(data.response, false);
+                    console.log('Response for Edited Message:', data); // Debug log
+                    addMessage(data.response, false); // Add server response to the chat UI
                 } else {
-                    addMessage("Error: Unable to get a response.", false);
+                    console.error('Error Response for Edited Message:', response.status);
+                    addMessage('Error: Unable to get a response.', false);
                 }
             } catch (error) {
-                addMessage("Error: Unable to communicate with the server.", false);
+                console.error('Fetch Error for Edited Message:', error);
+                removeTypingIndicator();
+                addMessage('Error: Unable to communicate with the server.', false);
             }
         }
-    }
-
-    // Existing event listeners remain the same
+        
+    
     sendButton.addEventListener('click', handleSend);
     userInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
@@ -511,3 +781,5 @@ function adjustInputWidth(inputElement) {
 </script>
 </body>
 </html>
+
+

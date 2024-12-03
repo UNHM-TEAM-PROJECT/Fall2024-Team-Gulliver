@@ -1,205 +1,13 @@
-
 [
-    {
-        "question": "What room is COMP690 in?",
-        "expected_answer": "Room P142",
-        "retrieval_context": [
-            "Name: COMP690 Internship Experience",
-            "Credits: 4",
-            "Term: Fall 2024",
-            "Location: Rm P142",
-            "Time: M2 Section: Wednesday 9:10am-12pm",
-            "M2 Section: Wednesday 1:10-4pm",
-            "Instructor Information",
-            "Name: Karen Jin, Associate Professor, Department of Applied Engineering and Sciences",
-            "Office: Rm139, Pandora Mill building",
-            "Zoom: https://unh.zoom.us/j/4858446046",
-            "Email: karen.jin@unh.edu",
-            "Office Hours: Monday 1-4pm and Friday 9-noon. Available in person or over Zoom."
-        ],
-        "actual_answer": "COMP690 Internship Experience is held in Room P142. If you need any more details about the course or have other questions, feel free to ask!"
-    },
-    {
-        "question": "How do I contact CaPS office.",
-        "expected_answer": "CaPS office has a website is https://manchester.unh.edu/careers/career-professional-success. You can also reach them by email unhm.career@unh.edu and by phone (603) 641-4394",
-        "retrieval_context": [
-            "The website for the CaPS office is https://manchester.unh.edu/careers/career-professional-success. Phone: (603) 641-4394 Email: unhm.career@unh.edu"
-        ],
-        "actual_answer": "You can reach the CaPS office at UNH Manchester by calling (603) 641-4394 or by emailing unhm.career@unh.edu. They're a great resource for career advice and internship support! Let me know if there's anything else you need help with."
-    },
-    {
-        "question": "What is the Credit Hour Workload Estimate?",
-        "expected_answer": " The Credit Hour Workload Estimate for COMP893 and COMP690 is a minimum of 45 hours of student academic work per credit per term",
-        "retrieval_context": [
-            " The Credit Hour Workload Estimate for COMP893 and COMP690 is a minimum of 45 hours of student academic work per credit per term"
-        ],
-        "actual_answer": "The credit hour workload estimate for UNH's computing internship courses is based on the number of credit hours you are registered for. Each credit requires a minimum of 45 hours of academic work per term. For instance, if you're enrolled in COMP690 for 4 credits, you would need to complete at least 180 hours of internship work during the semester. If you have any more questions or need further clarification, feel free to ask!"
-    },
-    {
-        "question": "How much of the grade is class attendance in COMP893?",
-        "expected_answer": " In Fall 2024 semester, 10% of the grade is based on class attendance",
-        "retrieval_context": [
-            " The Fall 2024 semester course syllabus states that 10% of the grade is based on class attendance"
-        ],
-        "actual_answer": "Class attendance is a crucial component of COMP893 (Team Project Internship), as it directly impacts your ability to participate in team activities and project development. While the specific percentage of the grade attributed to attendance may vary, consistent participation is essential for successful completion of the course requirements. Please refer to the course syllabus or contact Professor Karen Jin for detailed grading criteria."
-    },
-    {
-        "question": "When may I take the internship course COMP690?",
-        "expected_answer": "You may take the internship experience course COMP690 any time you have an internship. Additionally, you can take the COMP690 applied research option if you have a part-time or full-time tech job. If you can't find an internship by the last semester of your program, you are allowed to take COMP690 with the group project option.",
-        "retrieval_context": [
-            "For undergraduate students, you may take the internship course COMP690 any time you have an internship. Additionally, you can take the COMP690 applied research option if you have a part-time or full-time tech job. If you can't find an internship by the last semester of your program, you are allowed to take COMP690 with the group project option."
-        ],
-        "actual_answer": "You may take the COMP690 Internship Experience course at any time during your undergraduate program when you have secured an internship. Additionally, if you have a part-time or full-time tech job, you can opt for the applied research option within COMP690. If you're in your last semester and haven't found an internship, you can choose the group project option. If you need any assistance with registration or further details, feel free to reach out!"
-    },
-    {
-        "question": "When may I take COMP890",
-        "expected_answer": "You may take COMP890 Internship and Career Planning after you finish your first semester of study.",
-        "retrieval_context": [
-            "Graduate students: COMP890: Internship and Career Planning. This is a 1 cr course you need to take after the first semester to help you plan for the internship search process. The course is offered in fall and spring semesters."
-        ],
-        "actual_answer": "You can enroll in COMP890 (Internship and Career Planning) after completing your first semester as a graduate student at UNH. This course is designed to help you plan your internship search process and is available in both the fall and spring semesters. If you need any assistance with the registration process or have more questions, feel free to reach out!"
-    },
-    {
-        "question": "What is the instructor's email?",
-        "expected_answer": "karen.jin@unh.edu",
-        "retrieval_context": [
-            "Instructor Information",
-            "Name: Karen Jin, Associate Professor, Department of Applied Engineering and Sciences",
-            "Office: Rm139, Pandora Mill building",
-            "Zoom: https://unh.zoom.us/j/4858446046",
-            "Email: karen.jin@unh.edu",
-            "Office Hours: Monday 1-4pm and Friday 9-noon.",
-            "CaPS office: Website: https://manchester.unh.edu/careers/career-professional-success",
-            "Phone: (603) 641-4394",
-            "Email: unhm.career@unh.edu"
-        ],
-        "actual_answer": "Professor Karen Jin's email is karen.jin@unh.edu. She's the Faculty Internship Coordinator for the computing internship courses at UNH. If you have any questions about the internship courses or need guidance on any related matters, feel free to reach out to her!"
-    },
-    {
-        "question": "What time is COMP893?",
-        "expected_answer": "COMP893 has two sections:\n- M1 Section: Wednesday 9:10am-12pm\n- M2 Section: Wednesday 1:10-4pm",
-        "retrieval_context": [
-            "Name: COMP893 Team Project Internship",
-            "Credits: 1-3",
-            "Term: Fall 2024",
-            "Location: Rm P142",
-            "Time: M1 Section: Wednesday 9:10am-12pm",
-            "M2 Section: Wednesday 1:10-4pm",
-            "Instructor Information",
-            "Name: Karen Jin, Associate Professor, Department of Applied Engineering and Sciences",
-            "Office: Rm139, Pandora Mill building",
-            "Zoom: https://unh.zoom.us/j/4858446046",
-            "Email: karen.jin@unh.edu",
-            "Office Hours: Monday 1-4pm and Friday 9-noon."
-        ],
-        "actual_answer": "COMP893 (Team Project Internship) is scheduled in two sections. The M1 section meets on Wednesdays from 9:10 am to 12:00 pm, and the M2 section meets on Wednesdays from 1:10 pm to 4:00 pm. If you need any more details or help with registration, just let me know!"
-    },
-    {
-        "question": "When is week 1?",
-        "expected_answer": "Week 1 starts on 8/28",
-        "retrieval_context": [
-            "Week 1: 8/28",
-            "Class Introduction / Development Team (DT) Setup",
-            "Intro to Project Management",
-            "Intro to Scrum workflow",
-            "Project Goal",
-            "Week 2: 9/4",
-            "Project Kickoff",
-            "Environment Setup: Jira",
-            "Create Project backlog",
-            "Create user stories, tasks, and bugs"
-        ],
-        "actual_answer": "Week 1 for the COMP893 Team Project Internship course begins on August 28th. This week includes the class introduction, development team setup, an introduction to project management, and an introduction to the Scrum workflow. If you have any more questions or need further details, feel free to ask!"
-    },
-    {
-        "question": "How much of the grade is class attendance?",
-        "expected_answer": "10%.",
-        "retrieval_context": [
-            "Your final grade consists of the following three components:",
-            "10% Class Attendance of all required meetings",
-            "60% Sprint Grade is calculated as: Teamwork Grade * Sprint Grade",
-            "Teamwork Grade is based on peer evaluation for each of the three sprints.",
-            "Sprint Grades: You will receive a team grade for each of the three sprints, based on the technical aspect of the product and team project management.",
-            "10% Homework: additional homework in project management and development tools.",
-            "20% Final Project Report: See Appendix A for the report format."
-        ],
-        "actual_answer": "Class attendance accounts for 10% of your final grade in the COMP893 Team Project Internship course. Regular attendance is crucial as it contributes significantly to your learning and performance in the course. If you have any more questions or need clarification on other components of the grading, feel free to ask!"
-    },
-    {
-        "question": "How is sprint grade calculated?",
-        "expected_answer": "The sprint grade is calculated as the Teamwork Grade multiplied by the Sprint Grade.",
-        "retrieval_context": [
-            "Your final grade consists of the following three components:",
-            "10% Class Attendance of all required meetings",
-            "60% Sprint Grade is calculated as: Teamwork Grade * Sprint Grade",
-            "Teamwork Grade is based on peer evaluation for each of the three sprints.",
-            "Sprint Grades: You will receive a team grade for each of the three sprints, based on the technical aspect of the product and team project management."
-        ],
-        "actual_answer": "The sprint grade in COMP893 is calculated by combining the Teamwork Grade with the Sprint Grade for each of the three sprints. The Teamwork Grade is based on peer evaluations, and the Sprint Grade focuses on the technical aspects of the product and team project management. Detailed rubrics for these evaluations will be provided to guide you through the process. If you need more specifics on how these grades are weighted or any other details, just let me know!"
-    },
-    {
-        "question": "CaPS office website?",
-        "expected_answer": "The website for the CaPS office is [Career and Professional Success](https://manchester.unh.edu/careers/career-professional-success).",
-        "retrieval_context": [
-            "CaPS office:",
-            "Website: https://manchester.unh.edu/careers/career-professional-success",
-            "Phone: (603) 641-4394",
-            "Email: unhm.career@unh.edu",
-            "The Office of International Students and Scholars (OISS):",
-            "Website: https://www.unh.edu/global/international-students-scholars",
-            "Email: oiss@unh.edu"
-        ],
-        "actual_answer": "The Career and Professional Success (CaPS) office at UNH Manchester has a website where you can find a wealth of resources for your internship search and career planning. Here's the link to their website: [https://manchester.unh.edu/careers/career-professional-success](https://manchester.unh.edu/careers/career-professional-success). If you need further assistance or have specific questions, feel free to reach out to them directly!"
-    },
-    {
-        "question": "How many credits is COMP890?",
-        "expected_answer": "COMP890 is a 1-credit course in the UNH internship program.",
-        "retrieval_context": [
-            "Graduate students:",
-            "COMP890: Internship and Career Planning.",
-            "This is a 1 cr course you need to take after the first semester to help you plan for the internship search process.",
-            "The course is offered in fall and spring semesters.",
-            "COMP891: Internship Practice.",
-            "This is a variable credit 1-3 crs course that you will take when you have an external internship."
-        ],
-        "actual_answer": "COMP890, titled Internship and Career Planning, is a 1-credit course designed to assist students in preparing for their internship search process. It's offered in both the fall and spring semesters. If you have any more questions or need assistance with registration, feel free to ask!"
-    },
-    {
-        "question": "When is COMP890 offered?",
-        "expected_answer": "COMP890 is offered in both the fall and spring semesters.",
-        "retrieval_context": [
-            "COMP890: Internship and Career Planning.",
-            "This is a 1 cr course you need to take after the first semester to help you plan for the internship search process.",
-            "The course is offered in fall and spring semesters."
-        ],
-        "actual_answer": "COMP890, titled Internship and Career Planning, is offered in both the fall and spring semesters. This 1-credit course is designed to help you prepare for your internship search process. If you need more details or assistance with registration, just let me know!"
-    },
-    {
-        "question": "Who do you need to email for internship courses?",
-        "expected_answer": "To register for internship courses, you need to email the Internship Advisor, Karen Jin.",
-        "retrieval_context": [
-            "All internship courses require instructor's permission.",
-            "You will need to email the faculty internship coordinator, or the course instructor to register you for the course.",
-            "For more details, you may email Prof. Karen Jin.",
-            "How to register for Internship Courses?",
-            "Email the Internship Advisor, Karen Jin (karen.jin@unh.edu).",
-            "Provide details about your internship or project requirements.",
-            "Ensure to include your student ID in the email."
-        ],
-        "actual_answer": "For registering in any of the internship courses at UNH, you'll need to email the faculty internship coordinator, Professor Karen Jin. You can reach her at karen.jin@unh.edu. She will guide you through the registration process and any other requirements you might need to fulfill. If you have any more questions or need further assistance, feel free to ask!"
-    },
-
-
-
     {
         "question": "what majors are required to take internship courses?",
         "expected_answer": "Students from all computing majors are required to take internship courses. This includes undergraduate Computer Information Systems Major (CIS), Computer Science (CS) Major, and at the graduate level: M.S. Information Technology Major and M.S. Cybersecurity Engineering Major.",
         "retrieval_context": [
             "Internship courses are required for all computing major students. This includes undergraduate Computer Information Systems Major (CIS), Computer Science (CS) Major, and at the graduate level: M.S. Information Technology Major and M.S. Cybersecurity Engineering Major."
         ],
-        "actual_answer": "At UNH Manchester, internship courses are mandatory for all computing major students. This includes undergraduate majors in Computer Information Systems (CIS) and Computer Science (CS), as well as graduate students in the M.S. Information Technology and M.S. Cybersecurity Engineering programs. These courses are designed to integrate academic learning with practical work experience in the field.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and completely addresses the question about which majors require internship courses, without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the actual output and the retrieval context."
+        "actual_answer": "All computing major students at UNH are required to take internship courses. This includes undergraduate majors in Computer Information Systems (CIS) and Computer Science (CS), as well as graduate students in the M.S. Information Technology and M.S. Cybersecurity Engineering programs. If you need more details about specific courses or requirements, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the provided answer accurately and completely addresses the question asked without including any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context."
     },
     {
         "question": "what should I do to get an internship?",
@@ -207,9 +15,9 @@
         "retrieval_context": [
             "Students are encouraged to start their search on Handshake as most of the employers who posted their jobs are looking for UNH students. Students can also apply for jobs through the website of the company/organization they are interested in, or through job websites such as LinkedIn, Indeed and Hired. Do attend internship fair on both Manchester and Durham campus, and speak with family, friends, and faculty. Career and Professional Success office can help you with resume writing, interview coaching and other career advice."
         ],
-        "actual_answer": "To secure an internship, start by exploring opportunities on Handshake, which is tailored for UNH students. Additionally, check out job boards like LinkedIn, Indeed, and Hired. Attending internship fairs at both the Manchester and Durham campuses can also be very beneficial. Don\u2019t forget to network with family, friends, and faculty for potential leads. For support with your resume and interview preparation, reach out to the Career and Professional Success office. Once you find an opportunity, remember to register your internship experience on Handshake as part of the course requirements for COMP690 or other relevant internship courses.",
-        "relevancy_reason": "The score is 1.00 because the output accurately and directly addresses the query about how to get an internship without any irrelevant statements.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the retrieval context and the actual output."
+        "actual_answer": "To secure an internship, start by exploring opportunities on Handshake, which is tailored for UNH students. Additionally, check out job boards like LinkedIn, Indeed, and Hired. Attend internship fairs at the Manchester and Durham campuses, and network with family, friends, and faculty for potential leads. For support with your resume, interview preparation, and other career advice, reach out to the Career and Professional Success office. Once you find an opportunity, remember to register your internship experience on Handshake as part of the course requirements for COMP690 or other relevant internship courses. If you need any further guidance, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the output perfectly addressed the input question without any irrelevant information.",
+        "faithfulness_reason": "The score is 0.71 because the actual output incorrectly suggests that internships should be registered on Handshake for course requirements and that Handshake is a platform where internship experiences can be registered as part of course requirements, which is not mentioned in the retrieval context."
     },
     {
         "question": "How can I register my internship experience on Handshake?",
@@ -217,9 +25,9 @@
         "retrieval_context": [
             " To register your internship experience on Handshake, please follow these steps: 1. Login to Handshake. 2. On the top right corner, under Career Center, go to Experiences. 3. Click on 'Request an Experience' and fill out the form. 4. Your internship experience must be approved by your site supervisor and your course instructor. 5. Make sure to include at least three well-developed learning objectives. If you have any questions related to registering your internship experience on Handshake, please contact the Career and Professional Success office."
         ],
-        "actual_answer": "To register your internship experience on Handshake for credit in courses like COMP690, follow these steps:\n\n1. Log in to Handshake.\n2. Navigate to the top right corner, click on 'Career Center', then go to 'Experiences'.\n3. Click on \"Request an Experience\" and fill out the form.\n4. Ensure your internship experience is approved by both your site supervisor and your course instructor.\n\nMake sure to include at least three well-developed learning objectives in your submission. If you need any assistance during the process, feel free to reach out to the Career and Professional Success office.",
-        "relevancy_reason": "The score is 1.00 because the response directly addresses the question about registering internship experience on Handshake without any irrelevant statements.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
+        "actual_answer": "To register your internship experience on Handshake, follow these steps:\n\n1. Log in to Handshake.\n2. Navigate to the top right corner, click on 'Career Center', then go to 'Experiences'.\n3. Click on \"Request an Experience\" and fill out the form with details about your internship.\n4. Your internship experience must be approved by your site supervisor and your course instructor. Make sure to include at least three well-developed learning objectives.\n\nIf you encounter any issues or have further questions, feel free to reach out to the Career and Professional Success office for assistance.",
+        "relevancy_reason": "The score is 1.00 because the output perfectly addressed the input query without any irrelevant statements.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Great job!"
     },
     {
         "question": "what are the internship course options for undergrads?",
@@ -227,9 +35,9 @@
         "retrieval_context": [
             "Internship Courses: Undergraduate students: \u2022 COMP690 Internship Experience The course has an applied research option for students who are currently working, and a team project option for students in their last semester of program."
         ],
-        "actual_answer": "For undergraduate students at UNH Manchester, the primary internship course option is COMP690: Internship Experience. This course offers both an applied research option for students who are currently working in the field, and a team project option for those in their last semester of the program. It's designed to integrate your academic learning with practical work experience. If you need more details or help with registration, feel free to reach out to Professor Karen Jin, the Faculty Internship Coordinator.",
-        "relevancy_reason": "The score is 1.00 because the response accurately addresses the query about internship course options for undergraduates without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions detected between the 'actual output' and the 'retrieval context'. Great job!"
+        "actual_answer": "For undergraduate students at UNH, the primary internship course option is COMP690: Internship Experience. This course offers two options depending on your situation:\n\n1. **Applied Research Option** - Suitable if you are currently working part-time or full-time in a tech-related job. This allows you to leverage your existing employment as part of your internship requirement.\n2. **Team Project Option** - Available if you are in your last semester and haven't secured an external internship. This option involves working on a team project to fulfill the internship requirements.\n\nBoth options are designed to integrate practical experience with your academic studies. If you have any more questions or need further clarification, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the response accurately addresses the question about internship course options for undergraduates without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the retrieval context and the actual output."
     },
     {
         "question": "what are the internship course options for graduate students? ",
@@ -237,9 +45,9 @@
         "retrieval_context": [
             "For graduate students, the internship course options include: - COMP890: Internship and Career Planning - COMP891: Internship Practice - COMP892: Applied Research Internship - COMP893: Team Project Internship"
         ],
-        "actual_answer": "For graduate students at UNH Manchester, there are several internship course options tailored to different needs:\n\n- **COMP890: Internship and Career Planning** - This 1 credit course is designed to help you plan your internship search process. It's offered in both fall and spring semesters.\n\n- **COMP891: Internship Practice** - This variable credit course (1-3 credits) is for students who secure an external internship. It's necessary for applying for CPT and is available in fall, spring, and summer.\n\n- **COMP892: Applied Research Internship** - Also a variable credit course (1-3 credits), this is ideal for students who are currently working part-time or full-time in tech fields. It's offered throughout the year.\n\n- **COMP893: Team Project Internship** - This course is for those in their last semester needing to fulfill internship requirements. It's available in the fall and spring semesters.\n\nEach of these courses requires instructor permission for registration. If you need more details or assistance with the registration process, you can reach out to Professor Karen Jin, the Faculty Internship Coordinator.",
-        "relevancy_reason": "The score is 1.00 because the response accurately addressed the query about internship course options for graduate students with no irrelevant statements.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions present in the actual output compared to the retrieval context."
+        "actual_answer": "For graduate students at UNH, there are several internship course options tailored to different needs:\n\n1. **COMP890: Internship and Career Planning** - This 1-credit course is designed to help you plan your internship search. It's offered in both fall and spring semesters.\n\n2. **COMP891: Internship Practice** - This variable credit course (1-3 credits) is for students who secure an external internship. It's available in fall, spring, and summer, and you need to register for at least 1 credit to apply for CPT.\n\n3. **COMP892: Applied Research Internship** - Also a variable credit course (1-3 credits), this is ideal if you're currently working part-time or full-time in tech fields. It's offered throughout the year.\n\n4. **COMP893: Team Project Internship** - This course is for students in their last semester who need to fulfill their internship requirements through a team project. It's available in the fall and spring semesters.\n\nEach of these courses requires instructor permission for registration. If you have any more questions or need assistance with registration, feel free to reach out!",
+        "relevancy_reason": "The score is 1.00 because the response accurately and completely addressed the question about internship course options for graduate students.",
+        "faithfulness_reason": "The score is 1.00 because there were no contradictions found between the actual output and the retrieval context. Great job!"
     },
     {
         "question": "Tell me more about COMP690",
@@ -247,9 +55,9 @@
         "retrieval_context": [
             "Undergraduate students: COMP690 Internship Experience has an applied research option for students who are currently working, and a team project option for students in their last semester of program."
         ],
-        "actual_answer": "COMP690: Internship Experience is a 4-credit course designed for undergraduate students at UNH Manchester. It provides a practical, hands-on experience through placement in team projects or applied research, depending on your current employment status in the field. The course aims to integrate academic learning with real-world IT projects, enhancing your ability to analyze complex computing problems, design and implement solutions, and effectively communicate in professional settings. This course is particularly beneficial in your last semester if you haven't secured an external internship. For more details or assistance with registration, you can contact Professor Karen Jin.",
-        "relevancy_reason": "The score is 1.00 because the output perfectly addressed the request for more information about COMP690, without any irrelevant statements.",
-        "faithfulness_reason": "The score is 1.00 because there were no contradictions found between the actual output and the retrieval context. Great job in maintaining consistency!"
+        "actual_answer": "COMP690, titled \"Internship Experience,\" is a crucial course for undergraduate computing majors at UNH. It's structured to provide students with practical, hands-on experience in the computing field through various formats:\n\n1. **Applied Research Option** - This is ideal if you're already employed part-time or full-time in a tech-related job. It allows you to use your current job as your internship experience, integrating your work responsibilities with academic learning objectives.\n\n2. **Team Project Option** - If you haven't secured an external internship by your last semester, this option lets you work on a team project. This collaborative project aims to develop real-world IT solutions, providing a valuable experiential learning opportunity.\n\nThe course carries 4 credits and is offered in different sections to accommodate various schedules. Professor Karen Jin oversees this course, and you can reach out to her via email at karen.jin@unh.edu for more details or to discuss registration and your specific needs.\n\nIf you have any more questions or need further details about the course structure or how to register, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the output precisely addresses the query about COMP690 without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the retrieval context and the actual output."
     },
     {
         "question": "Tell me more about COMP890?",
@@ -257,9 +65,9 @@
         "retrieval_context": [
             "Graduate students: COMP890: Internship and Career Planning. This is a 1 cr course you need to take after the first semester to help you plan for the internship search process. The course is offered in fall and spring semesters."
         ],
-        "actual_answer": "COMP890: Internship and Career Planning is a 1-credit course designed primarily for graduate students at UNH Manchester. It's structured to assist you in planning and preparing for your internship search. The course covers various aspects of career planning, including resume building, interview preparation, and effective job search strategies. It's offered in both the fall and spring semesters and is a great starting point if you're beginning to look for internship opportunities. If you need more information or help with registration, Professor Karen Jin would be your go-to contact.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and completely addressed the query about COMP890 without any irrelevant statements.",
-        "faithfulness_reason": "The score is 1.00 because there were no contradictions identified between the actual output and the retrieval context."
+        "actual_answer": "COMP890, titled \"Internship and Career Planning,\" is a 1-credit course designed primarily for graduate students at UNH. It's structured to assist you in planning and preparing for your internship search. The course is offered in both the fall and spring semesters.\n\nIn this course, you'll learn strategies for finding internships, tailoring your resume, and preparing for interviews. It's a great starting point if you're beginning to look for internship opportunities and need guidance on how to approach the process effectively.\n\nIf you have any specific questions about the course content or how to register, feel free to reach out to Professor Karen Jin at karen.jin@unh.edu. She can provide you with detailed information and help with the registration process.",
+        "relevancy_reason": "The score is 1.00 because the response accurately and completely addressed the inquiry about COMP890 without any irrelevant statements.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the retrieval context and the actual output."
     },
     {
         "question": "Tell me more about COMP891",
@@ -267,9 +75,9 @@
         "retrieval_context": [
             "Graduate students: COMP891: Internship Practice. This is a variable credit 1-3 crs course that you will take when you have an external internship. You will need to register in this course for at least 1 credit to apply for CPT. The course is offered in both fall and spring semesters, as well as during the summer."
         ],
-        "actual_answer": "COMP891: Internship Practice is a variable credit course (1-3 credits) designed for graduate students at UNH Manchester who have secured an external internship. This course is essential for applying for Curricular Practical Training (CPT) and is available in the fall, spring, and summer semesters. It allows you to gain practical experience in a real-world setting, applying your academic knowledge to professional work. If you've already taken COMP890, you'll need 2 credits to complete this course. For registration or more details, Professor Karen Jin is available to assist you.",
-        "relevancy_reason": "The score is 1.00 because the output accurately provided the requested information about COMP891 without any irrelevant statements.",
-        "faithfulness_reason": "The score is 0.78 because the actual output includes two claims not supported by the retrieval context. Firstly, the output suggests that COMP891: Internship Practice requires students to have secured an external internship, which the retrieval context does not confirm. Secondly, it claims that students who have previously taken COMP890 need an additional 2 credits to complete COMP891: Internship Practice, a detail not mentioned in the retrieval context."
+        "actual_answer": "COMP891, titled \"Internship Practice,\" is a variable credit course designed for graduate students at UNH who have secured an external internship. You can register for 1-3 credits depending on the extent of your internship involvement. This course is available in the fall, spring, and summer semesters.\n\nThe primary focus of COMP891 is to provide a structured framework where you can apply theoretical knowledge to practical work experiences in the tech field. It also supports your eligibility for Curricular Practical Training (CPT) if you're an international student on an F-1 visa.\n\nFor registration, you'll need permission from the instructor, which you can obtain by contacting Professor Karen Jin at karen.jin@unh.edu. If you have any more questions about the course or how to align it with your internship, feel free to reach out!",
+        "relevancy_reason": "The score is 1.00 because the output perfectly addressed the request about COMP891 without any irrelevant statements.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the actual output and the retrieval context. Great job!"
     },
     {
         "question": "Tell me more about COMP892",
@@ -277,9 +85,9 @@
         "retrieval_context": [
             "Graduate students: COMP 892: Applied Research Internship This is a variable credit 1-3 crs course for students who are currently working full time or part time in the tech fields. The course is offered in both fall and spring semesters, as well as during the summer."
         ],
-        "actual_answer": "COMP892: Applied Research Internship is a flexible credit course (1-3 credits) designed for graduate students at UNH Manchester who are already employed in the tech industry and wish to engage in applied research as part of their job. This course allows you to delve deeper into practical computing problems and develop solutions that are directly applicable to your work environment. It can be taken over multiple semesters to accumulate a total of 3 credits. If you're interested in registering or need more details, Professor Karen Jin would be happy to help you.",
-        "relevancy_reason": "The score is 1.00 because the output accurately and thoroughly addressed the request for more information about COMP892, with no irrelevant statements.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the 'actual output' and the 'retrieval context'. Great job!"
+        "actual_answer": "COMP892, titled \"Applied Research Internship,\" is a variable credit course (1-3 credits) designed for graduate students at UNH who are already employed part-time or full-time in tech-related fields. This course allows you to apply your current work experience towards your academic credit requirements. It's available throughout the year, including fall, spring, and summer semesters.\n\nThe course focuses on integrating your work projects with academic research, helping you to enhance your professional skills while contributing to your field of study. If you're interested in registering or need more details, you can contact Professor Karen Jin at karen.jin@unh.edu. She can guide you through the registration process and help align your work responsibilities with the course objectives.",
+        "relevancy_reason": "The score is 1.00 because the response accurately and completely addressed the input about COMP892 without any irrelevant statements.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the retrieval context and the actual output."
     },
     {
         "question": "Tell me more about COMP893",
@@ -287,9 +95,9 @@
         "retrieval_context": [
             "Graduate students: COMP 893: Team Project Internship The course is for students who are in their last semester of study and need to fulfill the internship requirements. The COMP893 Team Project Internship course is designed for students who want to gain practical skills and insights into the field of computing by working on collaborative projects with external stakeholders. The course is offered in fall and spring semesters."
         ],
-        "actual_answer": "COMP893: Team Project Internship is a variable credit course (1-3 credits) designed for graduate students at UNH Manchester who are in their final semester and need to fulfill their internship requirements. This course offers a hands-on experience through placement in team projects, working collaboratively with external stakeholders to develop real-world IT solutions. It's available in both the fall and spring semesters. The course emphasizes analyzing complex computing problems, designing and implementing solutions, and effective communication within professional settings. If you're ready to register or need more details, you can contact Professor Karen Jin.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and thoroughly addressed the input request about COMP893 without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions noted in the actual output."
+        "actual_answer": "COMP893, titled \"Team Project Internship,\" is a variable credit course (1-3 credits) designed for graduate students at UNH who are in their last semester and need to fulfill their internship requirements through a team project. This course is offered in both the fall and spring semesters.\n\nThe course provides a hands-on experience where students work collaboratively on real-world IT projects with external stakeholders. This setup helps students apply their computing knowledge in a professional setting, enhancing their skills in problem-solving, project management, and teamwork.\n\nIf you're interested in registering for COMP893 or need more details about the course structure, please contact Professor Karen Jin at karen.jin@unh.edu. She can assist you with the registration process and provide further guidance on how to make the most of this course.",
+        "relevancy_reason": "The score is 1.00 because the response accurately and fully answered the prompt without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present. The actual output aligns perfectly with the information in the retrieval context."
     },
     {
         "question": "When may I take the internship course COMP690?",
@@ -297,9 +105,9 @@
         "retrieval_context": [
             "For undergraduate students, you may take the internship course COMP690 any time you have an internship. Additionally, you can take the COMP690 applied research option if you have a part-time or full-time tech job. If you can't find an internship by the last semester of your program, you are allowed to take COMP690 with the group project option."
         ],
-        "actual_answer": "You can take the COMP690 Internship Experience course at any time during your undergraduate program at UNH Manchester when you have secured an internship. Additionally, if you are employed part-time or full-time in a tech job, you can opt for the applied research version of COMP690. If you find yourself without an internship in your last semester, you can also take COMP690 with the group project option. This flexibility is designed to ensure you can integrate real-world experience with your academic studies effectively. If you need more details on how to register or prepare for the course, feel free to reach out to Professor Karen Jin.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and completely addressed the question about when the COMP690 internship course can be taken.",
-        "faithfulness_reason": "The faithfulness score is 0.80 because there is a discrepancy in the timing of when the COMP690 Internship Experience course can be taken during the undergraduate program at UNH Manchester. The actual output suggests it can be taken at any time, whereas the retrieval context does not specify when during the program it can be taken."
+        "actual_answer": "You may take the internship course COMP690 at any time during your undergraduate program at UNH when you have secured an internship. Additionally, if you are already working part-time or full-time in a tech-related job, you can opt for the Applied Research option within COMP690. If you find yourself in your last semester without an external internship, you can choose the Team Project option to fulfill your internship requirement. If you need more details on how to register or any other assistance, feel free to reach out!",
+        "relevancy_reason": "The score is 1.00 because the answer precisely addressed the question about when the internship course COMP690 can be taken.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the 'actual output' and the 'retrieval context'. Good job!"
     },
     {
         "question": "When may I take COMP890",
@@ -307,9 +115,9 @@
         "retrieval_context": [
             "Graduate students: COMP890: Internship and Career Planning. This is a 1 cr course you need to take after the first semester to help you plan for the internship search process. The course is offered in fall and spring semesters."
         ],
-        "actual_answer": "You can enroll in COMP890: Internship and Career Planning at any point during your graduate studies at UNH Manchester, provided you are seeking an internship. This course is particularly useful if you haven't yet secured an internship, as it prepares you with the necessary skills and strategies for your search. It's available in both fall and spring semesters. If you're planning to register or need further assistance, feel free to reach out to Professor Karen Jin.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and directly addressed the question asked in the input.",
-        "faithfulness_reason": "The score is 0.83 because the actual output inaccurately suggests that one can enroll in COMP890: Internship and Career Planning at any point in their graduate studies, whereas the retrieval context specifies it can only be taken after the first semester."
+        "actual_answer": "You can enroll in COMP890, \"Internship and Career Planning,\" after completing your first semester at UNH. This 1-credit course is available in both the fall and spring semesters. It's designed to help you effectively plan and prepare for your internship search, making it an excellent choice early in your graduate studies to set a strong foundation for your career development.\n\nIf you need any assistance with the registration process or have further questions about the course, feel free to contact Professor Karen Jin at karen.jin@unh.edu. She's there to help you navigate your internship planning successfully!",
+        "relevancy_reason": "The score is 1.00 because the response perfectly addressed the question asked without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
     },
     {
         "question": "When may I take COMP891",
@@ -317,9 +125,9 @@
         "retrieval_context": [
             "Graduate students: COMP891: Internship Practice. This is a variable credit 1-3 crs course that you will take when you have an external internship. You will need to register in this course for at least 1 credit to apply for CPT. The course is offered in both fall and spring semesters, as well as during the summer."
         ],
-        "actual_answer": "You can enroll in COMP891: Internship Practice during any semester, including summer, as long as you have secured an external internship. This course is designed for graduate students and is crucial for those applying for Curricular Practical Training (CPT). If you have previously completed COMP890, you will need to earn 2 credits in COMP891. If you need further details on registration or any other assistance, Professor Karen Jin is available to help.",
-        "relevancy_reason": "The score is 1.00 because the response perfectly addressed the question about when COMP891 could be taken. There were no irrelevant statements.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the retrieval context and the actual output."
+        "actual_answer": "You can enroll in COMP891, \"Internship Practice,\" once you have secured an external internship and are ready to apply your work experience towards academic credit. This course is available in the fall, spring, and summer semesters, making it flexible to fit into your schedule whenever you start your internship.\n\nIf you need any help with the registration process or have more questions about how to integrate your internship with this course, don't hesitate to contact Professor Karen Jin at karen.jin@unh.edu. She'll be glad to assist you!",
+        "relevancy_reason": "The score is 1.00 because the response perfectly addresses the question asked without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Great job!"
     },
     {
         "question": "When may I take COMP892",
@@ -327,9 +135,9 @@
         "retrieval_context": [
             "Graduate students: COMP 892: Applied Research Internship This is a variable credit 1-3 crs course for students who are currently working full time or part time in the tech fields. The course is offered in both fall and spring semesters, as well as during the summer."
         ],
-        "actual_answer": "You can enroll in COMP892: Applied Research Internship during any semester, including summer, as long as you are employed in a tech job that allows you to engage in applied research. This course is designed for graduate students and can be taken multiple times to accumulate a total of 3 credits. If you need more details on how to register or prepare for the course, Professor Karen Jin would be happy to assist you.",
-        "relevancy_reason": "The score is 1.00 because the response perfectly addressed the question asked, without any irrelevant statements.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
+        "actual_answer": "You can enroll in COMP892, \"Applied Research Internship,\" once you are working part-time or full-time in a tech-related job. This course is designed to integrate your work experience with academic research and is available in the fall, spring, and summer semesters.\n\nIf you're ready to register or need more information on how to align your job with the course objectives, please contact Professor Karen Jin at karen.jin@unh.edu. She will be happy to assist you with the process!",
+        "relevancy_reason": "The score is 1.00 because the response perfectly addressed the query about when COMP892 can be taken, without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present. The actual output perfectly aligns with the information given in the retrieval context."
     },
     {
         "question": "When may I take COMP893",
@@ -337,9 +145,9 @@
         "retrieval_context": [
             "Graduate students: COMP 893: Team Project Internship The course is for students who are in their last semester of study and need to fulfill the internship requirements. The COMP893 Team Project Internship course is designed for students who want to gain practical skills and insights into the field of computing by working on collaborative projects with external stakeholders. The course is offered in fall and spring semesters."
         ],
-        "actual_answer": "You can enroll in COMP893: Team Project Internship during your final semester at UNH Manchester. This course is designed to fulfill the internship requirements for graduate students, offering a hands-on team project experience. It's available in both the fall and spring semesters. If you're nearing your final semester and need to plan for this course, Professor Karen Jin would be the best contact for further guidance.",
-        "relevancy_reason": "The score is 1.00 because the response directly answered the question regarding when COMP893 can be taken, without any irrelevant statements.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
+        "actual_answer": "You can enroll in COMP893, \"Team Project Internship,\" during your last semester at UNH. This course is designed for students who need to fulfill their internship requirements through a team-based project. It's offered in both the fall and spring semesters.\n\nIf you're planning to register or need more details about the course, feel free to reach out to Professor Karen Jin at karen.jin@unh.edu. She can guide you through the registration process and provide more insights into the course.",
+        "relevancy_reason": "The score is 1.00 because the output perfectly addresses the question asked without any irrelevant statements.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the information presented in the retrieval context."
     },
     {
         "question": "What is the course name of COMP893?",
@@ -347,9 +155,9 @@
         "retrieval_context": [
             "The course information section of the Fall 2024 semester course syllabus states that the name of COMP 893 is Team Project Internship."
         ],
-        "actual_answer": "The course name for COMP893 is \"Team Project Internship.\" If you have any more questions about the course or need assistance with registration, feel free to reach out!",
-        "relevancy_reason": "The score is 1.00 because the answer provided was directly relevant to the question asked and didn't contain any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the actual output and the retrieval context. Great job!"
+        "actual_answer": "The course name of COMP893 is \"Team Project Internship.\" This course is designed for students in their last semester who need to fulfill their internship requirements through a collaborative team project. If you have any more questions or need further details about the course, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the output perfectly addressed the input query without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions identified between the actual output and the retrieval context."
     },
     {
         "question": "What is the course name of COMP690?",
@@ -357,9 +165,9 @@
         "retrieval_context": [
             "The course information section of the Fall 2024 semester course syllabus states that the name of COMP 690 is Internship Experience."
         ],
-        "actual_answer": "The course name for COMP690 is \"Internship Experience.\" If you need more details about this course or assistance with registration, don't hesitate to reach out!",
-        "relevancy_reason": "The score is 1.00 because the response accurately and directly answers the question asked in the input, with no irrelevant information provided.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the actual output and the retrieval context."
+        "actual_answer": "The course name of COMP690 is \"Internship Experience.\" This course offers a practical learning experience through placement in team projects, allowing students to apply their computing skills in real-world settings. If you need more details about this course or how to enroll, just let me know!",
+        "relevancy_reason": "The score is 1.00 because the output precisely answered the question without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
     },
     {
         "question": "What room is COMP893 in?",
@@ -367,9 +175,9 @@
         "retrieval_context": [
             " In Fall 2024 semester, COMP893 is located in Room P142"
         ],
-        "actual_answer": "COMP893: Team Project Internship is held in Room P142. If you need any more information or assistance with the course, feel free to reach out!",
-        "relevancy_reason": "The score is 1.00 because the output perfectly answered the question asked in the input without any irrelevant statements.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions present, indicating a perfect alignment between the actual output and the retrieval context."
+        "actual_answer": "COMP893, \"Team Project Internship,\" is held in Room P142. If you need any further details about the course or its location, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the response accurately and directly answered the query without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present in the actual output, perfectly aligning it with the retrieval context."
     },
     {
         "question": "What room is COMP690 in?",
@@ -377,9 +185,9 @@
         "retrieval_context": [
             " In Fall 2024 semester, COMP690 is located in Room P142"
         ],
-        "actual_answer": "COMP690: Internship Experience is held in Room P142. If you have any more questions or need further assistance with the course, feel free to reach out!",
-        "relevancy_reason": "The score is 1.00 because the response perfectly addresses the question asked, providing the requested information without any irrelevant content.",
-        "faithfulness_reason": "The score is 1.00 because there were no contradictions found between the actual output and the retrieval context."
+        "actual_answer": "COMP690, \"Internship Experience,\" is held in Room P142. If you have any other questions about the course or need further assistance, feel free to reach out!",
+        "relevancy_reason": "The score is 1.00 because the output accurately and directly addresses the input question without any irrelevant statements.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
     },
     {
         "question": "What time is COMP893?",
@@ -387,9 +195,9 @@
         "retrieval_context": [
             " COMP893 has two sections: M1 Section meets on Wednesday 9:10am-12pm and M2 Section meets on Wednesday 1:10-4pm"
         ],
-        "actual_answer": "COMP893: Team Project Internship has two sections. The M1 section meets on Wednesdays from 9:10 am to 12:00 pm, and the M2 section meets on Wednesdays from 1:10 pm to 4:00 pm. Both are held in Room P142. If you need any more details or help with scheduling, just let me know!",
-        "relevancy_reason": "The score is 0.60 because while the output does refer to COMP893, the information provided is about the sections and location of the course, not the time it is held, which was the information requested.",
-        "faithfulness_reason": "The score is 1.00 because there are no reported contradictions between the actual output and the retrieval context."
+        "actual_answer": "COMP893, \"Team Project Internship,\" has two sections. The M1 section meets on Wednesdays from 9:10 am to 12:00 pm, and the M2 section meets on Wednesdays from 1:10 pm to 4:00 pm. Both sessions are held in Room P142. If you need more details or have any other questions, feel free to ask!",
+        "relevancy_reason": "The score is 0.80 because although the actual output provides the time for COMP893, it includes irrelevant information about the location of the sessions, which was not asked in the input.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Great job!"
     },
     {
         "question": "What time is COMP690?",
@@ -397,9 +205,9 @@
         "retrieval_context": [
             "COMP690 has two sections: M2 Section meets on Wednesday 9:10am-12pm and M3 Section meets on Wednesday 1:10-4pm"
         ],
-        "actual_answer": "COMP690: Internship Experience has two sections. The M2 section meets on Wednesdays from 9:10 am to 12:00 pm, and the M3 section meets on Wednesdays from 1:10 pm to 4:00 pm. Both are held in Room P142. If you need any more details or help with scheduling, just let me know!",
-        "relevancy_reason": "The score is 0.80 because the output included irrelevant information about the location of the event, instead of focusing solely on the question about the time of COMP690.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect alignment."
+        "actual_answer": "COMP690, \"Internship Experience,\" has two sections. The M2 section meets on Wednesdays from 9:10 am to 12:00 pm, and the M3 section meets on Wednesdays from 1:10 pm to 4:00 pm. Both sessions are held in Room P142. If you need more details or have any other questions, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the output accurately and directly addresses the query about the time for COMP690 without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions found between the 'actual output' and the 'retrieval context'. Everything aligns perfectly."
     },
     {
         "question": "Who is the instructor of COMP893?",
@@ -407,9 +215,9 @@
         "retrieval_context": [
             " Professor Karen Jin is from the Department of Applied Engineering and Sciences. She is the instructor for COMP893 and COMP690. She is also the computing program internship coordinator"
         ],
-        "actual_answer": "Professor Karen Jin is the instructor for COMP893: Team Project Internship. If you need to contact her or schedule a meeting, her office is in Room 139 at the Pandora Mill building, and she's available for office hours on Mondays from 1-4 pm and Fridays from 9 am to noon. You can also reach her via email at karen.jin@unh.edu.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and effectively addressed the query without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the retrieval context and the actual output."
+        "actual_answer": "Professor Karen Jin is the instructor for COMP893, \"Team Project Internship.\" If you need to contact her or have any questions about the course, feel free to reach out to her via email at karen.jin@unh.edu.",
+        "relevancy_reason": "The score is 1.00 because the answer accurately and directly addresses the question about the instructor of COMP893 without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present in the actual output, which perfectly aligns with the information provided in the retrieval context."
     },
     {
         "question": "Who is the instructor of COMP690?",
@@ -417,9 +225,9 @@
         "retrieval_context": [
             " Professor Karen Jin is from the Department of Applied Engineering and Sciences. She is the instructor for COMP893 and COMP690. She is also the computing program internship coordinator"
         ],
-        "actual_answer": "Professor Karen Jin is the instructor for COMP690: Internship Experience. If you need to get in touch with her or have any questions about the course, her office is in Room 139 at the Pandora Mill building. You can also contact her via email at karen.jin@unh.edu.",
-        "relevancy_reason": "The score is 1.00 because the response directly and accurately answered the query without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the actual output and the retrieval context."
+        "actual_answer": "Professor Karen Jin is the instructor for COMP690, \"Internship Experience.\" If you need to contact her or have any questions about the course, feel free to reach out to her via email at karen.jin@unh.edu.",
+        "relevancy_reason": "The score is 1.00 because the response perfectly answered the input question without any irrelevant statements.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present. The 'actual output' perfectly aligns with the information presented in the 'retrieval context'. Great job!"
     },
     {
         "question": "What is Karen Jin's role?",
@@ -427,9 +235,9 @@
         "retrieval_context": [
             " Professor Karen Jin is from the Department of Applied Engineering and Sciences. She is the instructor for COMP893 and COMP690. She is also the computing program internship coordinator"
         ],
-        "actual_answer": "Karen Jin is the Faculty Internship Coordinator for UNH Manchester's computing internship courses. She oversees courses like COMP690: Internship Experience and COMP893: Team Project Internship. If you have any questions about the internship programs or need guidance, she's a great resource to reach out to!",
-        "relevancy_reason": "The score is 1.00 because the response accurately and directly addressed the question about Karen Jin's role without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
+        "actual_answer": "Karen Jin serves as the Faculty Internship Coordinator for UNH's computing internship courses. She is also the instructor for COMP690 \"Internship Experience\" and COMP893 \"Team Project Internship.\" If you need any assistance regarding the internship courses or have specific questions about the programs, feel free to reach out to her.",
+        "relevancy_reason": "The score is 1.00 because the response accurately and directly answered the question about Karen Jin's role without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the actual output and the retrieval context. Great job!"
     },
     {
         "question": "How to contact Karen Jin?",
@@ -437,9 +245,9 @@
         "retrieval_context": [
             " Prof. Karen Jin's office is located in Rm139, Pandora Mill building. Her email is Karen.Jin@unh.edu"
         ],
-        "actual_answer": "You can contact Professor Karen Jin via email at karen.jin@unh.edu. Her office is located in Room 139 at the Pandora Mill building. She holds office hours on Mondays from 1-4 pm and Fridays from 9 am to noon. You can also arrange a meeting over Zoom if that's more convenient.",
-        "relevancy_reason": "The score is 1.00 because the response accurately addresses the query about how to contact Karen Jin without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because the actual output perfectly aligns with the information presented in the retrieval context, with no contradictions present."
+        "actual_answer": "You can contact Professor Karen Jin via email at karen.jin@unh.edu. She is available for appointments both in person and over Zoom. If you prefer to meet in person, her office is located in Room 139 at the Pandora Mill building. Feel free to reach out to her for any assistance or questions regarding your internship courses!",
+        "relevancy_reason": "The score is 1.00 because the response accurately addressed the request in the input without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions, indicating that the actual output perfectly aligns with the information presented in the retrieval context."
     },
     {
         "question": "What are the instructor's office hours?",
@@ -447,9 +255,9 @@
         "retrieval_context": [
             " Karen Jin's office hours are Monday 1-4pm and Friday 9-noon. She is available in person or over Zoom, and appointments can be made via email"
         ],
-        "actual_answer": "Professor Karen Jin holds office hours on Mondays from 1-4 pm and Fridays from 9 am to noon. Her office is located in Room 139 at the Pandora Mill building. If you need to discuss anything related to your internship courses like COMP690 or COMP893, feel free to drop by during these times or arrange a meeting.",
-        "relevancy_reason": "The score is 1.00 because the response accurately answered the question about the instructor's office hours without including any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
+        "actual_answer": "Professor Karen Jin's office hours are on Tuesdays and Thursdays from 2:00 pm to 4:00 pm. Her office is located in Room 139 at the Pandora Mill building. If these times don't work for you, feel free to email her at karen.jin@unh.edu to arrange an alternative meeting time.",
+        "relevancy_reason": "The score is 1.00 because the output completely and accurately addressed the input question without any irrelevant information.",
+        "faithfulness_reason": "The score is 0.67 because the actual output inaccurately states Professor Karen Jin's office hours as Tuesdays and Thursdays from 2:00 pm to 4:00 pm, while the retrieval context indicates her office hours are from 1-4pm on Monday and from 9-noon on Friday."
     },
     {
         "question": "How do you make appointments with Karen Jin?",
@@ -457,8 +265,8 @@
         "retrieval_context": [
             " Email directly the instructor or internship coordinator Karen Jin to make an appointment. It's important to arrange these meetings in advance and provide a clear reason for the meeting. She is available in person or over Zoom, and appointments can be made via email. Her email is Karen.Jin@unh.edu"
         ],
-        "actual_answer": "To schedule an appointment with Professor Karen Jin, you can email her at karen.jin@unh.edu. She is available for office hours on Mondays from 1-4 pm and Fridays from 9 am to noon at Room 139 in the Pandora Mill building. If these times don't work for you, you can also request a Zoom meeting through her email.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and completely addressed the question about making appointments with Karen Jin.",
+        "actual_answer": "To make an appointment with Professor Karen Jin, you can email her at karen.jin@unh.edu. She is available for both in-person and Zoom meetings. If you prefer an in-person meeting, her office is located in Room 139 at the Pandora Mill building. Just let her know your preferred time and date, and she will get back to you to confirm the appointment.",
+        "relevancy_reason": "The score is 1.00 because the output accurately and directly addresses the input query about making appointments with Karen Jin without any irrelevant information.",
         "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
     },
     {
@@ -467,8 +275,8 @@
         "retrieval_context": [
             " The course description of COMP893 is stated as 'The internship course provides experiential learning experience through placement in team projects. This hands-on experience allows students to gain practical skills and insights into the field of computing. By working on a collaborative project with external stakeholders, they will contribute to the development of real-world information technology products, processes, or services, and understand the challenges involved in implementing technology solutions in a professional setting.'"
         ],
-        "actual_answer": "COMP893: Team Project Internship is designed to provide a hands-on experiential learning experience through placement in team projects. Students will gain practical skills by working collaboratively on real-world IT projects with external stakeholders. This course helps students understand the challenges of implementing technology solutions in professional settings while developing products, processes, or services. It's a great opportunity to apply computing principles to solve complex problems, design and evaluate solutions, and enhance communication and teamwork skills in professional contexts.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and completely provides the requested course description for COMP893 without any irrelevant information.",
+        "actual_answer": "COMP893, \"Team Project Internship,\" is designed for students in their final semester who need to fulfill their internship requirements. This course offers a hands-on experience where students work on collaborative projects with external stakeholders. Through this, they gain practical skills and insights into the computing field, contributing to real-world IT products, processes, or services, and tackling the challenges of implementing technology solutions in a professional environment.",
+        "relevancy_reason": "The score is 1.00 because the output perfectly addresses the input query without any irrelevant information.",
         "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
     },
     {
@@ -477,9 +285,9 @@
         "retrieval_context": [
             "The course description for COMP690 Internship Experience is as follows: 'The internship course provides experiential learning experience through placement in team projects. This hands-on experience allows students to gain practical skills and insights into the field of computing. By working on a collaborative project with external stakeholders, they will contribute to the development of real-world information technology products, processes, or services, and understand the challenges involved in implementing technology solutions in a professional setting.'"
         ],
-        "actual_answer": "COMP690: Internship Experience is designed to offer a practical, hands-on learning experience through team projects. Students engage in collaborative projects with external stakeholders, contributing to real-world IT solutions. This course enhances students' abilities to analyze complex computing problems, design and implement solutions, and effectively communicate in professional settings. It's ideal for gaining valuable industry insights and developing teamwork skills.",
-        "relevancy_reason": "The score is 1.00 because the response perfectly answered the question, providing the course description for COMP690 without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Great job!"
+        "actual_answer": "COMP690, titled \"Internship Experience,\" is a course designed to provide students with a practical, hands-on experience through placement in team projects. This course allows students to apply their computing knowledge in real-world settings by collaborating on projects with external stakeholders. The aim is to help students develop skills in analyzing complex computing problems, designing and implementing solutions, and effectively communicating in professional contexts. This course is particularly beneficial for those looking to deepen their understanding of the IT field and gain valuable industry experience.",
+        "relevancy_reason": "The score is 1.00 because the response accurately answered the question and provided relevant information regarding the course description for COMP690 without any irrelevant statements.",
+        "faithfulness_reason": "The score is 0.83 because the actual output claims that COMP690 aims to help students develop skills in analyzing complex computing problems, designing and implementing solutions, and effectively communicating in professional contexts, which is not directly mentioned in the retrieval context."
     },
     {
         "question": "Student learning outcome for COMP893?",
@@ -487,8 +295,8 @@
         "retrieval_context": [
             "The student learning outcomes for COMP893 Team Project Internship are as follows: 1. Analyze complex computing problems and identify solutions by applying principles of computing. 2. Design, implement, and evaluate computing solutions that meet IT computing requirements. 3. Communicate effectively in a variety of professional contexts. 4. Function effectively as a member or leader of a team engaged in IT activities. 5. Identify and analyze user needs in the process of developing and operating computing systems."
         ],
-        "actual_answer": "The student learning outcomes for COMP893: Team Project Internship are designed to enhance your skills in several key areas:\n\n1. Analyze complex computing problems and identify solutions by applying principles of computing.\n2. Design, implement, and evaluate computing solutions that meet specific IT requirements.\n3. Communicate effectively in a variety of professional contexts.\n4. Function effectively as a member or leader of a team engaged in IT activities.\n\nThis course aims to provide you with practical experience and insights into the field of computing through collaborative projects with external stakeholders.",
-        "relevancy_reason": "The score is 1.00 because the output perfectly addressed the student learning outcome for COMP893 without any irrelevant information.",
+        "actual_answer": "The student learning outcomes for COMP893, \"Team Project Internship,\" are designed to enhance your practical skills in the computing field. Here\u2019s what you can expect to achieve:\n\n1. Analyze complex computing problems and identify solutions by applying principles of computing.\n2. Design, implement, and evaluate computing solutions that meet specific IT requirements.\n3. Communicate effectively in various professional contexts.\n4. Function effectively as a member or leader of a team engaged in IT activities.\n\nThis course aims to prepare you for real-world challenges by working collaboratively on projects with external stakeholders.",
+        "relevancy_reason": "The score is 1.00 because the response directly addresses the student learning outcome for COMP893 without any irrelevant information.",
         "faithfulness_reason": "The score is 1.00 because there are no contradictions between the retrieval context and the actual output."
     },
     {
@@ -497,9 +305,9 @@
         "retrieval_context": [
             "The student learning outcomes for COMP690 Internship Experience are as follows: 1. Analyze complex computing problems and identify solutions by applying principles of computing. 2. Design, implement, and evaluate computing solutions that meet IT computing requirements. 3. Communicate effectively in a variety of professional contexts. 4. Function effectively as a member or leader of a team engaged in IT activities. 5. Identify and analyze user needs in the process of developing and operating computing systems."
         ],
-        "actual_answer": "The student learning outcomes for COMP690: Internship Experience are designed to enhance your skills in several key areas:\n\n1. Analyze complex computing problems and identify solutions by applying principles of computing.\n2. Design, implement, and evaluate computing solutions that meet specific IT requirements.\n3. Communicate effectively in a variety of professional contexts.\n4. Function effectively as a member or leader of a team engaged in IT activities.\n\nThis course aims to provide you with practical experience and insights into the field of computing through collaborative projects with external stakeholders.",
-        "relevancy_reason": "The score is 1.00 because the answer perfectly addressed the question about the student learning outcome for COMP690 without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the retrieval context and the actual output."
+        "actual_answer": "The student learning outcomes for COMP690, \"Internship Experience,\" focus on developing your practical skills in the computing field. Here\u2019s what you can expect to achieve:\n\n1. Analyze complex computing problems and identify solutions by applying principles of computing.\n2. Design, implement, and evaluate computing solutions that meet specific IT requirements.\n3. Communicate effectively in various professional contexts.\n4. Function effectively as a member or leader of a team engaged in IT activities.\n\nThis course is designed to give you a hands-on experience in real-world settings, enhancing your ability to tackle professional challenges in the computing industry.",
+        "relevancy_reason": "The score is 1.00 because the output precisely addresses the student learning outcome for COMP690 without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the 'actual output' and the 'retrieval context'. Everything aligns perfectly."
     },
     {
         "question": "How much of the grade is class attendance in COMP893?",
@@ -507,9 +315,9 @@
         "retrieval_context": [
             " The Fall 2024 semester course syllabus states that 10% of the grade is based on class attendance"
         ],
-        "actual_answer": "In COMP893, class attendance is crucial as it involves collaborative team projects and interactive sessions with stakeholders. While the specific percentage of the grade attributed to attendance isn't detailed in the syllabus, regular participation is essential to meet course objectives and contribute effectively to team activities. It's always a good idea to strive for full attendance to maximize your learning and contribution to the team projects.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and directly answered the query, without any irrelevant or incorrect information.",
-        "faithfulness_reason": "The score is 0.88 because the actual output incorrectly asserts that the syllabus does not detail the specific percentage of the grade attributed to attendance in COMP893, whereas the retrieval context clearly states it is 10%."
+        "actual_answer": "Class attendance in COMP893 is crucial as it forms a significant part of your grade. While the specific percentage attributed to attendance may vary and should be detailed in your course syllabus, attending all scheduled class meetings is a requirement to successfully complete the course. Regular attendance helps you stay engaged with the team projects and contributes to your overall performance and learning outcomes.",
+        "relevancy_reason": "The score is 1.00 because the response accurately and specifically addressed the question about class attendance in COMP893, without any irrelevant statements.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
     },
     {
         "question": "What components does the final grade consist of in COMP893?",
@@ -517,9 +325,9 @@
         "retrieval_context": [
             " The Fall 2024 semester course syllabus states that the final grade consists of four components: 10% Class Attendance of all required meetings. 60% Sprint Grade. 10% Homework and 20% Final Project Report"
         ],
-        "actual_answer": "In COMP893, the final grade is composed of several components:\n\n- **Teamwork Grade**: Evaluated through peer assessments during each of the three sprints.\n- **Sprint Grades**: Based on the technical quality of the project and team project management for each sprint.\n- **Homework**: 10% of the grade comes from additional assignments related to project management and development tools.\n- **Final Project Report**: This accounts for 20% of the overall grade. The format for the report is detailed in Appendix A of the course syllabus.\n\nThese elements are designed to assess both your individual contributions and your ability to work effectively within a team.",
-        "relevancy_reason": "The score is 1.00 because the answer accurately and completely addressed the components of the final grade in COMP893 without any irrelevant information.",
-        "faithfulness_reason": "The score is 0.86 because the actual output inaccurately claimed that 10% of the grade in COMP893 is from additional assignments related to project management and development tools, whereas the retrieval context stated that this 10% is actually from class attendance and homework."
+        "actual_answer": "In COMP893, the final grade is composed of several components:\n\n- **Teamwork Grade**: This is based on peer evaluations for each of the three sprints.\n- **Sprint Grades**: You will receive a team grade for each of the three sprints, focusing on the technical aspects of the product and team project management.\n- **Homework**: This accounts for 10% of your grade and includes additional work in project management and development tools.\n- **Final Project Report**: This makes up 20% of your grade. The format for the report is detailed in Appendix A of the course syllabus.\n\nThese components are designed to assess your practical skills and teamwork in a real-world project setting.",
+        "relevancy_reason": "The score is 1.00 because the answer provided was directly relevant to the question asked and contained no irrelevant information.",
+        "faithfulness_reason": "The score is 0.86 because the actual output wrongly includes 'Teamwork Grade' as a component of the final grade, which is not mentioned in the retrieval context."
     },
     {
         "question": "How is sprint grade calculated?",
@@ -527,9 +335,9 @@
         "retrieval_context": [
             " The Fall 2024 semester course syllabus states that The sprint grade in Fall 2024 semester is calculated as the Teamwork Grade multiplied by the sprint Grade. The Teamwork Grade is based on peer evaluation for each of the three sprints, and the Sprint Grade is based on the technical aspect of the product and team project management"
         ],
-        "actual_answer": "In COMP893, the Sprint Grade is calculated based on the combination of Teamwork Grades and the technical quality of the project during each sprint. Each sprint's Teamwork Grade is determined through peer evaluations, assessing how effectively team members collaborate and contribute to the project. The technical aspect evaluates the implementation and management of the project. These components together determine the overall Sprint Grade for each of the three sprints in the course.",
-        "relevancy_reason": "The score is 1.00 because the output accurately and completely addresses the input query without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions in the actual output compared to the retrieval context. Great job!"
+        "actual_answer": "In COMP893, the Sprint Grade is calculated based on the combination of Teamwork Grades and the technical performance of the team during each sprint. Specifically, the Sprint Grade is a product of the Teamwork Grade, which is derived from peer evaluations, and the assessment of the team's management and technical delivery for that sprint. This ensures that both collaborative skills and technical achievements are considered in your overall performance evaluation.",
+        "relevancy_reason": "The score is 1.00 because the response accurately and fully addresses the question about how sprint grade is calculated.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions detected between the actual output and the retrieval context."
     },
     {
         "question": "What is the Credit Hour Workload Estimate?",
@@ -537,9 +345,9 @@
         "retrieval_context": [
             " The Credit Hour Workload Estimate for COMP893 and COMP690 is a minimum of 45 hours of student academic work per credit per term"
         ],
-        "actual_answer": "The Credit Hour Workload Estimate for UNH's computing internship courses varies depending on the course and the number of credits. For undergraduate students enrolled in COMP690, you are expected to complete a minimum of 150 hours of internship work for 4 credits. For graduate students, each credit hour roughly equates to 40 hours of internship work. For instance, if you're enrolled in a 3-credit internship course, you should complete at least 120 hours of internship work. This ensures you gain substantial practical experience aligned with your academic goals.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and completely addressed the question about the Credit Hour Workload Estimate without any irrelevant information.",
-        "faithfulness_reason": "The score is 0.40 because the actual output consistently underestimates the required hours of internship work per credit in comparison to the retrieval context. This includes incorrect information for both undergraduate and graduate students as well as for different credit hours of internship courses."
+        "actual_answer": "The credit hour workload estimate for UNH's computing internship courses is designed to ensure that students dedicate an adequate amount of time to their internship experiences relative to the credits they are earning. For undergraduate students enrolled in COMP690, you are expected to complete 150 hours of internship work to earn 4 credits. For graduate students, the workload is approximately 40 hours of internship work per credit. For instance, if you're enrolled in a 3-credit course, you should complete about 120 hours of internship work. This structure helps maintain the academic rigor and practical relevance of the internship courses.",
+        "relevancy_reason": "The score is 1.00 because the output perfectly addressed the input question without any irrelevant statements.",
+        "faithfulness_reason": "The score is 0.40 because the actual output consistently provides incorrect information regarding the required hours of internship work for earning credits in COMP690 course. Despite the retrieval context stating that an estimate of minimum 45 hours per credit per term is needed, the actual output claims different hours for 4 credits, per credit, and for a 3-credit course, thereby contradicting the information from the retrieval context."
     },
     {
         "question": "What are the attendance policies in COMP893 and COMP690?",
@@ -547,9 +355,9 @@
         "retrieval_context": [
             " The attendance policy for COMP893 and COMP690 states that students are responsible for attending scheduled meetings and are expected to abide by the University Policy on Attendance. If a student cannot attend a scheduled meeting, they must email the instructor about the circumstances and request to be excused BEFORE the class meeting. Additionally, students need to arrange a meeting with the instructor individually to update their internship progress"
         ],
-        "actual_answer": "For COMP893, attendance is crucial as it involves collaborative team projects and interactive sessions with stakeholders. Regular participation is essential to meet course objectives and contribute effectively to team activities.\n\nIn COMP690, attendance expectations are also significant, especially since the course involves practical experience through external projects. Regular engagement is vital to fully benefit from the experiential learning opportunities provided.\n\nBoth courses emphasize the importance of attendance to maximize learning and project contributions.",
-        "relevancy_reason": "The score is 1.00 because the output perfectly addressed the question about the attendance policies in COMP893 and COMP690 without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
+        "actual_answer": "For COMP893, attendance is crucial as it significantly impacts your grade. You are expected to attend all scheduled class meetings to successfully complete the course. Missing a class requires you to inform the instructor beforehand and make arrangements to catch up on missed work.\n\nIn COMP690, regular attendance is also essential, especially since this course involves hands-on experience through placement in team projects or individual internships. Similar to COMP893, you should communicate any absences in advance with the instructor and ensure you stay updated with the course requirements.\n\nBoth courses emphasize the importance of participation and engagement as part of the learning and evaluation process.",
+        "relevancy_reason": "The score is 1.00 because the response accurately addressed the question about the attendance policies in COMP893 and COMP690 without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the actual output and the retrieval context. Great job!"
     },
     {
         "question": "What do you do if you think you'll miss a meeting?",
@@ -557,9 +365,9 @@
         "retrieval_context": [
             " The course syllabus of COMP893 and COMP690 states that a student needs to email the instructor about the circumstances and request to be excused for the meeting BEFORE the class meeting. It is important to communicate in advance and provide a valid reason for any missing meetings."
         ],
-        "actual_answer": "If you anticipate missing a meeting in your internship course, such as COMP893 or COMP690, it's important to inform your instructor as soon as possible. You should email them before the scheduled meeting to explain your situation and provide any necessary documentation if it's due to illness, accident, or another emergency. Additionally, arrange a time to meet with your instructor individually to discuss your progress and any missed content. This proactive approach helps maintain your responsibilities and keeps you aligned with the course's requirements.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and completely addresses the question about what to do if one anticipates missing a meeting.",
-        "faithfulness_reason": "The score is 1.00 because there were no contradictions found between the actual output and the retrieval context."
+        "actual_answer": "If you anticipate missing a scheduled meeting for courses like COMP893 or COMP690, it's important to inform your instructor as soon as possible. You should email the instructor before the meeting to explain your situation and request to be excused. Additionally, arrange a time to meet with your instructor to discuss any missed content or updates on your internship progress. This proactive communication helps maintain your responsibilities and ensures you stay on track with your internship course requirements.",
+        "relevancy_reason": "The score is 1.00 because the response accurately and thoroughly addressed the question, providing relevant advice without any irrelevant statements.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the actual output and the retrieval context."
     },
     {
         "question": "What is the policy on late submissions?",
@@ -567,9 +375,9 @@
         "retrieval_context": [
             " The policy for late submissions in COMP893 and COMP690 is very strict and applies only in exceptional cases of student illness, accidents, or emergencies that are properly documented. A late submission may be granted only if the student emails prior to the deadline and explains and provides evidence for the circumstances that have prevented them from meeting the class requirement. Failing to comply with these rules may result in no credit for the assignment."
         ],
-        "actual_answer": "The policy for late submissions in UNH's computing internship courses is quite strict and only applies in exceptional cases such as student illness, accidents, or other emergencies that are properly documented. If you find yourself unable to meet a deadline, you must email your instructor before the deadline to explain your situation and provide any necessary evidence. Failure to comply with these steps may result in receiving no credit for the assignment. It's important to communicate proactively to ensure you remain in good standing in your course.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and directly addresses the question about the policy on late submissions without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
+        "actual_answer": "The policy for late submissions in our internship courses, such as COMP893 and COMP690, is quite strict and only applies in exceptional circumstances such as illness, accidents, or other emergencies that are properly documented. If you find yourself unable to meet a deadline, you must:\n\n1. Email your instructor before the deadline to explain your situation.\n2. Provide evidence supporting the reason for your delay.\n\nFailure to comply with these steps may result in receiving no credit for the assignment. It's crucial to communicate proactively with your instructor to manage any potential issues effectively.",
+        "relevancy_reason": "The score is 1.00 because all information provided in the response was relevant to the query about the policy on late submissions.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the 'actual output' and the 'retrieval context'. Everything aligns perfectly!"
     },
     {
         "question": "Do I still need to take the course if I am currently working?",
@@ -577,9 +385,9 @@
         "retrieval_context": [
             "Yes, you do. Even if you are currently working or have worked in the past, you will still need to take the Internship Experience course as a degree requirement. However, you don't need to take another internship position if you are currently working in the field. You may use the applied research option of COMP690 for undergrad students, or COMP892 for graduate students to fulfill the internship requirements."
         ],
-        "actual_answer": "Yes, you still need to take the Internship Experience course even if you are currently working. If your current job is related to your field of study, you might be able to use the applied research options available in courses like COMP690 or COMP892 to fulfill your internship requirements. This allows you to integrate your work experience with academic research and coursework.",
-        "relevancy_reason": "The score is 1.00 because the response perfectly addresses the query about the need to take a course while working, without any irrelevant statements.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context."
+        "actual_answer": "Yes, you do need to take the internship course even if you are currently working. If your current job is in the field related to your studies, you might consider the applied research options available in courses like COMP690 or COMP892 to fulfill your internship requirements. This allows you to leverage your current work experience towards your degree.",
+        "relevancy_reason": "The score is 1.00 because the response perfectly addressed the question about the necessity of taking the course while currently working.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the retrieval context and the actual output."
     },
     {
         "question": "I did an internship last summer. Can I use that to cover the internship requirements?",
@@ -587,9 +395,9 @@
         "retrieval_context": [
             "No, a past internship completed cannot be used to fulfill the requirements for the course. The internship position and required hours must be completed while you are registered in the Internship Experience course."
         ],
-        "actual_answer": "Unfortunately, you cannot use a past internship to fulfill the requirements for the current internship courses like COMP690 or COMP892. You must be actively enrolled in the Internship Experience course and complete the required hours during the semester you are registered for the course. This ensures that your internship experience aligns with the academic objectives and oversight of the course.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and completely addressed the query about using a prior internship to cover internship requirements.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the actual output and the retrieval context. Well done!"
+        "actual_answer": "Unfortunately, you cannot use a past internship job to fulfill the course requirements. You must hold your internship position and work the required number of hours WHILE you are registered in the Internship Experience course. This ensures that your learning and work experience align with the academic objectives set for the course. If you have more questions or need further clarification, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the response perfectly addresses the question asked without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context. The information aligns perfectly."
     },
     {
         "question": "How to register for Internship Courses?",
@@ -597,9 +405,9 @@
         "retrieval_context": [
             "Students can register for internship courses by obtaining the instructor's permission. They need to email the faculty internship coordinator or the course instructor to register for the course. For more details, students may contact Prof. Karen Jin the internship coordinator."
         ],
-        "actual_answer": "To register for UNH's computing internship courses like COMP690, COMP890, COMP891, COMP892, or COMP893, you'll need to obtain permission from the faculty internship coordinator or the course instructor. You can start by emailing Professor Karen Jin at karen.jin@unh.edu to express your interest and discuss your eligibility. Once approved, they will guide you on how to officially register for the course.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and thoroughly addressed the question about how to register for Internship Courses.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions in the actual output when compared to the retrieval context. Everything aligns perfectly."
+        "actual_answer": "To register for internship courses at UNH, such as COMP690, COMP890, COMP891, COMP892, or COMP893, you'll need to obtain permission from the faculty internship coordinator or the course instructor. You can start by emailing Professor Karen Jin, who can guide you through the registration process and provide any additional details you might need. Her email is karen.jin@unh.edu. Make sure to reach out early to ensure you meet any deadlines or requirements for the upcoming semester!",
+        "relevancy_reason": "The score is 1.00 because the response precisely addressed the question about registering for Internship Courses, without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the retrieval context and the actual output."
     },
     {
         "question": "What requirements do you need to fulfill to earn the credit?",
@@ -607,9 +415,9 @@
         "retrieval_context": [
             "To earn credit for the internship course, you need to fulfill the following requirements: - Attend every scheduled class meeting - Submit weekly logs - Complete a final internship report - Give progress presentations during the class Additionally, you must meet the specific course syllabus requirements and complete the necessary hours at your internship based on your enrolled credit hours."
         ],
-        "actual_answer": "To earn credit for your internship courses like COMP690 or COMP892 at UNH, you need to fulfill several requirements:\n\n1. Complete the required number of internship hours (150 hours for 4 credits in COMP690 for undergraduates; for graduate courses, it's approximately 40 hours per credit).\n2. Attend all scheduled class meetings.\n3. Submit weekly logs detailing your work and learning experiences.\n4. Complete a final internship report that reflects on your overall internship experience and learning.\n5. Give progress presentations during the class to share your experiences and learnings with peers.\n\nThese components are designed to ensure that you gain practical experience while integrating academic learning. Make sure to check your specific course syllabus for any additional requirements or details.",
-        "relevancy_reason": "The score is 1.00 because the response accurately and comprehensively addresses the query about the requirements for earning the credit.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the actual output and the retrieval context."
+        "actual_answer": "To earn credit for your internship courses like COMP690 or COMP893, you need to meet several requirements:\n\n1. Attend all scheduled class meetings.\n2. Submit weekly logs documenting your work and learning experiences.\n3. Complete a comprehensive final internship report.\n4. Give progress presentations during the course.\n\nThese components are designed to ensure you integrate academic learning with practical experience. Make sure to check your specific course syllabus for any additional requirements or details. If you have any more questions or need clarification on any point, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the response accurately and completely addressed the question about the requirements needed to earn credit.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the retrieval context and the actual output."
     },
     {
         "question": "What are the steps for registering your internship experience on handshake?",
@@ -617,9 +425,9 @@
         "retrieval_context": [
             " To register your internship experience on Handshake, follow these steps: 1. Login to Handshake. 2. On the top right corner, under Career Center, go to Experiences. 3. Click on 'Request an Experience' and fill out the form. 4. Ensure that your internship experience is approved by both your site supervisor and your course instructor."
         ],
-        "actual_answer": "To register your internship experience on Handshake for UNH's computing internship courses, follow these steps:\n\n1. Log in to Handshake.\n2. Navigate to the top right corner, click on 'Career Center', then go to 'Experiences'.\n3. Click on \"Request an Experience\" and complete the form with details about your internship.\n4. Ensure that your internship experience is approved by both your site supervisor and your course instructor.\n5. Include at least three well-developed learning objectives in your submission.\n\nIf you need any assistance during this process, feel free to reach out to the Career and Professional Success office. They're there to help!",
-        "relevancy_reason": "The score is 1.00 because the response accurately and adequately addresses the steps for registering an internship experience on Handshake, with no irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there were no contradictions identified between the retrieval context and the actual output."
+        "actual_answer": "To register your internship experience on Handshake for credit in courses like COMP690 or COMP893, follow these steps:\n\n1. Log in to Handshake.\n2. Navigate to the 'Career Center' tab and select 'Experiences' from the dropdown menu.\n3. Click on \"Request an Experience\" and complete the form with details about your internship.\n4. Ensure your internship experience is approved by both your site supervisor and your course instructor.\n5. Include at least three well-developed learning objectives in your submission.\n\nIf you encounter any issues or have further questions, don't hesitate to contact the Career and Professional Success office for assistance. They're there to help you through the process!",
+        "relevancy_reason": "The score is 1.00 because the response perfectly addressed the query about the steps for registering an internship experience on Handshake, without any irrelevant statements.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions detected between the retrieval context and the actual output."
     },
     {
         "question": "Do I need to write weekly logs every week?",
@@ -627,9 +435,9 @@
         "retrieval_context": [
             "Yes, you need to write weekly logs every week during your internship until you complete the required hours for the credit. For undergraduate students, it's 150 hours for 4 credits of COMP690. For graduate students, the credit hour is roughly equal to 40 hours of internship work based on the number of credit hours you are enrolled in. After reaching the total hours required, it's recommended to continue with the weekly logs, but you don't need to submit logs for weeks you have not worked, like during a break."
         ],
-        "actual_answer": "Yes, you need to write weekly logs every week that you work during your internship. These logs are crucial for documenting your experiences and learning outcomes for the course. For COMP690, for instance, you'll need to log a total of 150 hours if you're aiming for 4 credits. Keep in mind that continuing with the logs even after reaching the required hours is highly recommended, although not mandatory. If you have any weeks where you do not work, such as during a break, you do not need to submit logs for those weeks.",
-        "relevancy_reason": "The score is 1.00 because the response perfectly addressed the question asked, without any irrelevant statements.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the actual output and the retrieval context."
+        "actual_answer": "Yes, you need to write weekly logs every week that you work during your internship. These logs are crucial for courses like COMP690, as they document your progress and learning throughout the internship. You should continue logging your hours each week until you've completed the required hours for your credit\u2014150 hours for 4 credits in COMP690 for undergraduates, and about 40 hours of work per credit for graduate students. If there are weeks when you do not work, such as during a break, you do not need to submit logs for those weeks. If you have any more questions or need further guidance, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the actual output directly and accurately responds to the input question, without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the 'actual output' and the 'retrieval context'. The information aligns perfectly."
     },
     {
         "question": "How many hours do I need to log?",
@@ -637,9 +445,9 @@
         "retrieval_context": [
             "For undergraduate students, you need to complete 150 hours for 4 credits of COMP690. For graduate students, a credit hour is roughly to 40 hours of internship work. For example, if you are enrolled in 3 credit hours of the Internship Experience class, then you must complete 120 hours of internship work."
         ],
-        "actual_answer": "The number of hours you need to log for your internship depends on the specific course you are enrolled in. For undergraduate students in COMP690, you need to log 150 hours to earn 4 credits. For graduate courses like COMP892, the requirement is approximately 40 hours per credit. If you're enrolled in a 3-credit course, you would need to complete around 120 hours of internship work. Remember to continue logging your hours even after meeting the minimum requirement to provide a comprehensive record of your experience.",
-        "relevancy_reason": "The score is 1.00 because the output perfectly addresses the input question without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the retrieval context and the actual output."
+        "actual_answer": "For undergraduate students enrolled in COMP690, you need to log a total of 150 hours to earn 4 credits. For graduate students, the hours vary depending on the credit hours you're registered for; typically, it's about 40 hours of work per credit. If you're enrolled for 3 credits, for instance, you would need to complete 120 hours of internship work. Remember, it's highly recommended to continue with your weekly logs even after reaching the required hours for your credits. If you have any more questions or need further details, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the response directly answered the query without any irrelevant information. It was precise and to the point.",
+        "faithfulness_reason": "The score is 0.80 because there is a contradiction in the actual output. The output incorrectly states that a graduate student enrolled for 3 credits would need to complete a different amount of internship work than the 120 hours stated in the retrieval context, which follows the conversion rate of 40 hours per credit."
     },
     {
         "question": "Can I start my internship position before the Internship Experience course starts?",
@@ -647,9 +455,9 @@
         "retrieval_context": [
             "It is permissible to start your internship position before the Internship Experience course starts. However, you can only count up to 20% of the total internship hours required towards the course if you complete the remaining hours during the same semester."
         ],
-        "actual_answer": "Yes, you can start your internship before the Internship Experience course begins. However, you can only count up to 20% of the required internship hours from the work done before the course officially starts. The remaining hours must be completed during the semester in which the course is conducted. This ensures that your internship experience aligns with the academic requirements and oversight provided during the course term.",
-        "relevancy_reason": "The score is 1.00 because the answer directly and accurately addressed the question asked, without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions identified between the retrieval context and the actual output. This shows a perfect alignment."
+        "actual_answer": "Yes, you may start your internship before the Internship Experience course begins. However, you can only count up to 20% of the required internship hours towards your total before the course officially starts. You'll need to complete the remaining hours during the semester. If you have any more questions or need further clarification, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the response directly addresses the question about starting an internship before the course starts, with no irrelevant information.",
+        "faithfulness_reason": "The faithfulness score is 1.00 because there are no contradictions in the actual output."
     },
     {
         "question": "How many hours I can count if I start my internship work before starting the course?",
@@ -657,9 +465,9 @@
         "retrieval_context": [
             "It is permissible to start your internship position before the Internship Experience course starts. However, you can only count up to 20% of the total internship hours required towards the course if you complete the remaining hours during the same semester."
         ],
-        "actual_answer": "If you start your internship before the official start of your course, you can count up to 20% of the required internship hours towards your total. For example, if you're enrolled in COMP690 and need to complete 150 hours, you can count up to 30 hours from work done prior to the course start. The rest of the hours must be completed during the semester when the course is active to ensure they align with the academic oversight and requirements.",
-        "relevancy_reason": "The score is 1.00 because the answer directly addresses the question and provides relevant information without any irrelevant statements.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions present between the retrieval context and the actual output. Great job!"
+        "actual_answer": "If you start your internship before the official start of your course, such as COMP690 or COMP893, you can count up to 20% of the required internship hours towards your total. For example, if you need to complete 150 hours for the course, you can count up to 30 hours of work done prior to the course start date. The remaining hours must be completed during the semester. If you have any more questions or need further clarification, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the answer provided is highly relevant to the question asked, without any irrelevant statements.",
+        "faithfulness_reason": "The score is 1.00 because there were no contradictions found between the actual output and the retrieval context."
     },
     {
         "question": "I just got an internship offer but the semester has already started, what should I do?",
@@ -667,9 +475,9 @@
         "retrieval_context": [
             "If you receive an internship offer after the semester has already started, you should contact the faculty internship coordinator, Professor Karen Jin, and inform her of the situation. Depending on the timing of your offer, you may be allowed to late add into the internship course or arrange with the employer for a later start date."
         ],
-        "actual_answer": "Congratulations on your internship offer! Since the semester has already started, you should immediately contact Professor Karen Jin, the faculty internship coordinator, at karen.jin@unh.edu. She can guide you on whether you can late add into the internship course or if you need to arrange a later start date with your employer. This will ensure that your internship aligns with the academic requirements and you receive credit for your work.",
-        "relevancy_reason": "The score is 1.00 because the response perfectly addressed the query without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the retrieval context and the actual output."
+        "actual_answer": "Congratulations on your internship offer! Since the semester has already started, you should contact Professor Karen Jin, the faculty internship coordinator, as soon as possible. She can guide you on whether you can late add into the internship course like COMP690 or arrange a later start date with your employer. Her email is karen.jin@unh.edu. Don't hesitate to reach out to her to discuss your options!",
+        "relevancy_reason": "The score is 1.00 because the output accurately and completely addressed the query about handling an internship offer that arrived after the semester started.",
+        "faithfulness_reason": "The score is 0.83 because the actual output incorrectly attributes the ability to arrange a later start date with the employer to Professor Karen Jin, when the retrieval context clearly states it is the students who may arrange this."
     },
     {
         "question": "How do I contact CaPS office.",
@@ -677,9 +485,9 @@
         "retrieval_context": [
             "The website for the CaPS office is https://manchester.unh.edu/careers/career-professional-success. Phone: (603) 641-4394 Email: unhm.career@unh.edu"
         ],
-        "actual_answer": "Sorry, I don\u2019t have information about that question. Feel free to ask me anything related to the UNH internship program.",
-        "relevancy_reason": "The score is 0.50 because while the response addresses the topic of university services, it mistakenly provides information about the UNH internship program instead of explaining how to contact the CaPS office as asked in the input.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the 'actual output' and the 'retrieval context'. Great alignment!"
+        "actual_answer": "You can contact the Career and Professional Success (CaPS) office at UNH Manchester by phone at (603) 641-4394 or via email at unhm.career@unh.edu. They can assist you with career advice, resume coaching, and more related to your internship experiences. If you need further assistance or have more questions, feel free to ask!",
+        "relevancy_reason": "The score is 1.00 because the response accurately and directly addresses the question asked without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there were no contradictions found between the 'actual output' and the 'retrieval context'. Everything matches perfectly!"
     },
     {
         "question": "what is the oiss' website?",
@@ -687,10 +495,8 @@
         "retrieval_context": [
             "The website for the Office of International Students and Scholars (OISS) is https://www.unh.edu/global/international-students-scholars Their email is oiss@unh.edu"
         ],
-        "actual_answer": "The website for the Office of International Students and Scholars (OISS) at UNH is https://www.unh.edu/global/international-students-scholars. You can find all the necessary information regarding international student services and support there. If you need help with CPT authorization or other related matters, this is a great resource.",
-        "relevancy_reason": "The score is 1.00 because the answer provided was directly relevant to the question asked, without any irrelevant information.",
-        "faithfulness_reason": "The score is 1.00 because there are no contradictions between the 'actual output' and the 'retrieval context'. Everything aligns perfectly."
+        "actual_answer": "The website for the Office of International Students and Scholars (OISS) at UNH is https://www.unh.edu/global/international-students-scholars. If you need any assistance with CPT authorization or other related matters, feel free to reach out to them!",
+        "relevancy_reason": "The score is 1.00 because the response accurately and directly answered the user's query without any irrelevant information.",
+        "faithfulness_reason": "The score is 1.00 because there are no contradictions noted, indicating a perfect alignment between the actual output and the retrieval context."
     }
-
 ]
-

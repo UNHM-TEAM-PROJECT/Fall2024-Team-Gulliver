@@ -407,14 +407,9 @@ def evaluate_test_case(test_case):
         retrieval_context=test_case["retrieval_context"]
     )
 
-<<<<<<< HEAD
     # Evaluate relevancy and faithfulness of the chatbot response
     relevancy_metric = AnswerRelevancyMetric(threshold=0.9, model="gpt-4")
     faithfulness_metric = FaithfulnessMetric(threshold=0.9, model="gpt-4")
-=======
-    relevancy_metric = AnswerRelevancyMetric(threshold=0.9, model="gpt-4", include_reason=True)
-    faithfulness_metric = FaithfulnessMetric(threshold=0.9, model="gpt-4", include_reason=True)
->>>>>>> a94da37e10cb00ca9d1877b7c2b7be103c996341
 
     relevancy_metric.measure(llm_test_case)
     faithfulness_metric.measure(llm_test_case)
