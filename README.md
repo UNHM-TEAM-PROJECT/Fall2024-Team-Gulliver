@@ -21,7 +21,6 @@ This chatbot is designed to assist students at the University of New Hampshire (
 - **Memory Update**: Stores the last 5 interactions (questions and answers) in `conversation_memory.json` for handling follow-up questions.
 - **Caching**: Saves new questions, responses, and their corresponding hashes in `chat_history.json` to reduce redundant API calls.
 
-
 ## Architecture Diagram
 ![Chatbot Architecture](static/architecture.png)
 
