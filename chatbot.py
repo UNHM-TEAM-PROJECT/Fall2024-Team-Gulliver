@@ -34,9 +34,7 @@ chat_history_file = 'chat_history.json'
 conversation_memory_file = 'conversation_memory.json'
 
 # OpenAI API key for accessing embeddings and language models
-
-apikey = "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"
-
+apikey = os.getenv("OPENAI_API_KEY")
 # Initialize the chat history and conversation memory files if they don't exist
 def initialize_chat_history_file():
     if not os.path.exists(chat_history_file):
@@ -137,7 +135,7 @@ def extract_texts_from_multiple_pdfs(pdf_directory):
 
 # Directory containing PDFs to be processed
 
-pdf_directory = 'C:\\Users\\sindh\\Teamgulliver\\data'
+pdf_directory = '/Users/bubby/TeamGulliver/data'
 documents = extract_texts_from_multiple_pdfs(pdf_directory)
 
 # Split documents into chunks for better context management
@@ -340,3 +338,7 @@ def ask():
 if __name__ == '__main__':
     initialize_chat_history_file()
     app.run(debug=True, host='127.0.0.1', port=5000)
+
+
+
+
