@@ -380,7 +380,7 @@ def get_chatbot_response(question):
     Returns:
         str: The chatbot's response or None if an error occurs.
     """
-    response = requests.post('http://127.0.0.1:5000/ask', json={"message": question})
+    response = requests.post('http://127.0.0.1:80/ask', json={"message": question})
     if response.status_code == 200:
         return response.json().get("response", "")
     return None
