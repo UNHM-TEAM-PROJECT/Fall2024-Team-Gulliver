@@ -99,9 +99,9 @@ By following these steps, you can ensure your OpenAI API key is properly set up 
 1. Place the PDF documents in the `data/` directory.
 2. **Change the path to your local directory**:
    - Open the `chatbot.py` file.
-   - Update the `PDF_PATH` variable to point to your local directory containing the PDFs. For example:
+   - Update the `pdf_directory ` variable to point to your local directory containing the PDFs. For example:
      ```python
-     PDF_PATH = "your_local_path_to_pdfs"
+     pdf_directory = "your_local_path_to_pdfs_directory"
      ```
 3. Run the chatbot:
    ```bash
@@ -165,13 +165,13 @@ This guide provides step-by-step instructions for deploying applications on Amaz
 
 9. Launch the instance.
 
-### 4. **Start the EC2 Instance**
+### 3. **Start the EC2 Instance**
 1. From EC2 Dashboard, select your instance
 2. Click "Start Instance"
 3. Wait for the instance state to become "Running"
 4. Note the Public IPv4 address
 
-### 5. **SSH Connection Setup**
+### 4. **SSH Connection Setup**
 1. Download MobaXterm on windows:
    - Visit the official MobaXterm website: https://mobaxterm.mobatek.net/.
    - Download the "Home Edition" (Installer version or Portable version).
@@ -187,7 +187,7 @@ This guide provides step-by-step instructions for deploying applications on Amaz
       - In "Advanced SSH settings", use "Use private key" and select your .pem file
 5. Then you will be logged into AWS Linux terminal.
 
-### 6. **Application Deployment**
+### 5. **Application Deployment**
 1. In AWS Linux terminal, switch to root user:
    ```bash
    sudo su
@@ -225,8 +225,8 @@ This guide provides step-by-step instructions for deploying applications on Amaz
       ```
 8. Now chatbot.py file is opened, then go to insert mode typing "i".
 
-9. Find the PDF path variable and change the PDF path to copied path in the step 6.
-   - PDF_PATH = "Path you have copied from Step 6"
+9. Find the pdf_directory variable and change the PDF path to copied path in the step 6.
+   - pdf_directory  = "Path you have copied from Step 6"
 
 10. Click on Esc button to exit from insert mode and type :wq to save and exit the file.
 
