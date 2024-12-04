@@ -172,7 +172,13 @@ This guide provides step-by-step instructions for deploying applications on Amaz
 4. Note the Public IPv4 address
 
 ### 5. **SSH Connection Setup**
-1. Open MobaXterm
+1. Download MobaXterm on windows:
+   - Visit the official MobaXterm website: https://mobaxterm.mobatek.net/.
+   - Download the "Home Edition" (Installer version or Portable version).
+   - Open the downloaded .exe file.
+   - Follow the on-screen instructions to install the application.
+   - Once installed, open MobaXterm from the Start Menu or Desktop Shortcut.
+
 2. Click "Session" → "New Session"
 3. Select "SSH"
 4. Configure SSH session:
