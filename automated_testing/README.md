@@ -34,7 +34,7 @@ Each test case consists of the following:
 Ensure the following steps are completed from the main repository's README.md:
 1. Clone the repository and install the required dependencies.
 2. Run the chatbot by executing python chatbot.py.
-3. Verify the chatbot is accessible via its local HTTP link (http://127.0.0.1:5000/).
+3. Verify the chatbot is accessible via its local HTTP link (http://127.0.0.1:80/).
 
 
 Once the chatbot is running, proceed with the steps below to execute automated testing.
