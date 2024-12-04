@@ -122,3 +122,119 @@ For detailed instructions on setting up and running automated tests, refer to th
 - The `test_chatbot.py` file is also **not relevant** and can be ignored for current testing purposes.
 - For accurate evaluation, focus only on the scripts and instructions provided in the `automated_testing/` folder.
 
+
+# Deploying Chatbot to AWS
+
+This guide provides step-by-step instructions for deploying applications on Amazon Web Services (AWS). It covers the entire process from account creation to application deployment using EC2 instances.
+
+
+
+## Prerequisites
+- Basic knowledge of AWS services.
+- Installed tools:
+  - AWS CLI
+  - Python 3.8+
+  - Virtual environment tools (e.g., `venv` or `virtualenv`)
+  - MobaXTerm or an SSH client for server access.
+
+
+
+## Steps to Deploy
+
+### 1. **Create an AWS Account**
+1. Go to the [AWS website](https://aws.amazon.com/).
+2. Click **"Create an AWS Account"**.
+3. Follow the steps to sign up, including:
+   - Adding payment information.
+   - Verifying your email and phone number.
+4. Log in to AWS using your credentials.
+
+### 2. **Launch an EC2 Instance**
+1. Go to the AWS Management Console and open the EC2 Dashboard.
+2. Click Launch Instance.
+3. Configure the instance:
+      - Choose an Amazon Machine Image (AMI): Select Amazon Linux 2.
+4. Select an instance type: Use t3.2xlarge or similar for performance.
+
+5. Create a new key pair (.pem file) during the instance setup.
+6. Download and save the .pem file securely on your local machine. This file will be used for SSH access.
+7. Add storage: Allocate at least 100GB.
+
+8. Configure security group to allow the following:
+      - Open ports 22 (SSH) and 80 (HTTP).
+
+9. Launch the instance.
+
+### 4. **Start the EC2 Instance**
+1. From EC2 Dashboard, select your instance
+2. Click "Start Instance"
+3. Wait for the instance state to become "Running"
+4. Note the Public IPv4 address
+
+### 5. **SSH Connection Setup**
+1. Open MobaXterm
+2. Click "Session" → "New Session"
+3. Select "SSH"
+4. Configure SSH session:
+      - Enter Public IPv4 address in "Remote host"
+      - Check "Specify username" and enter "ec2-user"
+      - In "Advanced SSH settings", use "Use private key" and select your .pem file
+5. Then you will be logged into AWS Linux terminal.
+
+### 6. **Application Deployment**
+1. In AWS Linux terminal, switch to root user:
+   ```bash
+   sudo su
+   ```
+2. Update system packages:
+   ```bash
+   sudo yum update -y
+   ```
+3. Install necessary tools:
+   ```bash
+   sudo yum install git -y
+   sudo yum install python3-pip -y
+   ```
+4. Clone your repository from Github:
+   ```bash
+   git clone https://github.com/UNHM-TEAM-PROJECT/Fall2024-Team-Gulliver.git
+   cd Fall2024-Team-Gulliver
+   ```
+
+5. Install project dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+6. Update the chatbot.py file with the following:
+   - Navigate to the data folder.
+      ```bash
+      cd data
+      pwd
+      ```
+   - Then you will get the data directory path where PDFs are located. Copy this path and save it.
+7. Now go back to Chatbot.py file and open that file using:
+   ```bash
+      nano chatbot.py or
+      vi chatbot.py
+      ```
+8. Now chatbot.py file is opened, then go to insert mode typing "i".
+
+9. Find the PDF path variable and change the PDF path to copied path in the step 6.
+   - PDF_PATH = "Path you have copied from Step 6"
+
+10. Click on Esc button to exit from insert mode and type :wq to save and exit the file.
+
+11. Set the OpenAI API key in the AWS terminal:
+      ```bash
+      export OPENAI_API_KEY="your_openai_api_key"
+      ```
+12. Run the Application:
+      ```bash
+      python3 chatbot.py
+      ```
+
+13. Ensure the application is running, and open any browser:
+   - Navigate to `http://<public-ip>:5000` in your browser.
+
+   - Start interacting with the chatbot.
+
