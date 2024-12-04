@@ -1,3 +1,10 @@
+<!--
+File: chatbot.py
+Authors: Hemasri Muddam
+Contributors: Sindhu Priya Itukulapati
+Date: 11-30-2024
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Global variables for consistent styling throughout the application */
         :root {
             --unh-blue: #002B7D;
             --unh-white: #ffffff;
@@ -19,7 +27,8 @@
             --border-radius: 0;
             --unh-black: #000000;
         }
-        
+        /* Ensure the application occupies the full viewport with no extra margins or scrollbars */
+
         html, body {
             height: 100%;
             margin: 0;
@@ -34,13 +43,15 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
-        
+        /* A transparent overlay to darken the background image and blur it slightly for readability */
+
         .page-container {
             height: 100vh;
             width: 100vw;
             backdrop-filter: blur(5px);
             background: rgba(0, 0, 0, 0.3);
         }
+        /* Main chat container with full height and blurred background */
 
         .chat-container {
             height: 100vh;
@@ -52,6 +63,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             margin: 0;
         }
+            /* Chat header with a blue gradient background and centered content */
 
         .chat-header {
             background: linear-gradient(135deg, var(--unh-blue) 0%, #004db3 100%);
@@ -62,24 +74,29 @@
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
             height: 80px;
         }
+
+        /* Flex container for header logo and title */
         .header-content {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
+        
+        /* Logo styling */
         .chat-header img {
             height: 60px;
             width: auto;
             object-fit: contain;
         }
-
+        
+        /* Header title styling */
         .chat-header-title {
             font-size: 24px;
             font-weight: 600;
             margin: 0;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+         /* Message container with scrolling and background styling */
 
         .chat-history {
             flex: 1;
@@ -97,16 +114,19 @@
             background-attachment: fixed;
         }
 
+        /* Container for edit icon positioned at bottom-right */
+
        .edit-icon-container {
-    position: absolute; /* Position it absolutely within the message container */
-    bottom: 40px; /* Place it at the bottom */
-    right: -2px; /* Align it to the right */
-    z-index: 1; /* Ensure it appears above content */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-        
+            position: absolute; /* Position it absolutely within the message container */
+            bottom: 40px; /* Place it at the bottom */
+            right: -2px; /* Align it to the right */
+            z-index: 1; /* Ensure it appears above content */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+         /* Styling for clickable edit icon */
+
         .edit-icon {
             font-size: 16px; /* Adjust size */
             color: var(--unh-black); /* Default color for the edit icon */
@@ -114,11 +134,12 @@
             transition: color 0.2s ease-in-out; /* Smooth hover effect */
         }
         
+        /* Hover effect for the edit icon */
         .edit-icon:hover {
             color: var(--unh-blue); /* Highlight color on hover */
         }
         
-
+        /* Chat message styling with animation and shadows */
         .message {
             position: relative;
             margin-bottom: 1.5rem;
@@ -130,11 +151,13 @@
             word-wrap: break-word;
         }
         
+        /* Fade-in animation for new messages */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Styling for user messages aligned to the right */
         .user-message {
             background-color: rgba(255, 255, 255, 0.9);
             color: #212529;
@@ -142,7 +165,8 @@
             border-bottom-right-radius: 0.25rem;
             text-align: left;
         }
-
+        
+         /* Styling for assistant messages aligned to the left */
         .assistant-message {
             background-color: rgba(255, 255, 255, 0.9);
             color: #212529;
@@ -151,7 +175,8 @@
             backdrop-filter: blur(5px);
             text-align: left;
         }
-
+        
+        /* Small circular avatar next to messages */
         .message-avatar {
             width: 32px;
             height: 32px;
@@ -165,73 +190,75 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
-/* Container for the input and buttons */
-.message-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Push buttons to the right */
-    gap: 10px; /* Spacing between elements */
-}
+        /* Container for the input and buttons */
+        .message-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Push buttons to the right */
+            gap: 10px; /* Spacing between elements */
+        }
+        
+        /* Style for the input field */
+        .edit-input {
+            flex-grow: 1; /* Make input take available space */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        /* Action buttons (Cancel and Send) */
+        .action-buttons {
+            display: flex;
+            gap: 8px; /* Space between buttons */
+        }
+        
+        .cancel-button,
+        .send-button {
+            padding: 6px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            line-height: 1.2;
+        }
+        
+        .cancel-button {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .send-button {
+            background-color: #002B7D; /* Updated color */
+            color: #fff; /* Keep the text white for contrast */
+        }
+        
+        /* Optional hover effect */
+        .send-button:hover {
+            background-color: #001F5C; /* A slightly darker shade for hover */
+        }
+        
+        
+        /* Hover effects for buttons */
+        .cancel-button:hover {
+            background-color: #e0e0e0;
+        }
 
-/* Style for the input field */
-.edit-input {
-    flex-grow: 1; /* Make input take available space */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-/* Action buttons (Cancel and Send) */
-.action-buttons {
-    display: flex;
-    gap: 8px; /* Space between buttons */
-}
-
-.cancel-button,
-.send-button {
-    padding: 6px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-    line-height: 1.2;
-}
-
-.cancel-button {
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-.send-button {
-    background-color: #002B7D; /* Updated color */
-    color: #fff; /* Keep the text white for contrast */
-}
-
-/* Optional hover effect */
-.send-button:hover {
-    background-color: #001F5C; /* A slightly darker shade for hover */
-}
-
-
-/* Hover effects for buttons */
-.cancel-button:hover {
-    background-color: #e0e0e0;
-}
-
-
+        /* Avatar for user messages, positioned to the right and styled with blue background and white icon color */
         .user-message .message-avatar {
             right: -16px;
             background-color: var(--unh-blue);
             color: white;
         }
-
+        
+        /* Avatar for assistant messages, positioned to the left and styled with blue background and white icon color */
         .assistant-message .message-avatar {
             left: -16px;
             background-color: var(--unh-blue);
             color: white;
         }
-
+        
+        /* Container for the input field and send button, centered horizontally with rounded bottom corners */
         .input-area {
             display: flex;
             justify-content: center;
@@ -241,7 +268,8 @@
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
         }
-
+        
+        /* Group for input field and send button, styled with rounded corners and shadow */
         .input-group {
             background-color: var(--unh-white);
             border-radius: 2rem;
@@ -249,6 +277,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
+        /* Text input field styling, with padding and transparent background */
         #user-input {
             border: none;
             padding: 0.75rem 1.5rem;
@@ -256,10 +285,12 @@
             background: transparent;
         }
 
+        /* Remove shadow on focus for a cleaner look */
         #user-input:focus {
             box-shadow: none;
         }
-
+        
+        /* Send button styling, circular with blue background, centered icon, and hover effect */
         #send-button {
             width: 45px;
             height: 45px;
@@ -272,12 +303,15 @@
             transition: all 0.3s ease;
             margin-right: 0.5rem;
         }
-
+        
+        /* Hover effect for send button with slight scale animation */
         #send-button:hover {
             background-color: #0b5ed7;
             transform: scale(1.05);
         }
-    .edit-button {
+
+        /* Edit button styling, positioned at the top-right of its container with a semi-transparent background */
+        .edit-button {
             position: absolute;
             top: 0.5rem;
             right: 0.5rem;
@@ -291,6 +325,7 @@
             transition: all 0.2s ease;
         }
 
+        /* Hover effect for edit button with increased background opacity */
         .edit-button:hover {
             background-color: rgba(255, 255, 255, 0.3);
         }
@@ -313,7 +348,7 @@
             background: rgba(0, 53, 145, 0.7);
         }
 
-    .typing-indicator {
+        .typing-indicator {
             display: flex;
             align-items: center;
             font-size: 1rem;
@@ -473,34 +508,34 @@
         }
     
         function addEditIcon(messageDiv) {
-    // Ensure the message container has relative positioning
-    messageDiv.style.position = 'relative';
-
-    // Remove existing edit icon if it exists
-    const existingIconContainer = messageDiv.querySelector('.edit-icon-container');
-    if (existingIconContainer) {
-        existingIconContainer.remove();
-    }
-
-    // Create the container for the edit icon
-    const editIconContainer = document.createElement('div');
-    editIconContainer.classList.add('edit-icon-container');
-
-    // Create the edit icon itself
-    const editIcon = document.createElement('div');
-    editIcon.classList.add('edit-icon');
-    editIcon.innerHTML = '<i class="fas fa-edit"></i>'; // Font Awesome edit icon
-    editIcon.addEventListener('click', () => startEditing(messageDiv));
-
-    // Append the edit icon to the container
-    editIconContainer.appendChild(editIcon);
-
-    // Append the container to the message
-    messageDiv.appendChild(editIconContainer);
-}
+            // Ensure the message container has relative positioning
+            messageDiv.style.position = 'relative';
+        
+            // Remove existing edit icon if it exists
+            const existingIconContainer = messageDiv.querySelector('.edit-icon-container');
+            if (existingIconContainer) {
+                existingIconContainer.remove();
+            }
+        
+            // Create the container for the edit icon
+            const editIconContainer = document.createElement('div');
+            editIconContainer.classList.add('edit-icon-container');
+        
+            // Create the edit icon itself
+            const editIcon = document.createElement('div');
+            editIcon.classList.add('edit-icon');
+            editIcon.innerHTML = '<i class="fas fa-edit"></i>'; // Font Awesome edit icon
+            editIcon.addEventListener('click', () => startEditing(messageDiv));
+        
+            // Append the edit icon to the container
+            editIconContainer.appendChild(editIcon);
+        
+            // Append the container to the message
+            messageDiv.appendChild(editIconContainer);
+        }
 
         
-        
+        /* Initializes editing mode for a specific message element.Ensures only one message is edited at a time and stores the original content. */
         function startEditing(messageElement) {
             if (!messageElement) {
                 console.error("Message element is null or undefined.");
@@ -622,10 +657,8 @@
             // Call handleResend to reprocess the edited message
             handleResend(newContent.trim());
         }
-            
+             
         
-        
-    
         // Cancel editing
         function cancelEditing() {
             if (!editingMessageElement) return;
@@ -678,10 +711,8 @@
                 }
             }
         }
-    
-    
 
- // Typing indicator functions
+         // Typing indicator functions
         function addTypingIndicator() {
             const typingDiv = document.createElement('div');
             typingDiv.classList.add('typing-indicator');
