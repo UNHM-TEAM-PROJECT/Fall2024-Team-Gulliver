@@ -108,8 +108,8 @@ By following these steps, you can ensure your OpenAI API key is properly set up 
    python chatbot.py
 4. Open your browser and navigate to:
    ```bash
-   http://127.0.0.1:5000/
-5. Ask internship-related questions, e.g., "What are the requirements for COMP690?"
+   http://127.0.0.1:80/
+5. Ask internship-related questions, e.g., "What are the requirements for COMP893?"
 
 ## Automated Testing
 
